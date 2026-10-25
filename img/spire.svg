@@ -1,0 +1,1933 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16222e"/>
+      <stop offset="0.2" stop-color="#24384c"/>
+      <stop offset="0.42" stop-color="#3f6379"/>
+      <stop offset="0.6" stop-color="#5f8ba0"/>
+      <stop offset="0.73" stop-color="#87b3c5"/>
+    </linearGradient>
+    <radialGradient id="skyGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#eaf7ff" stop-opacity="0.5"/>
+      <stop offset="0.38" stop-color="#a8d2ea" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#7db8e8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="starGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="0.2" stop-color="#ddf3ff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#8fd0f5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="footGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#b4f6ff" stop-opacity="0.82"/>
+      <stop offset="0.4" stop-color="#31bdf0" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#1a7fc0" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- The shaft is dark stone-ice; what reads as "tower" is the rim light
+         down its left edge and the core burning through the middle. -->
+    <linearGradient id="iceBody" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7d9fb4"/>
+      <stop offset="0.3" stop-color="#43647a"/>
+      <stop offset="0.62" stop-color="#213849"/>
+      <stop offset="1" stop-color="#0e1c26"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6feff"/>
+      <stop offset="0.28" stop-color="#93ecff"/>
+      <stop offset="0.72" stop-color="#2fbaf2"/>
+      <stop offset="1" stop-color="#0f86c8"/>
+    </linearGradient>
+    <linearGradient id="icicle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eefbff" stop-opacity="0.92"/>
+      <stop offset="0.5" stop-color="#bcdff2" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#8ab9d1" stop-opacity="0.26"/>
+    </linearGradient>
+    <linearGradient id="icicleDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#93bdd3" stop-opacity="0.72"/>
+      <stop offset="0.5" stop-color="#4d7791" stop-opacity="0.56"/>
+      <stop offset="1" stop-color="#264557" stop-opacity="0.22"/>
+    </linearGradient>
+    <linearGradient id="snowCap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#bed6e6"/>
+    </linearGradient>
+
+    <!-- Rock reads by value, not by hue: the windward facets sit only a little
+         above the lee ones, so the massif holds together as one mass. -->
+    <linearGradient id="mtnSnow" x1="0.15" y1="0" x2="0.75" y2="1">
+      <stop offset="0" stop-color="#e4eff7"/>
+      <stop offset="0.3" stop-color="#a5bccc"/>
+      <stop offset="0.72" stop-color="#5d7688"/>
+      <stop offset="1" stop-color="#31485a"/>
+    </linearGradient>
+    <linearGradient id="mtnSnowNear" x1="0.15" y1="0" x2="0.75" y2="1">
+      <stop offset="0" stop-color="#b3c8d6"/>
+      <stop offset="0.35" stop-color="#71889a"/>
+      <stop offset="1" stop-color="#22323f"/>
+    </linearGradient>
+    <linearGradient id="mtnLit" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#6d8697"/>
+      <stop offset="0.4" stop-color="#3e5666"/>
+      <stop offset="1" stop-color="#1d3040"/>
+    </linearGradient>
+    <linearGradient id="mtnDark" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#2a3f4f"/>
+      <stop offset="0.5" stop-color="#182937"/>
+      <stop offset="1" stop-color="#0d1922"/>
+    </linearGradient>
+    <linearGradient id="mtnFarLit" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#a9c1d1"/>
+      <stop offset="1" stop-color="#6d8798"/>
+    </linearGradient>
+    <linearGradient id="snowField" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a2c0d2"/>
+      <stop offset="0.22" stop-color="#7897ad"/>
+      <stop offset="0.6" stop-color="#4e6b81"/>
+      <stop offset="1" stop-color="#2c4152"/>
+    </linearGradient>
+    <linearGradient id="plain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4e6577"/>
+      <stop offset="0.3" stop-color="#31455a"/>
+      <stop offset="1" stop-color="#101b25"/>
+    </linearGradient>
+
+    <!-- Ice shards: snow-crusted along the windward edge, glassy teal beneath. -->
+    <linearGradient id="shardFace" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9ec5d6"/>
+      <stop offset="0.34" stop-color="#42839a"/>
+      <stop offset="1" stop-color="#123241"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#060c14" stop-opacity="0"/>
+      <stop offset="1" stop-color="#060c14" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <filter id="b2" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <filter id="b6" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="b18" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="b46" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="46"/></filter>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.3"/></filter>
+
+    <!-- Unit icicle, tip down in a 2x1 box, so scale(width,length) sizes it. -->
+    <g id="ici">
+      <path d="M -1 0 Q -0.45 0.72 0 1 Q 0.45 0.72 1 0 Z" fill="url(#icicle)"/>
+      <path d="M -0.92 0 Q -0.6 0.6 -0.14 0.96 Q -0.46 0.52 -0.5 0 Z" fill="#f4feff" opacity="0.45"/>
+    </g>
+    <g id="iciD">
+      <path d="M -1 0 Q -0.45 0.72 0 1 Q 0.45 0.72 1 0 Z" fill="url(#icicleDark)"/>
+      <path d="M -0.92 0 Q -0.6 0.6 -0.14 0.96 Q -0.46 0.52 -0.5 0 Z" fill="#d3eaf6" opacity="0.24"/>
+    </g>
+    <!-- One chain link, ring lying in the screen plane. -->
+    <g id="lk" fill="none">
+      <ellipse rx="4.6" ry="2.8" stroke="#101f2a" stroke-width="3.2"/>
+      <ellipse rx="4.6" ry="2.8" stroke="#b8d2e0" stroke-width="1.3"/>
+    </g>
+    <circle id="fl" r="1" fill="#f0faff"/>
+    <g id="s1">
+      <path d="M -9 0 C -7 -60 -6 -104 -2.5 -140 L 0 -160 L 4.5 -134 C 7 -96 8 -50 9 0 Z" fill="url(#shardFace)"/>
+      <path d="M 0 -160 L 4.5 -134 C 7 -96 8 -50 9 0 L 2 0 Z" fill="#08191f" opacity="0.86"/>
+      <path d="M -9 0 C -7 -60 -6 -104 -2.5 -140 L -4.5 -136 C -7 -98 -8 -52 -8 0 Z" fill="#c3e9f5" opacity="0.42"/>
+      <path d="M -3.6 -132 L 0 -160 L 3 -140 L 1.4 -120 L -1 -128 L -2.4 -114 Z" fill="url(#snowCap)" opacity="0.92"/>
+    </g>
+    <g id="s2">
+      <path d="M -12 0 C -10 -52 -12 -104 -2.5 -150 C -0.6 -157 1 -160 3.5 -160 L 4.5 -152 C 6.5 -104 10 -52 12 0 Z" fill="url(#shardFace)"/>
+      <path d="M 3.5 -160 C 6.5 -104 10 -52 12 0 L 3 0 C 1 -52 -1 -104 -1 -156 Z" fill="#08191f" opacity="0.86"/>
+      <path d="M -12 0 C -10 -52 -12 -104 -2.5 -150 L -5 -146 C -8.5 -100 -9.5 -52 -9.5 0 Z" fill="#c3e9f5" opacity="0.42"/>
+      <path d="M -3.8 -146 C -2 -155 1 -160 3.5 -160 L 4.4 -144 L 0.6 -132 L -2 -140 Z" fill="url(#snowCap)" opacity="0.92"/>
+    </g>
+    <g id="s3">
+      <path d="M -17 0 L -7 -74 L -2 -104 L 5 -76 L 17 0 Z" fill="url(#shardFace)"/>
+      <path d="M -2 -104 L 5 -76 L 17 0 L 3 0 Z" fill="#08191f" opacity="0.86"/>
+      <path d="M -17 0 L -7 -74 L -2 -104 L -4.5 0 Z" fill="#c3e9f5" opacity="0.42"/>
+      <path d="M -6.2 -80 L -2 -104 L 3.4 -84 L 0.6 -70 L -3 -76 Z" fill="url(#snowCap)" opacity="0.92"/>
+    </g>
+    <g id="s4">
+      <path d="M -18 0 L -13 -96 L -8 -120 L -3.5 -92 L 1 -128 L 5.5 -150 L 10 -110 L 18 0 Z" fill="url(#shardFace)"/>
+      <path d="M 5.5 -150 L 10 -110 L 18 0 L 4 0 Z" fill="#08191f" opacity="0.86"/>
+      <path d="M -18 0 L -13 -96 L -8 -120 L -7 0 Z" fill="#c3e9f5" opacity="0.42"/>
+      <path d="M 2.6 -134 L 5.5 -150 L 8.6 -126 L 5.4 -116 L 2.4 -122 Z M -10.2 -106 L -8 -120 L -5.2 -102 L -8.2 -96 Z" fill="url(#snowCap)" opacity="0.92"/>
+    </g>
+    <!-- sea, lit toward the horizon where the spire light falls on it -->
+    <linearGradient id="water" gradientUnits="userSpaceOnUse" x1="0" y1="648" x2="0" y2="900">
+      <stop offset="0" stop-color="#4b7482"/>
+      <stop offset="0.1" stop-color="#35768f"/>
+      <stop offset="0.34" stop-color="#2a7ba0"/>
+      <stop offset="0.6" stop-color="#1d5c82"/>
+      <stop offset="1" stop-color="#0e3352"/>
+    </linearGradient>
+    <radialGradient id="bloom" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="0.22" stop-color="#eafaff" stop-opacity="0.85"/>
+      <stop offset="0.5" stop-color="#a8dcf0" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#7db8e8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="refl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b9ecff" stop-opacity="0.5"/>
+      <stop offset="0.45" stop-color="#8fd8f4" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#7dcaf0" stop-opacity="0"/>
+    </linearGradient>
+    <!-- framing bergs: glassy flank the tower light rakes across -->
+    <linearGradient id="bergLitR" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#eaf7fd" stop-opacity="0.95"/>
+      <stop offset="0.4" stop-color="#9ccbde" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#5c8ba2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bergLitL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#eaf7fd" stop-opacity="0.95"/>
+      <stop offset="0.4" stop-color="#9ccbde" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#5c8ba2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bergFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d2233" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#0d2233" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#0d2233" stop-opacity="0.62"/>
+    </linearGradient>
+    <linearGradient id="mound" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0f8fd"/>
+      <stop offset="0.45" stop-color="#c2dcea"/>
+      <stop offset="1" stop-color="#7fa2b8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ============================== sky ============================== -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <!-- the light tearing the overcast open above the spire -->
+  <ellipse cx="800" cy="140" rx="680" ry="540" fill="url(#bloom)" opacity="0.75"/>
+  <g filter="url(#b46)">
+    <ellipse cx="-40" cy="20" rx="420" ry="120" fill="#101f2c" opacity="0.8"/>
+    <ellipse cx="230" cy="-10" rx="300" ry="80" fill="#0f1e2b" opacity="0.75"/>
+    <ellipse cx="-30" cy="140" rx="340" ry="95" fill="#132433" opacity="0.75"/>
+    <ellipse cx="300" cy="110" rx="260" ry="60" fill="#16293a" opacity="0.6"/>
+    <ellipse cx="520" cy="40" rx="210" ry="50" fill="#13232f" opacity="0.5"/>
+    <ellipse cx="180" cy="220" rx="300" ry="60" fill="#1a3040" opacity="0.45"/>
+    <ellipse cx="470" cy="180" rx="190" ry="42" fill="#22394a" opacity="0.35"/>
+    <ellipse cx="-20" cy="300" rx="240" ry="60" fill="#1e3444" opacity="0.4"/>
+    <ellipse cx="1640" cy="20" rx="420" ry="120" fill="#101f2c" opacity="0.8"/>
+    <ellipse cx="1370" cy="-10" rx="300" ry="80" fill="#0f1e2b" opacity="0.75"/>
+    <ellipse cx="1630" cy="140" rx="340" ry="95" fill="#132433" opacity="0.75"/>
+    <ellipse cx="1300" cy="110" rx="260" ry="60" fill="#16293a" opacity="0.6"/>
+    <ellipse cx="1080" cy="40" rx="210" ry="50" fill="#13232f" opacity="0.5"/>
+    <ellipse cx="1420" cy="220" rx="300" ry="60" fill="#1a3040" opacity="0.45"/>
+    <ellipse cx="1130" cy="180" rx="190" ry="42" fill="#22394a" opacity="0.35"/>
+    <ellipse cx="1620" cy="300" rx="240" ry="60" fill="#1e3444" opacity="0.4"/>
+    <ellipse cx="800" cy="-60" rx="320" ry="70" fill="#14242f" opacity="0.6"/>
+    <ellipse cx="690" cy="-10" rx="150" ry="38" fill="#16293a" opacity="0.45"/>
+    <ellipse cx="915" cy="-8" rx="140" ry="36" fill="#16293a" opacity="0.45"/>
+  </g>
+  <g filter="url(#b46)">
+    <ellipse cx="240" cy="265" rx="260" ry="36" fill="#6d95aa" opacity="0.22"/>
+    <ellipse cx="1360" cy="268" rx="265" ry="36" fill="#6d95aa" opacity="0.22"/>
+    <ellipse cx="560" cy="215" rx="170" ry="26" fill="#87afc2" opacity="0.2"/>
+    <ellipse cx="1040" cy="215" rx="170" ry="26" fill="#87afc2" opacity="0.2"/>
+  </g>
+  <g filter="url(#b18)">
+    <ellipse cx="350" cy="185" rx="120" ry="30" fill="#1c3242" opacity="0.3"/>
+    <ellipse cx="520" cy="122" rx="100" ry="24" fill="#243c4e" opacity="0.26"/>
+    <ellipse cx="1230" cy="152" rx="115" ry="28" fill="#1c3242" opacity="0.3"/>
+    <ellipse cx="1096" cy="108" rx="95" ry="22" fill="#243c4e" opacity="0.26"/>
+    <ellipse cx="238" cy="82" rx="105" ry="26" fill="#16293a" opacity="0.3"/>
+    <ellipse cx="1416" cy="88" rx="108" ry="26" fill="#16293a" opacity="0.3"/>
+    <ellipse cx="656" cy="58" rx="85" ry="20" fill="#1a3040" opacity="0.24"/>
+    <ellipse cx="942" cy="66" rx="80" ry="20" fill="#1a3040" opacity="0.24"/>
+    <ellipse cx="452" cy="298" rx="105" ry="22" fill="#243c4e" opacity="0.2"/>
+    <ellipse cx="1176" cy="282" rx="110" ry="22" fill="#243c4e" opacity="0.2"/>
+    <ellipse cx="612" cy="172" rx="78" ry="17" fill="#9cc4d6" opacity="0.16"/>
+    <ellipse cx="994" cy="162" rx="74" ry="16" fill="#9cc4d6" opacity="0.16"/>
+    <ellipse cx="788" cy="388" rx="130" ry="20" fill="#8fb6c8" opacity="0.12"/>
+    <ellipse cx="312" cy="236" rx="88" ry="18" fill="#2c4a5e" opacity="0.2"/>
+    <ellipse cx="1288" cy="226" rx="92" ry="18" fill="#2c4a5e" opacity="0.2"/>
+  </g>
+  <g filter="url(#b18)">
+    <ellipse cx="330" cy="300" rx="265" ry="27" fill="#243c4e" opacity="0.4"/>
+    <ellipse cx="235" cy="362" rx="225" ry="21" fill="#2c4a5e" opacity="0.3"/>
+    <ellipse cx="1285" cy="318" rx="285" ry="27" fill="#243c4e" opacity="0.4"/>
+    <ellipse cx="1385" cy="392" rx="245" ry="21" fill="#2c4a5e" opacity="0.28"/>
+    <ellipse cx="455" cy="432" rx="285" ry="22" fill="#3a5a6e" opacity="0.24"/>
+    <ellipse cx="1185" cy="468" rx="275" ry="20" fill="#3a5a6e" opacity="0.2"/>
+    <ellipse cx="300" cy="545" rx="320" ry="24" fill="#4c7086" opacity="0.22"/>
+    <ellipse cx="1310" cy="556" rx="330" ry="22" fill="#4c7086" opacity="0.2"/>
+  </g>
+  <g filter="url(#b18)">
+    <ellipse cx="600" cy="235" rx="140" ry="26" fill="#cfe9f6" opacity="0.4"/>
+    <ellipse cx="1010" cy="222" rx="150" ry="28" fill="#c7e4f2" opacity="0.38"/>
+    <ellipse cx="795" cy="320" rx="200" ry="28" fill="#b8dcec" opacity="0.3"/>
+    <ellipse cx="655" cy="120" rx="100" ry="22" fill="#eef8fe" opacity="0.55"/>
+    <ellipse cx="950" cy="108" rx="110" ry="22" fill="#e6f4fb" opacity="0.5"/>
+    <ellipse cx="505" cy="158" rx="105" ry="19" fill="#c2dfee" opacity="0.35"/>
+    <ellipse cx="1105" cy="150" rx="112" ry="20" fill="#c2dfee" opacity="0.32"/>
+    <ellipse cx="870" cy="205" rx="90" ry="16" fill="#f4fbff" opacity="0.5"/>
+  </g>
+  <g opacity="0.55">
+  <!-- god rays raking out of the star, fanning down and to the left -->
+  <g filter="url(#b18)">
+    <path d="M 800 122 L 155.9 266 L 177.5 341.2 Z" fill="#eef8ff" opacity="0.2"/>
+    <path d="M 800 122 L 150.1 382 L 171.9 431.1 Z" fill="#eef8ff" opacity="0.26"/>
+    <path d="M 800 122 L 179.6 487.4 L 199.6 519.4 Z" fill="#eef8ff" opacity="0.16"/>
+    <path d="M 800 122 L 226.3 573.4 L 273.1 627.3 Z" fill="#eef8ff" opacity="0.28"/>
+    <path d="M 800 122 L 325.6 671.6 L 361.1 700.3 Z" fill="#eef8ff" opacity="0.18"/>
+    <path d="M 800 122 L 427 733.1 L 479.4 762.2 Z" fill="#eef8ff" opacity="0.23"/>
+    <path d="M 800 122 L 567.5 782.3 L 600 792.8 Z" fill="#eef8ff" opacity="0.13"/>
+    <path d="M 800 122 L 692.1 803.5 L 739.9 809.4 Z" fill="#eef8ff" opacity="0.16"/>
+    <path d="M 800 122 L 855.2 779.7 L 882.7 776.8 Z" fill="#eef8ff" opacity="0.1"/>
+    <path d="M 800 122 L 1094.9 667.4 L 1124.9 650.1 Z" fill="#eef8ff" opacity="0.11"/>
+    <path d="M 800 122 L 1238.1 532 L 1253.5 514.8 Z" fill="#eef8ff" opacity="0.08"/>
+    <path d="M 800 122 L 1297.2 379.7 L 1309.2 355.1 Z" fill="#eef8ff" opacity="0.07"/>
+  </g>
+
+  </g>
+  <g transform="translate(0 -42)">
+  <!-- ================== the range behind, lost in haze ================= -->
+  <g opacity="0.42" filter="url(#b2)">
+  <path d="M -64 700 L -21.1 686.1 L 27.7 648.4 L 51.2 666.9 L 64.6 649.6 L 107.4 636.9 L 150.3 613.2 L 193.1 592.6 L 236 570 L 236 570 L 276 592.2 L 316 608.8 L 356 634.7 L 396 652.6 L 435.2 650 L 457.2 665.8 L 476 683.3 L 516 700 Z" fill="url(#mtnFarLit)"/>
+  <path d="M 236 570 L 236 570 L 276 592.2 L 316 608.8 L 356 634.7 L 396 652.6 L 435.2 650 L 457.2 665.8 L 476 683.3 L 516 700 L 292 700 Z" fill="#3d5a6e" opacity="0.4"/>
+  <path d="M 150.3 613.2 L 193.1 592.6 L 236 570 L 236 570 L 276 592.2 L 316 608.8 L 312.6 616.6 L 275 602.2 L 233.7 574.3 L 235.8 579.6 L 190.5 600.5 L 149.8 622.1 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 150.3 613.2 L 193.1 592.6 L 236 570 L 236 570 L 276 592.2 L 316 608.8" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 326 700 L 360.3 687.5 L 394.6 673.7 L 428.9 662.2 L 463.5 633 L 482.4 648 L 497.4 635 L 531.7 615.4 L 566 600 L 566 600 L 597.4 616.1 L 628.9 634 L 660.3 651 L 691.7 658.7 L 723.1 678.4 L 756 674.6 L 773.3 692.8 L 786 700 Z" fill="url(#mtnFarLit)"/>
+  <path d="M 566 600 L 566 600 L 597.4 616.1 L 628.9 634 L 660.3 651 L 691.7 658.7 L 723.1 678.4 L 756 674.6 L 773.3 692.8 L 786 700 L 610 700 Z" fill="#3d5a6e" opacity="0.4"/>
+  <path d="M 463.5 633 L 531.7 615.4 L 566 600 L 566 600 L 597.4 616.1 L 628.9 634 L 629.7 639.3 L 594.5 620.8 L 568.7 605 L 562.8 604.3 L 527.8 619.5 L 461.2 639.7 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 463.5 633 L 531.7 615.4 L 566 600 L 566 600 L 597.4 616.1 L 628.9 634" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 916 700 L 956 684.1 L 996 667.2 L 1036 654.2 L 1076 634.9 L 1116 615.9 L 1155.3 575.6 L 1177.3 596.6 L 1196 578 L 1196 578 L 1238.9 598.9 L 1281.7 620 L 1324.6 639.7 L 1372.2 646 L 1395.8 658.7 L 1410.3 669 L 1453.1 686.5 L 1496 700 Z" fill="url(#mtnFarLit)"/>
+  <path d="M 1196 578 L 1196 578 L 1238.9 598.9 L 1281.7 620 L 1324.6 639.7 L 1372.2 646 L 1395.8 658.7 L 1410.3 669 L 1453.1 686.5 L 1496 700 L 1256 700 Z" fill="#3d5a6e" opacity="0.4"/>
+  <path d="M 1116 615.9 L 1155.3 575.6 L 1177.3 596.6 L 1196 578 L 1196 578 L 1238.9 598.9 L 1237.6 605.3 L 1195 581.8 L 1197.2 582.1 L 1175.7 603.6 L 1152 579 L 1119.5 619.8 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 1116 615.9 L 1155.3 575.6 L 1177.3 596.6 L 1196 578 L 1196 578 L 1238.9 598.9" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 724 700 L 754 688.9 L 784 677.1 L 814 664.7 L 844 650.4 L 875 625.8 L 891.5 644.4 L 904 624 L 934 610 L 934 610 L 966.9 625.7 L 999.7 640.8 L 1029 636.3 L 1047.1 650.9 L 1065.4 663.5 L 1098.3 681.2 L 1131.1 689 L 1164 700 Z" fill="url(#mtnFarLit)"/>
+  <path d="M 934 610 L 934 610 L 966.9 625.7 L 999.7 640.8 L 1029 636.3 L 1047.1 650.9 L 1065.4 663.5 L 1098.3 681.2 L 1131.1 689 L 1164 700 L 980 700 Z" fill="#3d5a6e" opacity="0.4"/>
+  <path d="M 875 625.8 L 904 624 L 934 610 L 934 610 L 966.9 625.7 L 1029 636.3 L 1025.5 641.2 L 966.2 634.2 L 934.9 619.9 L 933.3 619.7 L 902.5 628.8 L 874.3 632.3 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 875 625.8 L 904 624 L 934 610 L 934 610 L 966.9 625.7 L 1029 636.3" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 1266 700 L 1297.4 686.8 L 1328.9 673.4 L 1359.7 656 L 1377 666.8 L 1391.7 653.3 L 1423.1 637.8 L 1454.6 621.9 L 1486 604 L 1486 604 L 1520.3 619.2 L 1554.6 632.2 L 1588.9 651.3 L 1623.1 660.9 L 1657.4 674.5 L 1693.1 678.2 L 1711.9 685.2 L 1726 700 Z" fill="url(#mtnFarLit)"/>
+  <path d="M 1486 604 L 1486 604 L 1520.3 619.2 L 1554.6 632.2 L 1588.9 651.3 L 1623.1 660.9 L 1657.4 674.5 L 1693.1 678.2 L 1711.9 685.2 L 1726 700 L 1534 700 Z" fill="#3d5a6e" opacity="0.4"/>
+  <path d="M 1454.6 621.9 L 1486 604 L 1486 604 L 1520.3 619.2 L 1554.6 632.2 L 1555.9 641.3 L 1517 629.2 L 1482.2 607.5 L 1489.9 608 L 1458.3 629.1 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 1454.6 621.9 L 1486 604 L 1486 604 L 1520.3 619.2 L 1554.6 632.2" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 570 700 L 597.1 690.7 L 624.3 677.3 L 651.4 667.9 L 676.3 643.7 L 691.3 658.4 L 705.7 640.8 L 732.9 629.5 L 760 618 L 760 618 L 788.6 631.9 L 811.8 634.1 L 827.6 646.5 L 845.7 661.7 L 874.3 672.2 L 902.9 680 L 931.4 689.6 L 960 700 Z" fill="url(#mtnFarLit)"/>
+  <path d="M 760 618 L 760 618 L 788.6 631.9 L 811.8 634.1 L 827.6 646.5 L 845.7 661.7 L 874.3 672.2 L 902.9 680 L 931.4 689.6 L 960 700 L 800 700 Z" fill="#3d5a6e" opacity="0.4"/>
+  <path d="M 676.3 643.7 L 705.7 640.8 L 732.9 629.5 L 760 618 L 760 618 L 788.6 631.9 L 811.8 634.1 L 811.7 641.4 L 785.4 637.9 L 762.3 625.2 L 762.8 625 L 733.8 634.1 L 709 644 L 674.8 650.7 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 676.3 643.7 L 705.7 640.8 L 732.9 629.5 L 760 618 L 760 618 L 788.6 631.9 L 811.8 634.1" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  </g>
+  </g>
+
+  <!-- ========================= the frozen sea ========================= -->
+  <rect x="0" y="648" width="1600" height="252" fill="url(#water)"/>
+  <ellipse cx="800" cy="652" rx="720" ry="24" fill="#b8dce8" opacity="0.32" filter="url(#b18)"/>
+  <ellipse cx="800" cy="654" rx="320" ry="17" fill="#eafaff" opacity="0.6" filter="url(#b18)"/>
+  <!-- the spire light lying on the water -->
+  <path d="M 690 650 L 910 650 L 950 900 L 650 900 Z" fill="url(#refl)" opacity="0.55"/>
+  <path d="M 756 650 L 844 650 L 866 900 L 734 900 Z" fill="url(#refl)" opacity="0.6"/>
+  <ellipse cx="800" cy="648" rx="1000" ry="58" fill="#9cc0d2" opacity="0.38" filter="url(#b46)"/>
+  <!-- ============ the massif the spire is rooted in ============ -->
+  <ellipse cx="800" cy="610" rx="270" ry="320" fill="#48bdf0" opacity="0.15" filter="url(#b46)"/>
+  <!-- built from a crowd of peaks rather than one pyramid, so the skyline -->
+  <!-- around the spire stays broken -->
+  <path d="M 234 852 L 264 831.7 L 294 806.7 L 324 775.2 L 340.5 792.1 L 354 765.7 L 384 742 L 414 714.1 L 444 690 L 444 690 L 461.1 716.9 L 479.8 727 L 489.2 744.6 L 495.4 760.1 L 512.6 785.9 L 529.7 815.4 L 546.9 834.4 L 564 852 Z" fill="url(#mtnSnow)"/>
+  <path d="M 444 690 L 444 690 L 461.1 716.9 L 479.8 727 L 489.2 744.6 L 495.4 760.1 L 512.6 785.9 L 529.7 815.4 L 546.9 834.4 L 564 852 L 468 852 Z" fill="#0c1a25" opacity="0.42"/>
+  <g>
+    <path d="M 419.8 705 L 435.9 714.6 L 430.7 852 L 416.3 852 Z" fill="#0e1c26" opacity="0.22"/>
+    <path d="M 381.1 723.1 L 400.9 735 L 389 852 L 371.3 852 Z" fill="#0e1c26" opacity="0.31"/>
+    <path d="M 348.9 741.3 L 361.4 748.8 L 358.6 852 L 347.4 852 Z" fill="#0e1c26" opacity="0.16"/>
+    <path d="M 306 759.5 L 316.9 766 L 309.4 852 L 299.6 852 Z" fill="#0e1c26" opacity="0.3"/>
+    <path d="M 278.5 777.7 L 296.8 788.6 L 285.2 852 L 268.8 852 Z" fill="#0e1c26" opacity="0.19"/>
+    <path d="M 465.4 707.1 L 476.8 713.9 L 473.1 852 L 462.9 852 Z" fill="#0e1c26" opacity="0.21"/>
+    <path d="M 484.6 726.4 L 493.4 731.6 L 489.1 852 L 481.1 852 Z" fill="#0e1c26" opacity="0.22"/>
+    <path d="M 507.8 745.6 L 521 753.5 L 514.3 852 L 502.4 852 Z" fill="#0e1c26" opacity="0.2"/>
+    <path d="M 529.1 764.8 L 545 774.4 L 538 852 L 523.7 852 Z" fill="#0e1c26" opacity="0.16"/>
+  </g>
+  <path d="M 384 742 L 414 714.1 L 444 690 L 444 690 L 461.1 716.9 L 479.8 727 L 489.2 744.6 L 486.9 748.2 L 478 732 L 459.9 724.8 L 443.8 694.8 L 445 698.7 L 414.1 717.2 L 381.3 745 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 384 742 L 414 714.1 L 444 690 L 444 690 L 461.1 716.9 L 479.8 727 L 489.2 744.6" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 1040 852 L 1057.1 833.1 L 1074.3 811.3 L 1091.4 790.1 L 1108.6 770.6 L 1126.8 726.1 L 1136.3 758.8 L 1142.9 727.7 L 1160 700 L 1160 700 L 1191.4 724 L 1222.9 743.6 L 1254.3 769.8 L 1285.7 794.1 L 1319.6 794.2 L 1336.8 815.7 L 1348.6 834.1 L 1380 852 Z" fill="url(#mtnSnow)"/>
+  <path d="M 1160 700 L 1160 700 L 1191.4 724 L 1222.9 743.6 L 1254.3 769.8 L 1285.7 794.1 L 1319.6 794.2 L 1336.8 815.7 L 1348.6 834.1 L 1380 852 L 1204 852 Z" fill="#0c1a25" opacity="0.5"/>
+  <g>
+    <path d="M 1143.8 714 L 1154.9 720.7 L 1150 852 L 1140 852 Z" fill="#0e1c26" opacity="0.26"/>
+    <path d="M 1118.2 731.1 L 1137.9 742.9 L 1125.4 852 L 1107.7 852 Z" fill="#0e1c26" opacity="0.29"/>
+    <path d="M 1101 748.2 L 1110.4 753.8 L 1104.3 852 L 1095.8 852 Z" fill="#0e1c26" opacity="0.22"/>
+    <path d="M 1080.5 765.2 L 1098.8 776.2 L 1085.4 852 L 1069 852 Z" fill="#0e1c26" opacity="0.31"/>
+    <path d="M 1065.3 782.3 L 1078.8 790.4 L 1073.6 852 L 1061.4 852 Z" fill="#0e1c26" opacity="0.24"/>
+    <path d="M 1194.3 716.1 L 1212.8 727.2 L 1206.1 852 L 1189.4 852 Z" fill="#0e1c26" opacity="0.25"/>
+    <path d="M 1241.5 734.1 L 1253 741 L 1244 852 L 1233.8 852 Z" fill="#0e1c26" opacity="0.17"/>
+    <path d="M 1269 752.2 L 1287.1 763.1 L 1277.3 852 L 1261 852 Z" fill="#0e1c26" opacity="0.18"/>
+    <path d="M 1318.3 770.2 L 1328.1 776.1 L 1324.1 852 L 1315.3 852 Z" fill="#0e1c26" opacity="0.31"/>
+  </g>
+  <path d="M 1126.8 726.1 L 1142.9 727.7 L 1160 700 L 1160 700 L 1191.4 724 L 1222.9 743.6 L 1225.5 751.6 L 1190.3 733.8 L 1157.9 709.9 L 1161.2 705.2 L 1142.4 737.7 L 1126.7 729.3 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 1126.8 726.1 L 1142.9 727.7 L 1160 700 L 1160 700 L 1191.4 724 L 1222.9 743.6" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 382 852 L 409.1 826.5 L 436.3 806.2 L 463.4 779.4 L 489.9 706 L 504.9 740.7 L 517.7 709.4 L 544.9 682.8 L 572 646 L 572 646 L 593.4 682.7 L 614.9 713.2 L 637.1 715.9 L 648.9 751.7 L 657.7 770 L 679.1 800.6 L 700.6 828.8 L 722 852 Z" fill="url(#mtnSnow)"/>
+  <path d="M 572 646 L 572 646 L 593.4 682.7 L 614.9 713.2 L 637.1 715.9 L 648.9 751.7 L 657.7 770 L 679.1 800.6 L 700.6 828.8 L 722 852 L 602 852 Z" fill="#0c1a25" opacity="0.44"/>
+  <g>
+    <path d="M 546.6 665 L 555.7 670.5 L 553.1 852 L 544.9 852 Z" fill="#0e1c26" opacity="0.28"/>
+    <path d="M 518.2 688.1 L 536.3 699 L 530 852 L 513.8 852 Z" fill="#0e1c26" opacity="0.29"/>
+    <path d="M 484 711.3 L 499.3 720.5 L 491.1 852 L 477.3 852 Z" fill="#0e1c26" opacity="0.26"/>
+    <path d="M 450.8 734.4 L 467.3 744.3 L 461.7 852 L 446.9 852 Z" fill="#0e1c26" opacity="0.25"/>
+    <path d="M 410.2 757.5 L 419.8 763.3 L 417.2 852 L 408.5 852 Z" fill="#0e1c26" opacity="0.19"/>
+    <path d="M 600.3 667.8 L 616.1 677.2 L 610.4 852 L 596.2 852 Z" fill="#0e1c26" opacity="0.25"/>
+    <path d="M 624.2 692.2 L 636.4 699.5 L 627 852 L 616 852 Z" fill="#0e1c26" opacity="0.17"/>
+    <path d="M 654.3 716.7 L 673.8 728.4 L 660.7 852 L 643.1 852 Z" fill="#0e1c26" opacity="0.17"/>
+    <path d="M 670.4 741.2 L 686 750.5 L 680.4 852 L 666.4 852 Z" fill="#0e1c26" opacity="0.29"/>
+  </g>
+  <path d="M 489.9 706 L 517.7 709.4 L 544.9 682.8 L 572 646 L 572 646 L 593.4 682.7 L 614.9 713.2 L 637.1 715.9 L 634.6 719.3 L 615.3 717 L 594.8 688.3 L 575.5 652.3 L 568.6 649.8 L 542.8 692.7 L 519.2 718.7 L 489.7 709.2 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 489.9 706 L 517.7 709.4 L 544.9 682.8 L 572 646 L 572 646 L 593.4 682.7 L 614.9 713.2 L 637.1 715.9" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 882 852 L 903.4 828 L 924.9 808.1 L 943 753.2 L 954.8 781.4 L 967.7 753.3 L 989.1 731 L 1010.6 692.4 L 1032 664 L 1032 664 L 1064.9 696.6 L 1097.7 720.6 L 1130.6 746.2 L 1163.4 777.9 L 1193.3 764.5 L 1211.4 792.3 L 1229.1 829.3 L 1262 852 Z" fill="url(#mtnSnow)"/>
+  <path d="M 1032 664 L 1032 664 L 1064.9 696.6 L 1097.7 720.6 L 1130.6 746.2 L 1163.4 777.9 L 1193.3 764.5 L 1211.4 792.3 L 1229.1 829.3 L 1262 852 L 1078 852 Z" fill="#0c1a25" opacity="0.5"/>
+  <g>
+    <path d="M 1011.2 681.4 L 1031.6 693.6 L 1023.8 852 L 1005.5 852 Z" fill="#0e1c26" opacity="0.27"/>
+    <path d="M 985.3 702.5 L 999.8 711.1 L 993 852 L 979.9 852 Z" fill="#0e1c26" opacity="0.25"/>
+    <path d="M 965.8 723.6 L 987 736.2 L 976.9 852 L 957.9 852 Z" fill="#0e1c26" opacity="0.22"/>
+    <path d="M 931.1 744.7 L 941.6 750.9 L 935.8 852 L 926.4 852 Z" fill="#0e1c26" opacity="0.19"/>
+    <path d="M 902.9 765.7 L 919.5 775.7 L 910.1 852 L 895.2 852 Z" fill="#0e1c26" opacity="0.22"/>
+    <path d="M 1062.4 683.9 L 1072.5 689.9 L 1065 852 L 1055.9 852 Z" fill="#0e1c26" opacity="0.33"/>
+    <path d="M 1116.8 706.2 L 1130 714.1 L 1119.6 852 L 1107.6 852 Z" fill="#0e1c26" opacity="0.33"/>
+    <path d="M 1157 728.5 L 1175.9 739.8 L 1169.4 852 L 1152.4 852 Z" fill="#0e1c26" opacity="0.27"/>
+    <path d="M 1189.7 750.9 L 1207.4 761.5 L 1193.7 852 L 1177.7 852 Z" fill="#0e1c26" opacity="0.29"/>
+  </g>
+  <path d="M 1010.6 692.4 L 1032 664 L 1032 664 L 1064.9 696.6 L 1097.7 720.6 L 1098.4 723.8 L 1062 699.9 L 1033.6 672.8 L 1031.4 671.7 L 1014.3 702 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 1010.6 692.4 L 1032 664 L 1032 664 L 1064.9 696.6 L 1097.7 720.6" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 534 852 L 555.4 822 L 576.9 788.2 L 594.1 722.9 L 605.9 761.9 L 619.7 724.5 L 641.1 686 L 662.6 653.7 L 684 612 L 684 612 L 702.6 648.1 L 721.1 689.5 L 744.4 702.9 L 754.6 738 L 758.3 758.3 L 776.9 798.7 L 795.4 825.4 L 814 852 Z" fill="url(#mtnSnow)"/>
+  <path d="M 684 612 L 684 612 L 702.6 648.1 L 721.1 689.5 L 744.4 702.9 L 754.6 738 L 758.3 758.3 L 776.9 798.7 L 795.4 825.4 L 814 852 L 710 852 Z" fill="#0c1a25" opacity="0.46"/>
+  <g>
+    <path d="M 666.5 634.2 L 681.3 643 L 678.1 852 L 664.8 852 Z" fill="#0e1c26" opacity="0.27"/>
+    <path d="M 632.6 661.1 L 639.9 665.5 L 636.1 852 L 629.5 852 Z" fill="#0e1c26" opacity="0.22"/>
+    <path d="M 615.8 688 L 630.3 696.7 L 624.3 852 L 611.3 852 Z" fill="#0e1c26" opacity="0.28"/>
+    <path d="M 591.7 715 L 599.6 719.7 L 594.5 852 L 587.4 852 Z" fill="#0e1c26" opacity="0.2"/>
+    <path d="M 564.9 741.9 L 573.2 746.8 L 570.7 852 L 563.3 852 Z" fill="#0e1c26" opacity="0.3"/>
+    <path d="M 705 637.3 L 714.6 643.1 L 710.6 852 L 702 852 Z" fill="#0e1c26" opacity="0.27"/>
+    <path d="M 729.4 665.9 L 738.8 671.5 L 733.9 852 L 725.5 852 Z" fill="#0e1c26" opacity="0.31"/>
+    <path d="M 745 694.4 L 759.3 702.9 L 749.8 852 L 737 852 Z" fill="#0e1c26" opacity="0.25"/>
+    <path d="M 780.2 722.9 L 792 730 L 783.6 852 L 772.9 852 Z" fill="#0e1c26" opacity="0.19"/>
+  </g>
+  <path d="M 641.1 686 L 662.6 653.7 L 684 612 L 684 612 L 702.6 648.1 L 721.1 689.5 L 717.6 692.7 L 705.8 657.6 L 680.5 618.4 L 685.3 619.9 L 660.5 656.8 L 640.1 693.3 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 641.1 686 L 662.6 653.7 L 684 612 L 684 612 L 702.6 648.1 L 721.1 689.5" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 774 852 L 792.6 822.3 L 811.1 802.3 L 829.7 773.5 L 848.9 697.9 L 859.1 728.1 L 866.9 694.8 L 885.4 663.8 L 904 628 L 904 628 L 931.1 664.7 L 958.3 705.7 L 989.8 705.5 L 1004.8 727 L 1012.6 772.5 L 1039.7 799.2 L 1066.9 825.8 L 1094 852 Z" fill="url(#mtnSnow)"/>
+  <path d="M 904 628 L 904 628 L 931.1 664.7 L 958.3 705.7 L 989.8 705.5 L 1004.8 727 L 1012.6 772.5 L 1039.7 799.2 L 1066.9 825.8 L 1094 852 L 942 852 Z" fill="#0c1a25" opacity="0.52"/>
+  <g>
+    <path d="M 886.9 648.7 L 898.6 655.8 L 890 852 L 879.4 852 Z" fill="#0e1c26" opacity="0.24"/>
+    <path d="M 862.3 673.8 L 881.2 685.2 L 870 852 L 852.9 852 Z" fill="#0e1c26" opacity="0.34"/>
+    <path d="M 838.9 699 L 850.6 706 L 843.7 852 L 833.1 852 Z" fill="#0e1c26" opacity="0.28"/>
+    <path d="M 815.5 724.1 L 824.9 729.7 L 821.1 852 L 812.7 852 Z" fill="#0e1c26" opacity="0.26"/>
+    <path d="M 792.6 749.2 L 800.8 754.2 L 798.3 852 L 790.9 852 Z" fill="#0e1c26" opacity="0.31"/>
+    <path d="M 934.4 651.7 L 945.2 658.2 L 937.2 852 L 927.4 852 Z" fill="#0e1c26" opacity="0.24"/>
+    <path d="M 968.7 678.3 L 986.5 688.9 L 981.4 852 L 965.4 852 Z" fill="#0e1c26" opacity="0.28"/>
+    <path d="M 1002.2 704.9 L 1014.4 712.2 L 1008 852 L 997 852 Z" fill="#0e1c26" opacity="0.33"/>
+    <path d="M 1039.5 731.5 L 1057 742 L 1049.1 852 L 1033.3 852 Z" fill="#0e1c26" opacity="0.2"/>
+  </g>
+  <path d="M 848.9 697.9 L 866.9 694.8 L 885.4 663.8 L 904 628 L 904 628 L 931.1 664.7 L 933.1 669.2 L 901.3 633.8 L 904.3 637.8 L 884.9 670.6 L 868.5 704.4 L 850.4 704.1 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 848.9 697.9 L 866.9 694.8 L 885.4 663.8 L 904 628 L 904 628 L 931.1 664.7" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 668 852 L 685.1 817.3 L 702.3 786.9 L 719.4 743.9 L 736.6 714.4 L 754 634.6 L 763.4 670.4 L 770.9 620.4 L 788 576 L 788 576 L 808 622.9 L 824.8 625.9 L 835.8 654.4 L 848 711.6 L 868 747.2 L 888 784.6 L 908 816.9 L 928 852 Z" fill="url(#mtnSnow)"/>
+  <path d="M 788 576 L 788 576 L 808 622.9 L 824.8 625.9 L 835.8 654.4 L 848 711.6 L 868 747.2 L 888 784.6 L 908 816.9 L 928 852 L 816 852 Z" fill="#0c1a25" opacity="0.48"/>
+  <g>
+    <path d="M 772.7 601.5 L 788.1 610.8 L 784 852 L 770.1 852 Z" fill="#0e1c26" opacity="0.25"/>
+    <path d="M 749.4 632.5 L 758 637.6 L 753.9 852 L 746.2 852 Z" fill="#0e1c26" opacity="0.26"/>
+    <path d="M 736.6 663.4 L 744.7 668.3 L 742.6 852 L 735.3 852 Z" fill="#0e1c26" opacity="0.35"/>
+    <path d="M 710.6 694.4 L 725.2 703.2 L 720 852 L 706.8 852 Z" fill="#0e1c26" opacity="0.2"/>
+    <path d="M 691.4 725.4 L 698.3 729.5 L 696.3 852 L 690.1 852 Z" fill="#0e1c26" opacity="0.33"/>
+    <path d="M 809.5 605.1 L 824.3 614 L 818.8 852 L 805.5 852 Z" fill="#0e1c26" opacity="0.22"/>
+    <path d="M 832.5 637.9 L 843.5 644.6 L 839.6 852 L 829.7 852 Z" fill="#0e1c26" opacity="0.27"/>
+    <path d="M 862.1 670.7 L 876.6 679.4 L 870.9 852 L 857.9 852 Z" fill="#0e1c26" opacity="0.28"/>
+    <path d="M 882.1 703.5 L 889.3 707.8 L 885.2 852 L 878.7 852 Z" fill="#0e1c26" opacity="0.29"/>
+  </g>
+  <path d="M 754 634.6 L 770.9 620.4 L 788 576 L 788 576 L 808 622.9 L 824.8 625.9 L 835.8 654.4 L 834.7 658.9 L 826.3 634.8 L 811.3 628 L 786.2 585.9 L 789.9 583.4 L 766.9 630.2 L 756.4 639 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 754 634.6 L 770.9 620.4 L 788 576 L 788 576 L 808 622.9 L 824.8 625.9 L 835.8 654.4" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+
+  <!-- ============================= the spire ========================== -->
+  <g id="spire">
+    <!-- dark stone-ice body; it reads through its rim light and its core -->
+    <path d="M 796.8 112 L 796 123 L 794.9 134 L 794.6 145 L 794.4 156 L 793.3 167 L 792.7 178 L 791.7 189 L 788.1 200 L 781.2 203 L 781.6 208 L 781.9 211 L 789.7 215 L 789.9 222 L 789.2 233 L 785.9 243 L 789.1 244 L 777.4 246 L 777.9 252 L 778.2 255 L 787.8 259 L 788.4 266 L 788.1 277 L 787.5 288 L 786.8 297 L 786.7 299 L 786.1 300 L 782.8 306 L 785.6 310 L 785.9 314 L 786.5 321 L 783.6 332 L 781.4 335 L 771.6 338 L 785.3 343 L 782.7 344 L 772.6 348 L 784 352 L 784.8 354 L 782.6 365 L 783.8 376 L 783.3 387 L 782.8 392 L 782.6 395 L 782.4 398 L 777.4 402 L 778.5 406 L 779.3 409 L 779.4 410 L 780 420 L 778.5 428 L 777.9 431 L 774.5 438 L 777.3 442 L 777.2 446 L 777 453 L 772.3 464 L 772.4 475 L 767.2 483 L 749.2 486 L 765.2 494 L 771.3 497 L 751 499 L 771.8 503 L 761.7 508 L 761 519 L 761.2 523 L 761.4 526 L 761.5 530 L 753.6 536 L 759.9 541 L 759.4 542 L 757.7 546 L 755.2 552 L 743.2 557 L 723.9 560 L 748.1 563 L 747.2 572 L 747 574 L 725.8 579 L 751.2 583 L 743.3 585 L 736.2 596 L 714 601 L 665.4 604 L 724.4 607 L 717.1 618 L 715.5 620 L 708.4 629 L 670.2 630 L 712.1 633 L 726 634 L 717.3 636 L 699.7 640 L 690 651 L 675.3 656 L 681.4 662 L 674.8 668 L 670.4 672 L 669.3 673 L 664 680 L 936 680 L 935 673 L 896.7 672 L 973.6 668 L 922.5 662 L 916.2 656 L 911.1 651 L 902.8 640 L 980.4 636 L 935.1 634 L 912.5 633 L 901.1 630 L 897.3 629 L 895.9 620 L 888.8 618 L 880.2 607 L 877.6 604 L 875.1 601 L 870.9 596 L 864.8 585 L 864.5 583 L 863.9 579 L 863.2 574 L 861 572 L 858.4 563 L 857.3 560 L 856.2 557 L 854.3 552 L 837.1 546 L 854.9 542 L 847.2 541 L 846.8 536 L 846.4 530 L 856.2 526 L 843.2 523 L 846.5 519 L 845.7 508 L 842.6 503 L 840.2 499 L 838.9 497 L 836.8 494 L 836.2 486 L 836.2 483 L 836.4 475 L 833.5 464 L 829.9 453 L 821.1 446 L 834.4 442 L 834.8 438 L 835.5 431 L 824.5 428 L 828.4 420 L 819.1 410 L 825 409 L 828.8 406 L 826.3 402 L 823.8 398 L 829.5 395 L 822.2 392 L 824.5 387 L 821.6 376 L 822 365 L 819.5 354 L 819.4 352 L 819.1 348 L 818.8 344 L 821.1 343 L 819.6 338 L 818.6 335 L 817.7 332 L 817 321 L 814 314 L 821.8 310 L 822 306 L 822.4 300 L 815.2 299 L 816.3 297 L 816.5 288 L 817.1 277 L 814.9 266 L 814.1 259 L 813.6 255 L 815.8 252 L 813.7 246 L 813 244 L 812.9 243 L 812.5 233 L 810.5 222 L 810.1 215 L 809.8 211 L 812.5 208 L 810.9 203 L 809.9 200 L 808.2 189 L 807.3 178 L 806.5 167 L 805.6 156 L 804.7 145 L 804.1 134 L 803.1 123 L 802.7 112 Z" fill="url(#iceBody)"/>
+    <path d="M 796.8 112 L 796 123 L 794.9 134 L 794.6 145 L 794.4 156 L 793.3 167 L 792.7 178 L 791.7 189 L 788.1 200 L 781.2 203 L 781.6 208 L 781.9 211 L 789.7 215 L 789.9 222 L 789.2 233 L 785.9 243 L 789.1 244 L 777.4 246 L 777.9 252 L 778.2 255 L 787.8 259 L 788.4 266 L 788.1 277 L 787.5 288 L 786.8 297 L 786.7 299 L 786.1 300 L 782.8 306 L 785.6 310 L 785.9 314 L 786.5 321 L 783.6 332 L 781.4 335 L 771.6 338 L 785.3 343 L 782.7 344 L 772.6 348 L 784 352 L 784.8 354 L 782.6 365 L 783.8 376 L 783.3 387 L 782.8 392 L 782.6 395 L 782.4 398 L 777.4 402 L 778.5 406 L 779.3 409 L 779.4 410 L 780 420 L 778.5 428 L 777.9 431 L 774.5 438 L 777.3 442 L 777.2 446 L 777 453 L 772.3 464 L 772.4 475 L 767.2 483 L 749.2 486 L 765.2 494 L 771.3 497 L 751 499 L 771.8 503 L 761.7 508 L 761 519 L 761.2 523 L 761.4 526 L 761.5 530 L 753.6 536 L 759.9 541 L 759.4 542 L 757.7 546 L 755.2 552 L 743.2 557 L 723.9 560 L 748.1 563 L 747.2 572 L 747 574 L 725.8 579 L 751.2 583 L 743.3 585 L 736.2 596 L 755.1 596 L 760.3 585 L 767 583 L 745.1 579 L 763.3 574 L 763.1 572 L 763.5 563 L 742.5 560 L 759 557 L 769.1 552 L 768.9 546 L 772.8 542 L 772.1 541 L 766.7 536 L 773.4 530 L 774.6 526 L 772.7 523 L 773 519 L 773.5 508 L 781.7 503 L 763.5 499 L 780.7 497 L 775.3 494 L 761.4 486 L 776.9 483 L 781.4 475 L 780.8 464 L 784.4 453 L 783.4 446 L 785.3 442 L 782.9 438 L 785.9 431 L 784.9 428 L 786.8 420 L 785 410 L 785.7 409 L 785.5 406 L 784.2 402 L 788.2 398 L 789.2 395 L 788.4 392 L 789 387 L 789.1 376 L 788.1 365 L 789.7 354 L 789 352 L 779.1 348 L 787.8 344 L 790.3 343 L 778.4 338 L 786.6 335 L 788.4 332 L 790.8 321 L 789.8 314 L 790.6 310 L 788.3 306 L 791.2 300 L 790.7 299 L 791 297 L 791.5 288 L 792.1 277 L 792.1 266 L 791.5 259 L 783.2 255 L 783.2 252 L 782.5 246 L 792.4 244 L 789.7 243 L 792.5 233 L 792.8 222 L 792.6 215 L 785.8 211 L 785.9 208 L 785.3 203 L 791.1 200 L 794 189 L 794.7 178 L 795.1 167 L 796 156 L 796 145 L 796.2 134 L 797 123 L 797.7 112 Z" fill="#d3ebf9" opacity="0.85"/>
+    <path d="M 796.8 112 L 796 123 L 794.9 134 L 794.6 145 L 794.4 156 L 793.3 167 L 792.7 178 L 791.7 189 L 788.1 200 L 781.2 203 L 781.6 208 L 781.9 211 L 789.7 215 L 789.9 222 L 789.2 233 L 785.9 243 L 789.1 244 L 777.4 246 L 777.9 252 L 778.2 255 L 787.8 259 L 788.4 266 L 788.1 277 L 787.5 288 L 786.8 297 L 786.7 299 L 786.1 300 L 782.8 306 L 785.6 310 L 785.9 314 L 786.5 321 L 783.6 332 L 781.4 335 L 771.6 338 L 785.3 343 L 782.7 344 L 772.6 348 L 784 352 L 784.8 354 L 782.6 365 L 783.8 376 L 783.3 387 L 782.8 392 L 782.6 395 L 782.4 398 L 777.4 402 L 778.5 406 L 779.3 409 L 779.4 410 L 780 420 L 778.5 428 L 777.9 431 L 774.5 438 L 777.3 442 L 777.2 446 L 777 453 L 772.3 464 L 772.4 475 L 767.2 483 L 749.2 486 L 765.2 494 L 771.3 497 L 751 499 L 771.8 503 L 761.7 508 L 761 519 L 761.2 523 L 761.4 526 L 761.5 530 L 753.6 536 L 759.9 541 L 759.4 542 L 757.7 546 L 755.2 552 L 743.2 557 L 723.9 560 L 748.1 563 L 747.2 572 L 747 574 L 725.8 579 L 751.2 583 L 743.3 585 L 736.2 596 L 742.3 596 L 748.8 585 L 756.3 583 L 732 579 L 752.2 574 L 752.3 572 L 753.1 563 L 729.9 560 L 748.3 557 L 759.7 552 L 761.3 546 L 763.7 542 L 763.8 541 L 757.8 536 L 765.4 530 L 765.6 526 L 764.9 523 L 764.9 519 L 765.5 508 L 775 503 L 755 499 L 774.3 497 L 768.5 494 L 753.1 486 L 770.3 483 L 775.3 475 L 775 464 L 779.4 453 L 779.2 446 L 779.9 442 L 777.2 438 L 780.5 431 L 780.5 428 L 782.2 420 L 781.2 410 L 781.4 409 L 780.8 406 L 779.6 402 L 784.2 398 L 784.7 395 L 784.6 392 L 785.1 387 L 785.5 376 L 784.4 365 L 786.4 354 L 785.6 352 L 774.7 348 L 784.4 344 L 786.9 343 L 773.8 338 L 783.1 335 L 785.2 332 L 787.9 321 L 787.2 314 L 787.2 310 L 784.6 306 L 787.8 300 L 788 299 L 788.2 297 L 788.8 288 L 789.4 277 L 789.6 266 L 789 259 L 779.8 255 L 779.6 252 L 779 246 L 790.2 244 L 787.1 243 L 790.3 233 L 790.9 222 L 790.6 215 L 783.1 211 L 783 208 L 782.5 203 L 789 200 L 792.4 189 L 793.3 178 L 793.9 167 L 794.9 156 L 795 145 L 795.3 134 L 796.4 123 L 797.1 112 Z" fill="#ffffff" opacity="0.85"/>
+    <path d="M 797.7 112 L 797 123 L 796.2 134 L 796 145 L 796 156 L 795.1 167 L 794.7 178 L 794 189 L 791.1 200 L 785.3 203 L 785.9 208 L 785.8 211 L 792.6 215 L 792.8 222 L 792.5 233 L 789.7 243 L 792.4 244 L 782.5 246 L 783.2 252 L 783.2 255 L 791.5 259 L 792.1 266 L 792.1 277 L 791.5 288 L 791 297 L 790.7 299 L 791.2 300 L 788.3 306 L 790.6 310 L 789.8 314 L 790.8 321 L 788.4 332 L 786.6 335 L 778.4 338 L 790.3 343 L 787.8 344 L 779.1 348 L 789 352 L 789.7 354 L 788.1 365 L 789.1 376 L 789 387 L 788.4 392 L 789.2 395 L 788.2 398 L 784.2 402 L 785.5 406 L 785.7 409 L 785 410 L 786.8 420 L 784.9 428 L 785.9 431 L 782.9 438 L 785.3 442 L 783.4 446 L 784.4 453 L 780.8 464 L 781.4 475 L 776.9 483 L 761.4 486 L 775.3 494 L 780.7 497 L 763.5 499 L 781.7 503 L 773.5 508 L 773 519 L 772.7 523 L 774.6 526 L 773.4 530 L 766.7 536 L 772.1 541 L 772.8 542 L 768.9 546 L 769.1 552 L 759 557 L 742.5 560 L 763.5 563 L 763.1 572 L 763.3 574 L 745.1 579 L 767 583 L 760.3 585 L 755.1 596 L 776.6 596 L 779.7 585 L 785.2 583 L 767.2 579 L 781.9 574 L 781.3 572 L 781.2 563 L 763.9 560 L 777.1 557 L 784.9 552 L 781.6 546 L 788.1 542 L 786.1 541 L 781.6 536 L 787 530 L 789.8 526 L 785.8 523 L 786.7 519 L 786.9 508 L 793 503 L 777.7 499 L 791.6 497 L 786.7 494 L 775.3 486 L 787.9 483 L 791.6 475 L 790.6 464 L 792.8 453 L 790.4 446 L 794.4 442 L 792.6 438 L 795.1 431 L 792.3 428 L 794.5 420 L 791.3 410 L 793 409 L 793.6 406 L 792.1 402 L 794.8 398 L 796.7 395 L 794.6 392 L 795.6 387 L 795.2 376 L 794.4 365 L 795.2 354 L 794.6 352 L 786.6 348 L 793.6 344 L 796 343 L 786 338 L 792.6 335 L 793.9 332 L 795.6 321 L 794.3 314 L 796.4 310 L 794.6 306 L 797 300 L 795.3 299 L 795.7 297 L 796.2 288 L 796.8 277 L 796.4 266 L 795.7 259 L 788.8 255 L 789.3 252 L 788.3 246 L 796.2 244 L 794 243 L 796.2 233 L 796.1 222 L 795.8 215 L 790.3 211 L 790.9 208 L 790.1 203 L 794.6 200 L 796.7 189 L 797.1 178 L 797.2 167 L 797.8 156 L 797.6 145 L 797.7 134 L 798.2 123 L 798.6 112 Z" fill="#9cc0d6" opacity="0.35"/>
+    <path d="M 801.8 112 L 802.2 123 L 802.8 134 L 803.3 145 L 804 156 L 804.6 167 L 805.3 178 L 805.9 189 L 806.8 200 L 806.7 203 L 808.2 208 L 805.9 211 L 807.2 215 L 807.6 222 L 809.2 233 L 809.1 243 L 809.6 244 L 808.6 246 L 810.5 252 L 808.7 255 L 810.4 259 L 811.2 266 L 813 277 L 812.4 288 L 812.1 297 L 811.2 299 L 817.3 300 L 816.5 306 L 816.7 310 L 810.1 314 L 812.7 321 L 812.9 332 L 813.4 335 L 812.8 338 L 816.1 343 L 813.8 344 L 812.6 348 L 814.4 352 L 814.7 354 L 816.5 365 L 816.3 376 L 818.7 387 L 816.7 392 L 822.9 395 L 818 398 L 819.4 402 L 821.7 406 L 818.6 409 L 813.5 410 L 821.6 420 L 818.1 428 L 827.4 431 L 826.3 438 L 826.4 442 L 815 446 L 822.5 453 L 824.9 464 L 827.4 475 L 826.6 483 L 824 486 L 826.8 494 L 829.5 497 L 827.7 499 L 832.7 503 L 833.9 508 L 834.5 519 L 831.7 523 L 842.9 526 L 834.5 530 L 833.8 536 L 835 541 L 841.5 542 L 826 546 L 840.4 552 L 840.4 557 L 838.6 560 L 843 563 L 845 572 L 846.9 574 L 844.6 579 L 848.7 583 L 847.8 585 L 852 596 L 852.5 601 L 847.9 604 L 858.4 607 L 864.8 618 L 870.6 620 L 870.8 629 L 868.7 630 L 884.4 633 L 905.9 634 L 943.6 636 L 874.4 640 L 880.1 651 L 882.5 656 L 888.7 662 L 931.8 668 L 865 672 L 897.8 673 L 897.9 680 L 936 680 L 935 673 L 896.7 672 L 973.6 668 L 922.5 662 L 916.2 656 L 911.1 651 L 902.8 640 L 980.4 636 L 935.1 634 L 912.5 633 L 901.1 630 L 897.3 629 L 895.9 620 L 888.8 618 L 880.2 607 L 877.6 604 L 875.1 601 L 870.9 596 L 864.8 585 L 864.5 583 L 863.9 579 L 863.2 574 L 861 572 L 858.4 563 L 857.3 560 L 856.2 557 L 854.3 552 L 837.1 546 L 854.9 542 L 847.2 541 L 846.8 536 L 846.4 530 L 856.2 526 L 843.2 523 L 846.5 519 L 845.7 508 L 842.6 503 L 840.2 499 L 838.9 497 L 836.8 494 L 836.2 486 L 836.2 483 L 836.4 475 L 833.5 464 L 829.9 453 L 821.1 446 L 834.4 442 L 834.8 438 L 835.5 431 L 824.5 428 L 828.4 420 L 819.1 410 L 825 409 L 828.8 406 L 826.3 402 L 823.8 398 L 829.5 395 L 822.2 392 L 824.5 387 L 821.6 376 L 822 365 L 819.5 354 L 819.4 352 L 819.1 348 L 818.8 344 L 821.1 343 L 819.6 338 L 818.6 335 L 817.7 332 L 817 321 L 814 314 L 821.8 310 L 822 306 L 822.4 300 L 815.2 299 L 816.3 297 L 816.5 288 L 817.1 277 L 814.9 266 L 814.1 259 L 813.6 255 L 815.8 252 L 813.7 246 L 813 244 L 812.9 243 L 812.5 233 L 810.5 222 L 810.1 215 L 809.8 211 L 812.5 208 L 810.9 203 L 809.9 200 L 808.2 189 L 807.3 178 L 806.5 167 L 805.6 156 L 804.7 145 L 804.1 134 L 803.1 123 L 802.7 112 Z" fill="#06111a" opacity="0.6"/>
+    <!-- the flare, where the ice has taken the mountain into itself -->
+    <path d="M 740.1 590 L 736.2 596 L 714 601 L 665.4 604 L 724.4 607 L 717.1 618 L 715.5 620 L 708.4 629 L 670.2 630 L 712.1 633 L 726 634 L 717.3 636 L 699.7 640 L 690 651 L 675.3 656 L 681.4 662 L 674.8 668 L 670.4 672 L 669.3 673 L 664 680 L 936 680 L 935 673 L 896.7 672 L 973.6 668 L 922.5 662 L 916.2 656 L 911.1 651 L 902.8 640 L 980.4 636 L 935.1 634 L 912.5 633 L 901.1 630 L 897.3 629 L 895.9 620 L 888.8 618 L 880.2 607 L 877.6 604 L 875.1 601 L 870.9 596 L 867.6 590 Z" fill="url(#mtnDark)"/>
+    <path d="M 740.1 590 L 736.2 596 L 714 601 L 665.4 604 L 724.4 607 L 717.1 618 L 715.5 620 L 708.4 629 L 670.2 630 L 712.1 633 L 726 634 L 717.3 636 L 699.7 640 L 690 651 L 675.3 656 L 681.4 662 L 674.8 668 L 670.4 672 L 669.3 673 L 664 680 L 767.4 680 L 770.3 673 L 756.4 672 L 788.4 668 L 773 662 L 766.8 656 L 774 651 L 776.9 640 L 817.3 636 L 805.5 634 L 788.2 633 L 758 630 L 780.2 629 L 784.1 620 L 782.4 618 L 783.6 607 L 746 604 L 775.2 601 L 787.4 596 L 788.5 590 Z" fill="url(#mtnLit)" opacity="0.9"/>
+    <path d="M 740.1 590 L 736.2 596 L 714 601 L 665.4 604 L 724.4 607 L 717.1 618 L 715.5 620 L 708.4 629 L 670.2 630 L 712.1 633 L 726 634 L 717.3 636 L 699.7 640 L 690 651 L 675.3 656 L 681.4 662 L 674.8 668 L 670.4 672 L 669.3 673 L 664 680 L 683 680 L 687.9 673 L 686.3 672 L 695.7 668 L 698.3 662 L 692.1 656 L 705.4 651 L 713.9 640 L 735.7 636 L 740.7 634 L 726.1 633 L 686.4 630 L 721.6 629 L 728.2 620 L 729.1 618 L 735.3 607 L 680.2 604 L 725.3 601 L 745.6 596 L 749 590 Z" fill="#dcecf7" opacity="0.6"/>
+
+    <!-- flowstone ribs: sheets of refrozen melt running down the flanks -->
+    <g>
+      <path d="M 791.1 239.1 L 782.5 249.1 L 790.2 259.1 L 790.2 269.1 L 789.7 279.1 L 789 289.1 L 788.4 299.1 L 788.2 309.1 L 789.1 319.1 L 788.4 329.1 L 781.4 339.1 L 787.6 341.7 L 787.6 341.7 L 781.8 339.1 L 790.5 329.1 L 792.7 319.1 L 793 309.1 L 793.9 299.1 L 794.7 289.1 L 795 279.1 L 794.7 269.1 L 793.5 259.1 L 784.2 249.1 L 791.1 239.1 Z" fill="#f2fcff" opacity="0.35"/>
+      <path d="M 802.1 453.6 L 800.6 463.6 L 801.2 473.6 L 795.9 483.6 L 796.4 493.6 L 802.3 503.6 L 798.9 513.6 L 799 523.6 L 797.4 533.6 L 799.5 543.6 L 799.8 553.6 L 800.6 563.3 L 800.6 563.3 L 801.3 553.6 L 802.5 543.6 L 801.6 533.6 L 804 523.6 L 804.4 513.6 L 807.7 503.6 L 801.4 493.6 L 800.1 483.6 L 804.2 473.6 L 802.2 463.6 L 802.1 453.6 Z" fill="#c9e3f2" opacity="0.31"/>
+      <path d="M 811.8 276.5 L 811.1 286.5 L 810.4 296.5 L 814.2 306.5 L 808.7 316.5 L 810.3 326.5 L 810.1 336.5 L 810.1 346.5 L 812.4 356.5 L 813.9 366.5 L 814.1 376.5 L 816.5 386.5 L 818.6 396.5 L 818.4 403.5 L 818.4 403.5 L 819.1 396.5 L 817.6 386.5 L 815.9 376.5 L 816.1 366.5 L 815 356.5 L 812.9 346.5 L 813 336.5 L 813 326.5 L 811.1 316.5 L 816.1 306.5 L 811.7 296.5 L 811.8 286.5 L 811.8 276.5 Z" fill="#0a1720" opacity="0.36"/>
+      <path d="M 841.2 555.2 L 841.5 565.2 L 843.5 575.2 L 846.7 585.2 L 851.5 592 L 851.5 592 L 850.9 585.2 L 851.1 575.2 L 847.2 565.2 L 841.2 555.2 Z" fill="#0a1720" opacity="0.17"/>
+      <path d="M 819.5 426.9 L 826.7 436.9 L 814.9 446.9 L 821.8 456.9 L 823.5 466.9 L 824.8 476.9 L 822.2 486.9 L 827 496.9 L 831.9 506.9 L 833.3 516.9 L 840.7 526.9 L 834.6 536.9 L 829.7 546.9 L 834.3 548.7 L 834.3 548.7 L 830 546.9 L 836.9 536.9 L 844.8 526.9 L 838.8 516.9 L 838.6 506.9 L 834.4 496.9 L 829.8 486.9 L 832.1 476.9 L 830.1 466.9 L 827.1 456.9 L 818.7 446.9 L 828.6 436.9 L 819.5 426.9 Z" fill="#0a1720" opacity="0.2"/>
+      <path d="M 796.9 188.1 L 793.4 198.1 L 788.6 208.1 L 794 218.1 L 795.7 228.1 L 796.5 231.7 L 796.5 231.7 L 797.1 228.1 L 798.5 218.1 L 793.9 208.1 L 797 198.1 L 796.9 188.1 Z" fill="#c9e3f2" opacity="0.35"/>
+      <path d="M 792.4 203.1 L 794.2 213.1 L 796.1 223.1 L 796.1 233.1 L 794.6 243.1 L 790.8 253.1 L 797.8 263.1 L 798.5 266.7 L 798.5 266.7 L 798.5 263.1 L 793.2 253.1 L 798.1 243.1 L 799.9 233.1 L 799.3 223.1 L 796 213.1 L 792.4 203.1 Z" fill="#c9e3f2" opacity="0.27"/>
+      <path d="M 826.1 440.9 L 818.9 450.9 L 822.1 460.9 L 824 470.9 L 824.3 480.9 L 823.8 490.9 L 829.1 500.9 L 833.3 506.7 L 833.3 506.7 L 830.4 500.9 L 827 490.9 L 828.7 480.9 L 828.5 470.9 L 825.9 460.9 L 821.1 450.9 L 826.1 440.9 Z" fill="#0a1720" opacity="0.17"/>
+      <path d="M 793.7 290 L 793 300 L 791.6 310 L 790.5 320 L 788.5 330 L 783.5 340 L 784.5 350 L 789.5 360 L 790.1 370 L 791.6 380 L 792.2 385.3 L 792.2 385.3 L 792.6 380 L 793 370 L 793.9 360 L 790 350 L 789.5 340 L 794.3 330 L 795.5 320 L 795.3 310 L 795 300 L 793.7 290 Z" fill="#f2fcff" opacity="0.17"/>
+      <path d="M 796.3 213.4 L 797.1 223.4 L 796.3 233.4 L 794.9 243.4 L 790.5 253.4 L 797.3 263.4 L 799.3 273.4 L 800 277.1 L 800 277.1 L 800.4 273.4 L 801 263.4 L 796 253.4 L 800.8 243.4 L 801.2 233.4 L 799.9 223.4 L 796.3 213.4 Z" fill="#c9e3f2" opacity="0.17"/>
+      <path d="M 768.8 538.5 L 766.4 548.5 L 746.9 558.5 L 759.1 568.5 L 743.6 578.5 L 757.1 588.5 L 756.1 592 L 756.1 592 L 758.5 588.5 L 748.6 578.5 L 766 568.5 L 753.3 558.5 L 770.3 548.5 L 768.8 538.5 Z" fill="#f2fcff" opacity="0.27"/>
+      <path d="M 789.9 358.2 L 788.7 368.2 L 788.8 378.2 L 788.2 388.2 L 787 398.2 L 784.6 408.2 L 785.3 418.2 L 784 428.2 L 782.7 438.2 L 783.4 448.2 L 783.2 458.2 L 782.3 468.2 L 782.7 472 L 782.7 472 L 782.7 468.2 L 784.9 458.2 L 786.2 448.2 L 786.3 438.2 L 788.2 428.2 L 789.8 418.2 L 789 408.2 L 791 398.2 L 791.5 388.2 L 791.2 378.2 L 789.9 368.2 L 789.9 358.2 Z" fill="#f2fcff" opacity="0.3"/>
+      <path d="M 795.3 271.3 L 794.4 281.3 L 793.1 291.3 L 792.7 301.3 L 792 311.3 L 792.1 321.3 L 790.9 331.3 L 790 341.3 L 790.2 350.6 L 790.2 350.6 L 791.7 341.3 L 794.1 331.3 L 796.4 321.3 L 796.6 311.3 L 797 301.3 L 796.4 291.3 L 796.2 281.3 L 795.3 271.3 Z" fill="#f2fcff" opacity="0.32"/>
+      <path d="M 832.4 476 L 829.4 486 L 831.4 496 L 836.3 506 L 837.7 516 L 847.5 526 L 839.4 536 L 832 546 L 838.9 548.5 L 838.9 548.5 L 832.7 546 L 842.9 536 L 853.1 526 L 844.4 516 L 842.9 506 L 836.6 496 L 832.3 486 L 832.4 476 Z" fill="#0a1720" opacity="0.24"/>
+      <path d="M 779.3 455.3 L 774.9 465.3 L 774.3 475.3 L 756.6 485.3 L 771 495.3 L 772.4 505 L 772.4 505 L 773.2 495.3 L 760.4 485.3 L 778 475.3 L 777.2 465.3 L 779.3 455.3 Z" fill="#f2fcff" opacity="0.19"/>
+      <path d="M 792.9 197.8 L 787 207.8 L 792.5 217.8 L 792 227.8 L 790.3 237.8 L 782.3 247.8 L 788.1 257.8 L 791.3 267.8 L 791.8 277.8 L 791.8 287.8 L 791.7 297.8 L 791.4 307.8 L 792.5 309.6 L 792.5 309.6 L 791.6 307.8 L 793.4 297.8 L 794.7 287.8 L 795.7 277.8 L 796 267.8 L 793.1 257.8 L 787.3 247.8 L 794.9 237.8 L 795.8 227.8 L 795.2 217.8 L 788.4 207.8 L 792.9 197.8 Z" fill="#f2fcff" opacity="0.25"/>
+      <path d="M 821.8 540.4 L 821.4 550.4 L 817.8 560.4 L 825.9 570.4 L 825.5 580.4 L 830.8 590.4 L 831.2 591.7 L 831.2 591.7 L 831.1 590.4 L 828.2 580.4 L 830.1 570.4 L 821.9 560.4 L 823.9 550.4 L 821.8 540.4 Z" fill="#0a1720" opacity="0.25"/>
+      <path d="M 791.1 485.8 L 800.4 495.8 L 801.1 505.8 L 799.3 515.8 L 804.3 525.8 L 797.5 535.8 L 800 539.1 L 800 539.1 L 798.4 535.8 L 807.6 525.8 L 803.9 515.8 L 805.4 505.8 L 803 495.8 L 791.1 485.8 Z" fill="#c9e3f2" opacity="0.17"/>
+      <path d="M 806.4 323 L 804.9 333 L 806.8 343 L 804.9 353 L 805.5 363 L 805.8 373 L 807.3 383 L 808.5 393 L 809.1 403 L 806.4 411.6 L 806.4 411.6 L 810.8 403 L 812 393 L 812.1 383 L 811.3 373 L 811.1 363 L 809.9 353 L 810.5 343 L 806.9 333 L 806.4 323 Z" fill="#0a1720" opacity="0.2"/>
+      <path d="M 798.9 340.5 L 798.2 350.5 L 800.2 360.5 L 799.9 370.5 L 800.3 380.5 L 799.9 390.5 L 799.5 400.5 L 797.2 410.5 L 802.3 420.5 L 804.8 430.5 L 805.1 433.6 L 805.1 433.6 L 805.4 430.5 L 804.4 420.5 L 800.7 410.5 L 803.9 400.5 L 804.8 390.5 L 805.1 380.5 L 804.1 370.5 L 803.3 360.5 L 799.8 350.5 L 798.9 340.5 Z" fill="#c9e3f2" opacity="0.35"/>
+      <path d="M 784.1 203.3 L 787.2 213.3 L 789.3 223.3 L 788.1 233.3 L 785.9 243.3 L 778.6 253.3 L 788.7 263.3 L 790.2 273.3 L 790.8 278 L 790.8 278 L 791.6 273.3 L 792.8 263.3 L 784.6 253.3 L 792.8 243.3 L 794.7 233.3 L 794.5 223.3 L 790.1 213.3 L 784.1 203.3 Z" fill="#f2fcff" opacity="0.26"/>
+      <path d="M 805.2 323.5 L 803.7 333.5 L 804.9 343.5 L 805.1 353.5 L 806.4 363.5 L 807.1 369 L 807.1 369 L 807.4 363.5 L 807.4 353.5 L 807.5 343.5 L 805.4 333.5 L 805.2 323.5 Z" fill="#0a1720" opacity="0.2"/>
+    </g>
+
+    <!-- snow crusting the windward ledges of the shaft -->
+    <g>
+      <path d="M 757.2 532.2 L 770.6 527 L 784 527.5 L 797.4 527.6 L 810.8 529.2 L 810.8 533.4 L 797.4 535.9 L 784 536.9 L 770.6 535.1 L 757.2 533.9 Z" fill="url(#snowCap)" opacity="0.61"/>
+      <path d="M 780.4 398.4 L 788 393 L 795.7 393.1 L 803.3 395.8 L 810.9 394.4 L 810.9 399.6 L 803.3 403.2 L 795.7 401.4 L 788 403 L 780.4 402 Z" fill="url(#snowCap)" opacity="0.77"/>
+      <path d="M 782.3 359.3 L 786.1 356.2 L 789.9 355.1 L 793.8 357.7 L 797.6 354.8 L 797.6 360.3 L 793.8 360.6 L 789.9 361.9 L 786.1 361.1 L 782.3 362.2 Z" fill="url(#snowCap)" opacity="0.88"/>
+      <path d="M 752.4 488.4 L 760.1 487.5 L 767.8 479.7 L 775.4 485.8 L 783.1 480.5 L 783.1 493.6 L 775.4 491 L 767.8 490.2 L 760.1 492.9 L 752.4 494.9 Z" fill="url(#snowCap)" opacity="0.68"/>
+      <path d="M 785.2 240.5 L 789.5 236.4 L 793.8 237.6 L 798.1 237.8 L 802.4 237.2 L 802.4 242.8 L 798.1 244.3 L 793.8 243.7 L 789.5 244.3 L 785.2 243.9 Z" fill="url(#snowCap)" opacity="0.51"/>
+      <path d="M 788.4 223.2 L 790.8 219 L 793.2 221.4 L 795.6 219 L 798 221.3 L 798 225.2 L 795.6 225 L 793.2 224.7 L 790.8 226.6 L 788.4 226 Z" fill="url(#snowCap)" opacity="0.64"/>
+      <path d="M 773.7 439 L 782.2 431.5 L 790.8 433.8 L 799.3 434.5 L 807.9 434.7 L 807.9 445.4 L 799.3 444.8 L 790.8 445.6 L 782.2 445 L 773.7 444.1 Z" fill="url(#snowCap)" opacity="0.75"/>
+      <path d="M 772.3 460.5 L 782.3 452.5 L 792.3 453.6 L 802.3 459.9 L 812.3 457.4 L 812.3 462.9 L 802.3 462.2 L 792.3 467.5 L 782.3 464.1 L 772.3 463.2 Z" fill="url(#snowCap)" opacity="0.7"/>
+      <path d="M 759.7 517.2 L 769.5 514.6 L 779.3 512.9 L 789.1 515.1 L 798.9 515.9 L 798.9 520.7 L 789.1 518.9 L 779.3 521 L 769.5 522.3 L 759.7 524.1 Z" fill="url(#snowCap)" opacity="0.66"/>
+      <path d="M 776.4 252 L 780.9 250.3 L 785.3 250.5 L 789.8 250.9 L 794.2 250.2 L 794.2 253.5 L 789.8 254.4 L 785.3 254.8 L 780.9 254.1 L 776.4 255.3 Z" fill="url(#snowCap)" opacity="0.87"/>
+      <path d="M 776 402.3 L 784.5 399.2 L 793 400.6 L 801.6 398.6 L 810.1 397.1 L 810.1 405.6 L 801.6 404.1 L 793 406.5 L 784.5 406.1 L 776 403.5 Z" fill="url(#snowCap)" opacity="0.65"/>
+      <path d="M 778.5 419.6 L 785.1 417 L 791.8 415.8 L 798.4 417.1 L 805 418.8 L 805 423.4 L 798.4 423 L 791.8 424.2 L 785.1 421.3 L 778.5 421.7 Z" fill="url(#snowCap)" opacity="0.59"/>
+      <path d="M 725 579.1 L 748 565.8 L 771 575.4 L 794.1 570.3 L 817.1 572.5 L 817.1 583.9 L 794.1 589.3 L 771 592.7 L 748 587.6 L 725 582.6 Z" fill="url(#snowCap)" opacity="0.68"/>
+      <path d="M 757.4 543.3 L 773.1 537.9 L 788.9 542.8 L 804.7 539.4 L 820.4 540.7 L 820.4 545.3 L 804.7 548.1 L 788.9 545.8 L 773.1 547.6 L 757.4 546.2 Z" fill="url(#snowCap)" opacity="0.87"/>
+      <path d="M 757.4 543.2 L 763.7 542.3 L 770 533.4 L 776.3 533.5 L 782.5 539.7 L 782.5 544.7 L 776.3 546.1 L 770 551.4 L 763.7 552.1 L 757.4 545.5 Z" fill="url(#snowCap)" opacity="0.8"/>
+      <path d="M 775.8 444.8 L 781.5 441.6 L 787.2 443.1 L 793 443.2 L 798.7 439 L 798.7 448.5 L 793 448.8 L 787.2 450.6 L 781.5 448.1 L 775.8 447.3 Z" fill="url(#snowCap)" opacity="0.86"/>
+      <path d="M 778.4 418.5 L 785.9 412.7 L 793.3 412.5 L 800.8 416.1 L 808.2 417 L 808.2 424.8 L 800.8 421.9 L 793.3 421.3 L 785.9 419.6 L 778.4 420.4 Z" fill="url(#snowCap)" opacity="0.88"/>
+      <path d="M 781.2 365.8 L 785.7 360.8 L 790.2 362.3 L 794.7 362.8 L 799.2 362.7 L 799.2 367.4 L 794.7 369.5 L 790.2 369.6 L 785.7 367.3 L 781.2 367.6 Z" fill="url(#snowCap)" opacity="0.79"/>
+    </g>
+
+    <!-- the core burning inside, showing through where the ice runs thin. -->
+    <!-- It stops short of the flare: down there the light comes out through -->
+    <!-- fissures in the rock instead, not as one lit slab. -->
+    <g filter="url(#b6)">
+      <path d="M 798.3 150 L 798.4 156 L 798 167 L 797.9 178 L 797.6 189 L 795.9 200 L 791.9 203 L 792.7 208 L 791.9 211 L 797 215 L 797.3 222 L 797.6 233 L 795.6 243 L 797.7 244 L 790.4 246 L 791.6 252 L 791 255 L 797.3 259 L 798 266 L 798.5 277 L 797.9 288 L 797.4 297 L 797 299 L 799.2 300 L 796.9 306 L 798.6 310 L 796 314 L 797.5 321 L 795.9 332 L 794.8 335 L 788.9 338 L 798.2 343 L 795.7 344 L 789.4 348 L 796.7 352 L 797.3 354 L 796.8 365 L 797.4 376 L 798.1 387 L 797 392 L 799.5 395 L 797.3 398 L 795 402 L 796.6 406 L 795.8 409 L 793.7 410 L 797.4 420 L 795 428 L 798.6 431 L 796.2 438 L 797.9 442 L 793 446 L 796 453 L 794.3 464 L 795.4 475 L 792.1 483 L 780.5 486 L 791 494 L 795.6 497 L 783.1 499 L 797.3 503 L 791.9 508 L 791.8 519 L 790.7 523 L 795.5 526 L 792.1 530 L 787.2 536 L 791.3 541 L 793.8 542 L 786.3 546 L 790.9 552 L 783.9 557 L 771.9 560 L 787.8 563 L 788.2 572 L 788.8 574 L 775.5 579 L 792 583 L 787 585 L 784.7 596 L 817 596 L 816.2 585 L 819.2 583 L 808.7 579 L 816.7 574 L 815.5 572 L 814.3 563 L 803.9 560 L 811 557 L 814.7 552 L 805.4 546 L 816.7 542 L 812.3 541 L 809.5 536 L 812.4 530 L 818.2 526 L 810.4 523 L 812.3 519 L 812.1 508 L 814.3 503 L 804.5 499 L 811.9 497 L 808.2 494 L 801.4 486 L 808.6 483 L 810.8 475 L 809 464 L 808.7 453 L 803.5 446 L 811.6 442 L 810.7 438 L 812.4 431 L 806.1 428 L 809 420 L 803.2 410 L 806.8 409 L 808.7 406 L 806.7 402 L 807.3 398 L 810.7 395 L 806.4 392 L 808 387 L 806.5 376 L 806.2 365 L 805.6 354 L 805.2 352 L 800.5 348 L 804.4 344 L 806.8 343 L 800.4 338 L 803.7 335 L 804.1 332 L 804.8 321 L 802.8 314 L 807.3 310 L 806.3 306 L 807.9 300 L 803.8 299 L 804.5 297 L 804.9 288 L 805.5 277 L 804.3 266 L 803.6 259 L 799.5 255 L 800.6 252 L 799.1 246 L 803.4 244 L 802.1 243 L 803.2 233 L 802.3 222 L 801.9 215 L 798.6 211 L 800.2 208 L 799 203 L 801.2 200 L 801.6 189 L 801.5 178 L 801.2 167 L 801.1 156 L 800.9 150 Z" fill="url(#core)" opacity="0.95"/>
+    </g>
+    <g filter="url(#b18)">
+      <path d="M 796.6 150 L 796.6 156 L 795.9 167 L 795.6 178 L 795 189 L 792.4 200 L 787.1 203 L 787.8 208 L 787.5 211 L 793.8 215 L 794.1 222 L 793.9 233 L 791.3 243 L 793.9 244 L 784.6 246 L 785.5 252 L 785.3 255 L 793.1 259 L 793.7 266 L 793.9 277 L 793.3 288 L 792.7 297 L 792.4 299 L 793.4 300 L 790.6 306 L 792.8 310 L 791.5 314 L 792.6 321 L 790.5 332 L 788.8 335 L 781.2 338 L 792.4 343 L 790 344 L 781.9 348 L 791.1 352 L 791.8 354 L 790.5 365 L 791.4 376 L 791.5 387 L 790.7 392 L 792 395 L 790.7 398 L 787.2 402 L 788.5 406 L 788.5 409 L 787.3 410 L 789.7 420 L 787.7 428 L 789.4 431 L 786.6 438 L 788.7 442 L 786 446 L 787.6 453 L 784.5 464 L 785.2 475 L 781 483 L 766.6 486 L 779.6 494 L 784.8 497 L 768.8 499 L 786 503 L 778.5 508 L 778.1 519 L 777.6 523 L 780.3 526 L 778.5 530 L 772.2 536 L 777.3 541 L 778.5 542 L 773.6 546 L 775 552 L 765.8 557 L 750.5 560 L 770.2 563 L 770 572 L 770.2 574 L 753.4 579 L 773.8 583 L 767.6 585 L 763.1 596 L 746.2 601 L 707.8 604 L 739.7 606 L 844.4 606 L 835.2 604 L 842.9 601 L 843.9 596 L 840.5 585 L 841.9 583 L 836.3 579 L 840 574 L 838.2 572 L 836.4 563 L 830.6 560 L 833.6 557 L 834.5 552 L 821.2 546 L 835.8 542 L 829.7 541 L 828.2 536 L 829.4 530 L 837.2 526 L 826.8 523 L 829.4 519 L 828.9 508 L 828.5 503 L 822.3 499 L 825.4 497 L 822.5 494 L 818.8 486 L 822.4 483 L 823.6 475 L 821.3 464 L 819.3 453 L 812.3 446 L 823 442 L 822.7 438 L 823.9 431 L 815.3 428 L 818.7 420 L 811.1 410 L 815.9 409 L 818.7 406 L 816.5 402 L 815.5 398 L 820.1 395 L 814.3 392 L 816.2 387 L 814 376 L 814.1 365 L 812.6 354 L 812.3 352 L 809.8 348 L 811.6 344 L 813.9 343 L 810 338 L 811.2 335 L 810.9 332 L 810.9 321 L 808.4 314 L 814.5 310 L 814.2 306 L 815.2 300 L 809.5 299 L 810.4 297 L 810.7 288 L 811.3 277 L 809.6 266 L 808.9 259 L 806.5 255 L 808.2 252 L 806.4 246 L 808.2 244 L 807.5 243 L 807.8 233 L 806.4 222 L 806 215 L 804.2 211 L 806.3 208 L 804.9 203 L 805.5 200 L 804.9 189 L 804.4 178 L 803.8 167 L 803.4 156 L 803 150 Z" fill="#55cdff" opacity="0.5"/>
+    </g>
+    <!-- and a wash of that light soaked through the whole lower shaft -->
+    <g filter="url(#b18)">
+      <path d="M 786.2 330 L 785.7 332 L 783.6 335 L 774.5 338 L 787.4 343 L 784.9 344 L 775.4 348 L 786.1 352 L 786.9 354 L 785 365 L 786.1 376 L 785.7 387 L 785.2 392 L 785.4 395 L 784.9 398 L 780.3 402 L 781.5 406 L 782.1 409 L 781.8 410 L 782.9 420 L 781.2 428 L 781.3 431 L 778.1 438 L 780.8 442 L 779.8 446 L 780.2 453 L 775.9 464 L 776.2 475 L 771.4 483 L 754.4 486 L 769.5 494 L 775.3 497 L 756.3 499 L 776 503 L 766.8 508 L 766.2 519 L 766.1 523 L 767 526 L 766.6 530 L 759.2 536 L 765.1 541 L 765.2 542 L 762.5 546 L 761.1 552 L 750 557 L 731.9 560 L 754.7 563 L 754 572 L 754 574 L 734.1 579 L 758 583 L 750.6 585 L 744.3 596 L 723.7 601 L 708.5 602 L 865.2 602 L 865.4 601 L 862.8 596 L 857.5 585 L 857.7 583 L 855.7 579 L 856.2 574 L 854.1 572 L 851.8 563 L 849.3 560 L 849.4 557 L 848.3 552 L 832.4 546 L 849.1 542 L 841.9 541 L 841.2 536 L 841.3 530 L 850.5 526 L 838.2 523 L 841.4 519 L 840.6 508 L 838.4 503 L 834.8 499 L 834.9 497 L 832.5 494 L 831 486 L 832.1 483 L 832.5 475 L 829.8 464 L 826.7 453 L 818.5 446 L 830.9 442 L 831.1 438 L 832 431 L 821.8 428 L 825.5 420 L 816.7 410 L 822.3 409 L 825.7 406 L 823.4 402 L 821.4 398 L 826.7 395 L 819.8 392 L 822 387 L 819.3 376 L 819.6 365 L 817.4 354 L 817.3 352 L 816.3 348 L 816.6 344 L 819 343 L 816.7 338 L 816.4 335 L 815.6 332 L 815.5 330 Z" fill="#3fb6ee" opacity="0.3"/>
+    </g>
+    <!-- and the flare below it stays rock, cracked open in a few places -->
+    <g filter="url(#b6)" fill="#7fe6ff">
+      <path d="M 765.9 608 L 775.9 608 L 772.4 670 L 769.4 670 Z" opacity="0.72"/>
+      <path d="M 789.1 612 L 803.1 612 L 798.2 696 L 794 696 Z" opacity="0.65"/>
+      <path d="M 817.6 618 L 829.6 618 L 825.4 694 L 821.8 694 Z" opacity="0.42"/>
+      <path d="M 712.4 630 L 720.4 630 L 717.6 684 L 715.2 684 Z" opacity="0.71"/>
+      <path d="M 917.5 636 L 927.5 636 L 924 694 L 921 694 Z" opacity="0.51"/>
+      <path d="M 792.7 648 L 808.7 648 L 803.1 714 L 798.3 714 Z" opacity="0.71"/>
+      <path d="M 757.3 660 L 765.3 660 L 762.5 704 L 760.1 704 Z" opacity="0.55"/>
+      <path d="M 863.1 666 L 871.1 666 L 868.3 714 L 865.9 714 Z" opacity="0.57"/>
+    </g>
+    <!-- fissures leaking light out into the flanks -->
+    <g stroke="#94ecff" fill="none" opacity="0.45" filter="url(#b6)" stroke-linecap="round">
+      <path d="M 801.8 268 L 790.6 291.6" stroke-width="2.2"/>
+      <path d="M 801.8 268 L 813.8 288.1" stroke-width="2.2"/>
+      <path d="M 800.9 330 L 781.8 355.8" stroke-width="2.8"/>
+      <path d="M 800.9 330 L 814.8 347.8" stroke-width="2.8"/>
+      <path d="M 802.5 392 L 783.8 421.3" stroke-width="3.4"/>
+      <path d="M 802.5 392 L 821.6 416" stroke-width="3.4"/>
+      <path d="M 805.2 436 L 782.2 464.6" stroke-width="3.9"/>
+      <path d="M 805.2 436 L 823.5 451.3" stroke-width="3.9"/>
+      <path d="M 800.3 498 L 769.8 516.7" stroke-width="4.5"/>
+      <path d="M 800.3 498 L 837.6 516.9" stroke-width="4.5"/>
+      <path d="M 797.4 546 L 751.8 571.9" stroke-width="5"/>
+      <path d="M 797.4 546 L 846.3 560.1" stroke-width="5"/>
+      <path d="M 798.1 580 L 749.7 599.2" stroke-width="5.3"/>
+      <path d="M 798.1 580 L 857.4 597.2" stroke-width="5.3"/>
+    </g>
+
+    <!-- the shelves themselves: a wedge of ice with snow banked on top -->
+    <path d="M 780.6 203.1 L 788.5 201.3 L 796.3 204.5 L 804.2 202.3 L 803.2 210.8 L 781.6 211.6 Z" fill="#b9d5e6" opacity="0.9"/>
+    <path d="M 779.6 204.1 L 786.5 201.6 L 792.4 201.3 L 798.3 200.5 L 805.2 203.3 L 805.2 207.6 L 798.8 204.4 L 792.4 204.8 L 786 207.7 L 779.6 205.2 Z" fill="url(#snowCap)" opacity="0.92"/>
+    <path d="M 776.9 248.3 L 787.1 249 L 797.2 246.6 L 807.3 244.5 L 806.3 253.4 L 777.9 257.3 Z" fill="#b9d5e6" opacity="0.9"/>
+    <path d="M 775.9 249.3 L 784.5 243.7 L 792.1 242.4 L 799.7 242.1 L 808.3 245.5 L 808.3 245 L 800.2 246.4 L 792.1 248.7 L 784 249.5 L 775.9 253.6 Z" fill="url(#snowCap)" opacity="0.92"/>
+    <path d="M 800.1 301.5 L 807.7 299.6 L 815.4 301.5 L 823 298.6 L 822 308.1 L 801.1 311 Z" fill="#3d5c71" opacity="0.9"/>
+    <path d="M 799.1 302.5 L 805.8 298.8 L 811.6 296.2 L 817.3 295.1 L 824 299.6 L 824 299.6 L 817.8 301.3 L 811.6 304.2 L 805.3 303.3 L 799.1 303.6 Z" fill="url(#snowCap)" opacity="0.78"/>
+    <path d="M 781.7 339.4 L 790 338.7 L 798.3 336.5 L 806.6 336 L 805.6 346.1 L 782.7 349.5 Z" fill="#b9d5e6" opacity="0.9"/>
+    <path d="M 780.7 340.4 L 788 335.9 L 794.2 334.3 L 800.4 332.6 L 807.6 337 L 807.6 337.1 L 800.9 338.9 L 794.2 342.8 L 787.5 341.2 L 780.7 341.6 Z" fill="url(#snowCap)" opacity="0.92"/>
+    <path d="M 794.4 397 L 805.4 396.9 L 816.3 396.3 L 827.3 393.4 L 826.3 404.3 L 795.4 407.9 Z" fill="#3d5c71" opacity="0.9"/>
+    <path d="M 793.4 398 L 802.6 393.1 L 810.9 391.9 L 819.1 392.1 L 828.3 394.4 L 828.3 394.2 L 819.6 398.1 L 810.9 397.2 L 802.1 400.8 L 793.4 398.9 Z" fill="url(#snowCap)" opacity="0.78"/>
+    <path d="M 789.6 430.6 L 805 431.1 L 820.4 430.9 L 835.8 431 L 834.8 442.5 L 790.6 442.1 Z" fill="#3d5c71" opacity="0.9"/>
+    <path d="M 788.6 431.6 L 801.2 427.3 L 812.7 429.4 L 824.2 429.3 L 836.8 432 L 836.8 432.9 L 824.7 435.3 L 812.7 433.2 L 800.7 433.9 L 788.6 433.7 Z" fill="url(#snowCap)" opacity="0.78"/>
+    <path d="M 764.2 485.7 L 779 486.6 L 793.9 485 L 808.7 485.5 L 807.7 499 L 765.2 499.1 Z" fill="#b9d5e6" opacity="0.9"/>
+    <path d="M 763.2 486.7 L 775.3 482.3 L 786.4 482.6 L 797.6 483.4 L 809.7 486.5 L 809.7 487.4 L 798.1 490.3 L 786.4 487.2 L 774.8 488.8 L 763.2 488.6 Z" fill="url(#snowCap)" opacity="0.92"/>
+    <path d="M 768.2 525 L 784.1 527.3 L 800 527.8 L 816 527.8 L 831.9 525.4 L 847.8 527 L 846.8 543 L 769.2 541 Z" fill="#3d5c71" opacity="0.9"/>
+    <path d="M 767.2 526 L 781.5 522 L 794.7 523.7 L 808 523.1 L 821.3 524.5 L 834.5 523.4 L 848.8 528 L 848.8 530 L 835.2 529.2 L 821.6 531.8 L 808 531.2 L 794.4 527.5 L 780.8 528.5 L 767.2 528.2 Z" fill="url(#snowCap)" opacity="0.78"/>
+    <path d="M 746.2 562.1 L 760.8 561.5 L 775.5 559.2 L 790.1 557.4 L 804.7 557.9 L 803.7 577.1 L 747.2 581.3 Z" fill="#b9d5e6" opacity="0.9"/>
+    <path d="M 745.2 563.1 L 757.9 557.7 L 769.6 556.5 L 781.3 556.7 L 793 555.1 L 805.7 558.9 L 805.7 561.1 L 793.6 561 L 781.5 562.1 L 769.4 563.1 L 757.3 562.9 L 745.2 566.7 Z" fill="url(#snowCap)" opacity="0.92"/>
+    <path d="M 714.5 604.6 L 729.6 603.3 L 744.6 603.5 L 759.6 603.2 L 774.7 603.3 L 789.7 603.4 L 804.8 604.3 L 819.8 603.4 L 834.8 602.8 L 849.9 602.6 L 848.9 628.8 L 715.5 630.9 Z" fill="#b9d5e6" opacity="0.9"/>
+    <path d="M 713.5 605.6 L 728.1 603 L 741.6 600.4 L 755.1 600.4 L 768.7 601.5 L 782.2 602.1 L 795.7 600 L 809.3 601.6 L 822.8 599.1 L 836.3 600.8 L 850.9 603.6 L 850.9 604.2 L 837.1 604.5 L 823.4 607.7 L 809.7 608.2 L 795.9 605.5 L 782.2 606.1 L 768.5 605.3 L 754.7 605.5 L 741 606 L 727.3 607.3 L 713.5 606.9 Z" fill="url(#snowCap)" opacity="0.92"/>
+    <path d="M 737.6 636.5 L 752.5 637.4 L 767.5 637.3 L 782.5 635.9 L 797.5 637 L 812.4 637.6 L 827.4 636.6 L 842.4 634.5 L 857.3 635.3 L 872.3 635.6 L 887.3 633.7 L 902.3 634.2 L 917.2 634.8 L 916.2 667.4 L 738.6 669.1 Z" fill="#3d5c71" opacity="0.9"/>
+    <path d="M 736.6 637.5 L 751.4 635.1 L 765.2 634.9 L 779 632.8 L 792.8 633.5 L 806.7 632.7 L 820.5 633.2 L 834.3 634 L 848.1 633.7 L 862 632.1 L 875.8 633.7 L 889.6 633.2 L 903.4 632.2 L 918.2 635.8 L 918.2 636.9 L 904.3 637.6 L 890.3 637.3 L 876.3 637.7 L 862.3 636.9 L 848.4 638.2 L 834.4 637.9 L 820.4 638.8 L 806.4 637.4 L 792.5 637.6 L 778.5 638 L 764.5 638.1 L 750.5 638.4 L 736.6 639.6 Z" fill="url(#snowCap)" opacity="0.78"/>
+
+    <!-- icicles: a heavy fringe under each shelf, a lighter one elsewhere -->
+    <g>
+      <use href="#ici" transform="translate(783.6 210.7) scale(2.18 25.6)"/>
+      <use href="#ici" transform="translate(795.1 210.7) scale(1.72 16.3)"/>
+      <use href="#ici" transform="translate(802.2 210.7) scale(2.66 35.2)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(781.3 254.9) scale(1.95 21.1)"/>
+      <use href="#ici" transform="translate(786.1 254.9) scale(2.16 25.3)"/>
+      <use href="#ici" transform="translate(790.2 254.9) scale(1.5 12)"/>
+      <use href="#ici" transform="translate(797 254.9) scale(1.68 15.5)"/>
+      <use href="#ici" transform="translate(801 254.9) scale(2.35 28.9)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(799 309.1) scale(3.07 43.5)"/>
+      <use href="#iciD" transform="translate(802 309.1) scale(2.41 30.2)"/>
+      <use href="#iciD" transform="translate(810.2 309.1) scale(1.86 19.2)"/>
+      <use href="#iciD" transform="translate(815.6 309.1) scale(2.35 28.9)"/>
+      <use href="#iciD" transform="translate(818.5 309.1) scale(3.14 44.9)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(782.8 347.3) scale(2.82 38.5)"/>
+      <use href="#ici" transform="translate(789.8 347.3) scale(1.83 18.7)"/>
+      <use href="#ici" transform="translate(793.7 347.3) scale(1.87 19.5)"/>
+      <use href="#ici" transform="translate(799.2 347.3) scale(1.74 16.8)"/>
+      <use href="#ici" transform="translate(806.2 347.3) scale(2.68 35.7)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(795.4 405.6) scale(2.56 33.2)"/>
+      <use href="#iciD" transform="translate(801.3 405.6) scale(2.47 31.3)"/>
+      <use href="#iciD" transform="translate(803 405.6) scale(2.04 22.7)"/>
+      <use href="#iciD" transform="translate(809.3 405.6) scale(1.42 10.4)"/>
+      <use href="#iciD" transform="translate(813.1 405.6) scale(1.97 21.5)"/>
+      <use href="#iciD" transform="translate(820.2 405.6) scale(2.59 33.9)"/>
+      <use href="#iciD" transform="translate(826.4 405.6) scale(2.52 32.4)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(794.2 441.8) scale(2.75 37.1)"/>
+      <use href="#iciD" transform="translate(802.5 441.8) scale(2.17 25.4)"/>
+      <use href="#iciD" transform="translate(805.1 441.8) scale(2.13 24.6)"/>
+      <use href="#iciD" transform="translate(810.3 441.8) scale(2.12 24.5)"/>
+      <use href="#iciD" transform="translate(827.5 441.8) scale(2.31 28.1)"/>
+      <use href="#iciD" transform="translate(831.6 441.8) scale(2.37 29.4)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(765.3 498.6) scale(2.55 32.9)"/>
+      <use href="#ici" transform="translate(772.1 498.6) scale(2.33 28.5)"/>
+      <use href="#ici" transform="translate(777.3 498.6) scale(2.47 31.3)"/>
+      <use href="#ici" transform="translate(781.1 498.6) scale(2.4 29.9)"/>
+      <use href="#ici" transform="translate(785.5 498.6) scale(2.15 24.9)"/>
+      <use href="#ici" transform="translate(792.9 498.6) scale(3.15 45)"/>
+      <use href="#ici" transform="translate(796.4 498.6) scale(2.26 27.2)"/>
+      <use href="#ici" transform="translate(802.4 498.6) scale(2.42 30.5)"/>
+      <use href="#ici" transform="translate(809.1 498.6) scale(3.8 58.1)"/>
+      <use href="#ici" transform="translate(812.9 498.6) scale(4.1 64)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(782.9 541.5) scale(2.59 33.8)"/>
+      <use href="#iciD" transform="translate(788 541.5) scale(2.99 41.7)"/>
+      <use href="#iciD" transform="translate(801.2 541.5) scale(2.27 27.5)"/>
+      <use href="#iciD" transform="translate(804.7 541.5) scale(2.32 28.3)"/>
+      <use href="#iciD" transform="translate(810.2 541.5) scale(2.08 23.5)"/>
+      <use href="#iciD" transform="translate(816.2 541.5) scale(1.91 20.2)"/>
+      <use href="#iciD" transform="translate(819.1 541.5) scale(2.21 26.1)"/>
+      <use href="#iciD" transform="translate(824.6 541.5) scale(1.81 18.3)"/>
+      <use href="#iciD" transform="translate(830.4 541.5) scale(2.35 29.1)"/>
+      <use href="#iciD" transform="translate(835 541.5) scale(2.81 38.3)"/>
+      <use href="#iciD" transform="translate(840.6 541.5) scale(2.81 38.2)"/>
+      <use href="#iciD" transform="translate(846.9 541.5) scale(4.1 64)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(749.6 578.7) scale(3.06 43.1)"/>
+      <use href="#ici" transform="translate(754.7 578.7) scale(2.66 35.2)"/>
+      <use href="#ici" transform="translate(757.3 578.7) scale(2.8 37.9)"/>
+      <use href="#ici" transform="translate(764 578.7) scale(2.37 29.4)"/>
+      <use href="#ici" transform="translate(773.5 578.7) scale(3.6 54)"/>
+      <use href="#ici" transform="translate(780.5 578.7) scale(2.18 25.5)"/>
+      <use href="#ici" transform="translate(785.3 578.7) scale(1.91 20.2)"/>
+      <use href="#ici" transform="translate(790.2 578.7) scale(2.4 30)"/>
+      <use href="#ici" transform="translate(798.6 578.7) scale(2.06 23.2)"/>
+      <use href="#ici" transform="translate(805.7 578.7) scale(2.53 32.6)"/>
+      <use href="#ici" transform="translate(810 578.7) scale(2.39 29.8)"/>
+      <use href="#ici" transform="translate(813.4 578.7) scale(2.9 40.1)"/>
+      <use href="#ici" transform="translate(820.9 578.7) scale(2.6 34.1)"/>
+      <use href="#ici" transform="translate(823.6 578.7) scale(3.01 42.3)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(715.4 629.3) scale(3.47 51.4)"/>
+      <use href="#ici" transform="translate(722.4 629.3) scale(3.15 45)"/>
+      <use href="#ici" transform="translate(728.2 629.3) scale(3.37 49.5)"/>
+      <use href="#ici" transform="translate(733 629.3) scale(3.26 47.2)"/>
+      <use href="#ici" transform="translate(737.8 629.3) scale(2.73 36.5)"/>
+      <use href="#ici" transform="translate(742.1 629.3) scale(2.63 34.7)"/>
+      <use href="#ici" transform="translate(745.9 629.3) scale(4.1 64)"/>
+      <use href="#ici" transform="translate(751.1 629.3) scale(2.96 41.2)"/>
+      <use href="#ici" transform="translate(759 629.3) scale(2.55 33)"/>
+      <use href="#ici" transform="translate(763.7 629.3) scale(2.55 33.1)"/>
+      <use href="#ici" transform="translate(768.8 629.3) scale(2.22 26.4)"/>
+      <use href="#ici" transform="translate(771.7 629.3) scale(2.79 37.8)"/>
+      <use href="#ici" transform="translate(777.7 629.3) scale(2.57 33.5)"/>
+      <use href="#ici" transform="translate(781.9 629.3) scale(2.24 26.7)"/>
+      <use href="#ici" transform="translate(787.2 629.3) scale(2.59 33.9)"/>
+      <use href="#ici" transform="translate(793.2 629.3) scale(2.73 36.7)"/>
+      <use href="#ici" transform="translate(799.4 629.3) scale(2.4 30.1)"/>
+      <use href="#ici" transform="translate(809.7 629.3) scale(3.08 43.6)"/>
+      <use href="#ici" transform="translate(814.5 629.3) scale(2.97 41.5)"/>
+      <use href="#ici" transform="translate(817.5 629.3) scale(3.25 47)"/>
+      <use href="#ici" transform="translate(829.3 629.3) scale(3.56 53.2)"/>
+      <use href="#ici" transform="translate(835.7 629.3) scale(3.21 46.1)"/>
+      <use href="#ici" transform="translate(841 629.3) scale(3.52 52.3)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(749.5 667.7) scale(4.1 64)"/>
+      <use href="#iciD" transform="translate(755.4 667.7) scale(3.94 60.8)"/>
+      <use href="#iciD" transform="translate(764.6 667.7) scale(3.4 49.9)"/>
+      <use href="#iciD" transform="translate(770.3 667.7) scale(3.65 55.1)"/>
+      <use href="#iciD" transform="translate(775 667.7) scale(4.1 64)"/>
+      <use href="#iciD" transform="translate(779.6 667.7) scale(3.22 46.4)"/>
+      <use href="#iciD" transform="translate(787.2 667.7) scale(3.12 44.4)"/>
+      <use href="#iciD" transform="translate(789.6 667.7) scale(4.1 64)"/>
+      <use href="#iciD" transform="translate(796.5 667.7) scale(3.14 44.8)"/>
+      <use href="#iciD" transform="translate(800.6 667.7) scale(4.1 64)"/>
+      <use href="#iciD" transform="translate(807.2 667.7) scale(2.8 38)"/>
+      <use href="#iciD" transform="translate(818.3 667.7) scale(3.13 44.6)"/>
+      <use href="#iciD" transform="translate(822.1 667.7) scale(4.1 64)"/>
+      <use href="#iciD" transform="translate(828.6 667.7) scale(2.68 35.6)"/>
+      <use href="#iciD" transform="translate(833.4 667.7) scale(2.68 35.5)"/>
+      <use href="#iciD" transform="translate(839.2 667.7) scale(2.87 39.3)"/>
+      <use href="#iciD" transform="translate(842.6 667.7) scale(2.55 32.9)"/>
+      <use href="#iciD" transform="translate(848.3 667.7) scale(4.1 64)"/>
+      <use href="#iciD" transform="translate(859.5 667.7) scale(2.78 37.6)"/>
+      <use href="#iciD" transform="translate(864.8 667.7) scale(3.21 46.1)"/>
+      <use href="#iciD" transform="translate(869.3 667.7) scale(3.17 45.5)"/>
+      <use href="#iciD" transform="translate(874 667.7) scale(2.98 41.6)"/>
+      <use href="#iciD" transform="translate(880.5 667.7) scale(3.36 49.1)"/>
+      <use href="#iciD" transform="translate(882.1 667.7) scale(4.1 64)"/>
+      <use href="#iciD" transform="translate(890.6 667.7) scale(3.09 43.9)"/>
+      <use href="#iciD" transform="translate(898.3 667.7) scale(3.26 47.2)"/>
+      <use href="#iciD" transform="translate(905.7 667.7) scale(3.94 60.8)"/>
+      <use href="#iciD" transform="translate(909.4 667.7) scale(3.7 55.9)"/>
+      <use href="#iciD" transform="translate(915 667.7) scale(4.1 64)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(779.9 245.5) scale(1.58 13.6)"/>
+      <use href="#ici" transform="translate(784.9 245.5) scale(1.4 9.9)"/>
+      <use href="#ici" transform="translate(790 245.5) scale(1.42 10.5)"/>
+      <use href="#ici" transform="translate(795.4 245.5) scale(1.1 4)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(800.2 245.5) scale(1.32 8.4)"/>
+      <use href="#iciD" transform="translate(806 245.5) scale(1.48 11.6)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(791.6 295.5) scale(1.42 10.4)"/>
+      <use href="#ici" transform="translate(793.8 295.5) scale(1.92 20.4)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(800.6 295.5) scale(1.11 4.1)"/>
+      <use href="#iciD" transform="translate(806.5 295.5) scale(1.37 9.3)"/>
+      <use href="#iciD" transform="translate(811.9 295.5) scale(1.52 12.4)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(785 343.5) scale(1.55 12.9)"/>
+      <use href="#ici" transform="translate(791.1 343.5) scale(1.44 10.9)"/>
+      <use href="#ici" transform="translate(795 343.5) scale(1.33 8.5)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(800.8 343.5) scale(1.64 14.7)"/>
+      <use href="#iciD" transform="translate(807.4 343.5) scale(1.33 8.6)"/>
+      <use href="#iciD" transform="translate(809.9 343.5) scale(1.29 7.8)"/>
+      <use href="#iciD" transform="translate(815.9 343.5) scale(1.61 14.2)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(786.4 391.5) scale(2.35 29)"/>
+      <use href="#ici" transform="translate(791.4 391.5) scale(1.53 12.5)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(802.9 391.5) scale(1.15 5.1)"/>
+      <use href="#iciD" transform="translate(809.5 391.5) scale(1.26 7.1)"/>
+      <use href="#iciD" transform="translate(818.7 391.5) scale(1.59 13.8)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(777.9 439.5) scale(1.66 15.2)"/>
+      <use href="#ici" transform="translate(784.3 439.5) scale(1.69 15.8)"/>
+      <use href="#ici" transform="translate(788.4 439.5) scale(1.46 11.2)"/>
+      <use href="#ici" transform="translate(794.7 439.5) scale(1.42 10.5)"/>
+      <use href="#ici" transform="translate(798.7 439.5) scale(1.4 10)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(805.3 439.5) scale(1.36 9.2)"/>
+      <use href="#iciD" transform="translate(811.1 439.5) scale(1.19 5.7)"/>
+      <use href="#iciD" transform="translate(816.2 439.5) scale(1.48 11.5)"/>
+      <use href="#iciD" transform="translate(819.8 439.5) scale(1.37 9.4)"/>
+      <use href="#iciD" transform="translate(826.5 439.5) scale(1.65 15)"/>
+      <use href="#iciD" transform="translate(830.3 439.5) scale(1.64 14.9)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(752.1 485.5) scale(1.7 16.1)"/>
+      <use href="#ici" transform="translate(757.9 485.5) scale(1.55 12.9)"/>
+      <use href="#ici" transform="translate(762.7 485.5) scale(1.65 15)"/>
+      <use href="#ici" transform="translate(766.4 485.5) scale(1.62 14.4)"/>
+      <use href="#ici" transform="translate(773.8 485.5) scale(1.5 12.1)"/>
+      <use href="#ici" transform="translate(776.8 485.5) scale(1.28 7.7)"/>
+      <use href="#ici" transform="translate(782 485.5) scale(1.28 7.6)"/>
+      <use href="#ici" transform="translate(786.7 485.5) scale(1.23 6.7)"/>
+      <use href="#ici" transform="translate(791.3 485.5) scale(1.66 15.2)"/>
+      <use href="#ici" transform="translate(798.7 485.5) scale(1.79 17.8)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(809.4 485.5) scale(1.29 7.8)"/>
+      <use href="#iciD" transform="translate(812.3 485.5) scale(1.5 12)"/>
+      <use href="#iciD" transform="translate(817.7 485.5) scale(1.41 10.3)"/>
+      <use href="#iciD" transform="translate(823.9 485.5) scale(1.48 11.6)"/>
+      <use href="#iciD" transform="translate(829.5 485.5) scale(1.77 17.4)"/>
+      <use href="#iciD" transform="translate(834.2 485.5) scale(1.77 17.3)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(767.5 531.5) scale(2.38 29.6)"/>
+      <use href="#ici" transform="translate(773.1 531.5) scale(1.59 13.7)"/>
+      <use href="#ici" transform="translate(776.9 531.5) scale(1.54 12.8)"/>
+      <use href="#ici" transform="translate(782.5 531.5) scale(1.43 10.6)"/>
+      <use href="#ici" transform="translate(786.9 531.5) scale(1.74 16.9)"/>
+      <use href="#ici" transform="translate(790.9 531.5) scale(1.37 9.4)"/>
+      <use href="#ici" transform="translate(797 531.5) scale(1.45 11)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(804 531.5) scale(1.42 10.3)"/>
+      <use href="#iciD" transform="translate(812.1 531.5) scale(1.29 7.8)"/>
+      <use href="#iciD" transform="translate(819.3 531.5) scale(1.53 12.5)"/>
+      <use href="#iciD" transform="translate(824.6 531.5) scale(1.66 15.2)"/>
+      <use href="#iciD" transform="translate(828.1 531.5) scale(1.58 13.6)"/>
+      <use href="#iciD" transform="translate(835.2 531.5) scale(1.75 17.1)"/>
+      <use href="#iciD" transform="translate(840.4 531.5) scale(1.82 18.4)"/>
+      <use href="#iciD" transform="translate(842.8 531.5) scale(2.3 28.1)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(734 579.5) scale(1.82 18.3)"/>
+      <use href="#ici" transform="translate(755.8 579.5) scale(1.75 17)"/>
+      <use href="#ici" transform="translate(760.3 579.5) scale(1.54 12.8)"/>
+      <use href="#ici" transform="translate(766 579.5) scale(1.5 12)"/>
+      <use href="#ici" transform="translate(768.5 579.5) scale(1.9 20.1)"/>
+      <use href="#ici" transform="translate(774.1 579.5) scale(1.6 14)"/>
+      <use href="#ici" transform="translate(780.9 579.5) scale(1.33 8.5)"/>
+      <use href="#ici" transform="translate(785.4 579.5) scale(1.76 17.1)"/>
+      <use href="#ici" transform="translate(789.9 579.5) scale(1.62 14.4)"/>
+      <use href="#ici" transform="translate(796 579.5) scale(1.47 11.3)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(800 579.5) scale(1.45 10.9)"/>
+      <use href="#iciD" transform="translate(806.8 579.5) scale(1.42 10.3)"/>
+      <use href="#iciD" transform="translate(809.4 579.5) scale(1.4 10)"/>
+      <use href="#iciD" transform="translate(814.3 579.5) scale(1.47 11.5)"/>
+      <use href="#iciD" transform="translate(821.4 579.5) scale(1.4 10.1)"/>
+      <use href="#iciD" transform="translate(831.1 579.5) scale(1.64 14.9)"/>
+      <use href="#iciD" transform="translate(837.2 579.5) scale(1.68 15.6)"/>
+      <use href="#iciD" transform="translate(840.2 579.5) scale(1.68 15.6)"/>
+      <use href="#iciD" transform="translate(845.7 579.5) scale(1.75 17.1)"/>
+      <use href="#iciD" transform="translate(852.6 579.5) scale(2.28 27.6)"/>
+      <use href="#iciD" transform="translate(858.2 579.5) scale(1.71 16.3)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(713.6 625.5) scale(1.93 20.7)"/>
+      <use href="#ici" transform="translate(721.6 625.5) scale(2.04 22.9)"/>
+      <use href="#ici" transform="translate(729.5 625.5) scale(2.01 22.1)"/>
+      <use href="#ici" transform="translate(737.1 625.5) scale(1.94 20.7)"/>
+      <use href="#ici" transform="translate(750.1 625.5) scale(1.65 15)"/>
+      <use href="#ici" transform="translate(752.7 625.5) scale(1.76 17.2)"/>
+      <use href="#ici" transform="translate(757.6 625.5) scale(1.75 17)"/>
+      <use href="#ici" transform="translate(763.1 625.5) scale(1.78 17.6)"/>
+      <use href="#ici" transform="translate(770 625.5) scale(1.56 13.3)"/>
+      <use href="#ici" transform="translate(778.3 625.5) scale(1.65 15)"/>
+      <use href="#ici" transform="translate(790.1 625.5) scale(1.57 13.3)"/>
+      <use href="#ici" transform="translate(795 625.5) scale(1.44 10.8)"/>
+      <use href="#ici" transform="translate(797.4 625.5) scale(1.67 15.4)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(804.9 625.5) scale(1.63 14.5)"/>
+      <use href="#iciD" transform="translate(808.3 625.5) scale(1.58 13.5)"/>
+      <use href="#iciD" transform="translate(815.3 625.5) scale(1.58 13.6)"/>
+      <use href="#iciD" transform="translate(817.4 625.5) scale(1.42 10.3)"/>
+      <use href="#iciD" transform="translate(822.7 625.5) scale(1.56 13.2)"/>
+      <use href="#iciD" transform="translate(838.1 625.5) scale(1.72 16.4)"/>
+      <use href="#iciD" transform="translate(845 625.5) scale(1.68 15.6)"/>
+      <use href="#iciD" transform="translate(848.4 625.5) scale(1.7 15.9)"/>
+      <use href="#iciD" transform="translate(855.5 625.5) scale(1.61 14.2)"/>
+      <use href="#iciD" transform="translate(864.3 625.5) scale(1.87 19.3)"/>
+      <use href="#iciD" transform="translate(870.1 625.5) scale(1.7 16.1)"/>
+      <use href="#iciD" transform="translate(874.1 625.5) scale(1.72 16.4)"/>
+      <use href="#iciD" transform="translate(879.3 625.5) scale(1.75 17)"/>
+      <use href="#iciD" transform="translate(888.1 625.5) scale(2.58 33.6)"/>
+      <use href="#iciD" transform="translate(895.5 625.5) scale(1.9 20)"/>
+    </g>
+    <g>
+      <use href="#ici" transform="translate(678.2 671.5) scale(2.22 26.3)"/>
+      <use href="#ici" transform="translate(682.4 671.5) scale(1.99 21.7)"/>
+      <use href="#ici" transform="translate(687.7 671.5) scale(2.92 40.4)"/>
+      <use href="#ici" transform="translate(694.1 671.5) scale(2.01 22.2)"/>
+      <use href="#ici" transform="translate(696.7 671.5) scale(2.15 24.9)"/>
+      <use href="#ici" transform="translate(702.8 671.5) scale(1.99 21.8)"/>
+      <use href="#ici" transform="translate(706.7 671.5) scale(2.03 22.6)"/>
+      <use href="#ici" transform="translate(714.1 671.5) scale(1.88 19.7)"/>
+      <use href="#ici" transform="translate(718.2 671.5) scale(1.93 20.5)"/>
+      <use href="#ici" transform="translate(724.5 671.5) scale(1.97 21.4)"/>
+      <use href="#ici" transform="translate(727.9 671.5) scale(1.92 20.4)"/>
+      <use href="#ici" transform="translate(732.3 671.5) scale(1.92 20.3)"/>
+      <use href="#ici" transform="translate(736.7 671.5) scale(1.71 16.2)"/>
+      <use href="#ici" transform="translate(748.9 671.5) scale(1.7 16)"/>
+      <use href="#ici" transform="translate(754.5 671.5) scale(1.67 15.5)"/>
+      <use href="#ici" transform="translate(759.6 671.5) scale(1.66 15.3)"/>
+      <use href="#ici" transform="translate(761.9 671.5) scale(1.75 17)"/>
+      <use href="#ici" transform="translate(768.2 671.5) scale(1.85 19)"/>
+      <use href="#ici" transform="translate(777.1 671.5) scale(1.76 17.3)"/>
+      <use href="#ici" transform="translate(785.1 671.5) scale(1.7 15.9)"/>
+      <use href="#ici" transform="translate(788.6 671.5) scale(1.6 13.9)"/>
+      <use href="#ici" transform="translate(795.1 671.5) scale(1.7 16)"/>
+      <use href="#ici" transform="translate(799.3 671.5) scale(1.76 17.1)"/>
+    </g>
+    <g>
+      <use href="#iciD" transform="translate(802.4 671.5) scale(1.77 17.4)"/>
+      <use href="#iciD" transform="translate(809.9 671.5) scale(1.88 19.6)"/>
+      <use href="#iciD" transform="translate(814.7 671.5) scale(1.86 19.3)"/>
+      <use href="#iciD" transform="translate(818.6 671.5) scale(1.8 17.9)"/>
+      <use href="#iciD" transform="translate(824.9 671.5) scale(1.85 19.1)"/>
+      <use href="#iciD" transform="translate(830.6 671.5) scale(1.86 19.1)"/>
+      <use href="#iciD" transform="translate(835.5 671.5) scale(2.81 38.1)"/>
+      <use href="#iciD" transform="translate(843.4 671.5) scale(1.91 20.1)"/>
+      <use href="#iciD" transform="translate(849.9 671.5) scale(1.87 19.5)"/>
+      <use href="#iciD" transform="translate(854.9 671.5) scale(2.02 22.5)"/>
+      <use href="#iciD" transform="translate(869.9 671.5) scale(1.86 19.2)"/>
+      <use href="#iciD" transform="translate(875.3 671.5) scale(2.14 24.7)"/>
+      <use href="#iciD" transform="translate(877.8 671.5) scale(1.95 21.1)"/>
+      <use href="#iciD" transform="translate(887.9 671.5) scale(2.14 24.8)"/>
+      <use href="#iciD" transform="translate(895.5 671.5) scale(2.26 27.3)"/>
+    </g>
+
+    <!-- meltwater streaks running down off the shelves -->
+    <g stroke="#eefaff" fill="none" stroke-width="1.1" opacity="0.2" stroke-linecap="round">
+      <path d="M 789.8 214 L 787.3 246.5"/>
+      <path d="M 790.1 214 L 792.3 233.1"/>
+      <path d="M 784.1 214 L 785.9 265.5"/>
+      <path d="M 784.4 258 L 786.3 282.1"/>
+      <path d="M 782.4 258 L 783.2 292.3"/>
+      <path d="M 783.1 258 L 784.9 270.8"/>
+      <path d="M 796.5 312 L 796.8 324.8"/>
+      <path d="M 794.8 312 L 796.8 341"/>
+      <path d="M 785 312 L 786.4 355.5"/>
+      <path d="M 786.7 350 L 788.9 375.6"/>
+      <path d="M 790.9 350 L 789.3 395.7"/>
+      <path d="M 794.2 350 L 794.4 386.1"/>
+      <path d="M 793.7 408 L 794.1 459.2"/>
+      <path d="M 792.7 408 L 790.7 426.7"/>
+      <path d="M 785 408 L 786.1 425.2"/>
+      <path d="M 799.3 444 L 798.1 489.9"/>
+      <path d="M 782.9 444 L 784.4 463"/>
+      <path d="M 797.8 444 L 797.1 488.7"/>
+      <path d="M 773.1 500 L 775.9 515.6"/>
+      <path d="M 779.5 500 L 778.1 532.6"/>
+      <path d="M 794.3 500 L 792.6 541"/>
+      <path d="M 785 542 L 784.4 591"/>
+      <path d="M 762.7 542 L 760.3 557"/>
+      <path d="M 781.1 542 L 778.2 562"/>
+      <path d="M 794.1 578 L 794 605.4"/>
+      <path d="M 765.4 578 L 768.1 603.1"/>
+      <path d="M 762.1 578 L 761.9 595.1"/>
+      <path d="M 782.7 626 L 783.2 648.1"/>
+      <path d="M 786.9 626 L 785.1 645.7"/>
+      <path d="M 744 626 L 742 658.6"/>
+    </g>
+    <g stroke="#0b1822" fill="none" stroke-width="1.2" opacity="0.3" stroke-linecap="round">
+      <path d="M 806.4 214 L 806.7 233.5"/>
+      <path d="M 806.1 214 L 804.5 225.3"/>
+      <path d="M 811.2 214 L 813.5 225.5"/>
+      <path d="M 814 258 L 816.9 271.4"/>
+      <path d="M 802.7 258 L 799.9 276.1"/>
+      <path d="M 812 258 L 811.8 290.3"/>
+      <path d="M 815 312 L 817.7 327.4"/>
+      <path d="M 807.6 312 L 806.1 351.4"/>
+      <path d="M 810.7 312 L 809.7 322.7"/>
+      <path d="M 806.5 350 L 808.9 368"/>
+      <path d="M 807.2 350 L 805.4 381.2"/>
+      <path d="M 816.6 350 L 816.7 381.9"/>
+      <path d="M 821.6 408 L 820.1 420.1"/>
+      <path d="M 820.6 408 L 821.1 416.7"/>
+      <path d="M 811.6 408 L 814.5 449.2"/>
+      <path d="M 820.7 444 L 818 457"/>
+      <path d="M 831.7 444 L 833 464.3"/>
+      <path d="M 831.4 444 L 833.3 468.8"/>
+      <path d="M 833.3 500 L 831.1 530.6"/>
+      <path d="M 811.6 500 L 812.7 515.7"/>
+      <path d="M 816.9 500 L 815.8 525.8"/>
+      <path d="M 820.7 542 L 818.7 553.6"/>
+      <path d="M 812.6 542 L 815 563.3"/>
+      <path d="M 830.6 542 L 830.7 565.4"/>
+      <path d="M 840.2 578 L 843.2 586.2"/>
+      <path d="M 840.2 578 L 838.7 594.5"/>
+      <path d="M 829.1 578 L 830.9 615.4"/>
+      <path d="M 826.8 626 L 825.9 657.3"/>
+      <path d="M 860.3 626 L 859.1 647.8"/>
+      <path d="M 879.1 626 L 878.1 662.6"/>
+    </g>
+
+    <!-- the two crags the chains are made fast to -->
+    <path d="M 777 442.1 L 743 458.6 L 760.7 474 L 777 468.5 Z" fill="#c8e0ef" opacity="0.95"/>
+    <path d="M 777 442.1 L 743 458.6 L 756.6 460.8 Z" fill="#ffffff" opacity="0.5"/>
+    <path d="M 836.2 475.2 L 874.2 493.2 L 854.4 510 L 836.2 504 Z" fill="#152632" opacity="0.95"/>
+    <path d="M 836.2 475.2 L 874.2 493.2 L 859 495.6 Z" fill="#4a6a80" opacity="0.5"/>
+    <path d="M 855.8 547.9 L 885.8 561.4 L 870.2 574 L 855.8 569.5 Z" fill="#152632" opacity="0.95"/>
+    <path d="M 855.8 547.9 L 885.8 561.4 L 873.8 563.2 Z" fill="#4a6a80" opacity="0.5"/>
+    <path d="M 758.6 530.1 L 722.6 546.6 L 741.3 562 L 758.6 556.5 Z" fill="#c8e0ef" opacity="0.95"/>
+    <path d="M 758.6 530.1 L 722.6 546.6 L 737 548.8 Z" fill="#ffffff" opacity="0.5"/>
+  </g>
+
+  <!-- ============ chains slung from the spire down to the ice ============ -->
+  <g opacity="0.95">
+    <path d="M 741 466 Q 498.5 690 256 742" fill="none" stroke="#0e1c26" stroke-width="5.9" stroke-linecap="round" opacity="0.75"/>
+    <use href="#lk" transform="translate(741 466) rotate(137.4) scale(0.84)"/>
+    <use href="#lk" transform="translate(730.7 475.5) rotate(137.7) scale(0.85) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(720.4 484.8) rotate(138.2) scale(0.85)"/>
+    <use href="#lk" transform="translate(710.1 493.9) rotate(138.7) scale(0.86) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(699.7 502.9) rotate(139.2) scale(0.87)"/>
+    <use href="#lk" transform="translate(689.4 511.7) rotate(139.7) scale(0.88) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(679.1 520.4) rotate(140.2) scale(0.88)"/>
+    <use href="#lk" transform="translate(668.8 528.9) rotate(140.7) scale(0.89) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(658.5 537.3) rotate(141.2) scale(0.9)"/>
+    <use href="#lk" transform="translate(648.1 545.5) rotate(141.8) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(637.8 553.5) rotate(142.3) scale(0.91)"/>
+    <use href="#lk" transform="translate(627.5 561.4) rotate(142.8) scale(0.92) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(617.2 569.2) rotate(143.4) scale(0.93)"/>
+    <use href="#lk" transform="translate(606.9 576.8) rotate(144) scale(0.93) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(596.5 584.2) rotate(144.5) scale(0.94)"/>
+    <use href="#lk" transform="translate(586.2 591.5) rotate(145.1) scale(0.95) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(575.9 598.6) rotate(145.7) scale(0.95)"/>
+    <use href="#lk" transform="translate(565.6 605.5) rotate(146.3) scale(0.96) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(555.3 612.3) rotate(146.9) scale(0.97)"/>
+    <use href="#lk" transform="translate(544.9 619) rotate(147.5) scale(0.98) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(534.6 625.5) rotate(148.1) scale(0.98)"/>
+    <use href="#lk" transform="translate(524.3 631.8) rotate(148.8) scale(0.99) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(514 638) rotate(149.4) scale(1)"/>
+    <use href="#lk" transform="translate(503.7 644) rotate(150) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(493.3 649.9) rotate(150.7) scale(1.01)"/>
+    <use href="#lk" transform="translate(483 655.6) rotate(151.3) scale(1.02) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(472.7 661.2) rotate(152) scale(1.03)"/>
+    <use href="#lk" transform="translate(462.4 666.6) rotate(152.7) scale(1.03) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(452.1 671.8) rotate(153.4) scale(1.04)"/>
+    <use href="#lk" transform="translate(441.8 676.9) rotate(154.1) scale(1.05) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(431.4 681.9) rotate(154.8) scale(1.05)"/>
+    <use href="#lk" transform="translate(421.1 686.7) rotate(155.5) scale(1.06) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(410.8 691.3) rotate(156.2) scale(1.07)"/>
+    <use href="#lk" transform="translate(400.5 695.8) rotate(156.9) scale(1.08) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(390.2 700.1) rotate(157.7) scale(1.08)"/>
+    <use href="#lk" transform="translate(379.8 704.2) rotate(158.4) scale(1.09) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(369.5 708.2) rotate(159.2) scale(1.1)"/>
+    <use href="#lk" transform="translate(359.2 712.1) rotate(159.9) scale(1.1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(348.9 715.8) rotate(160.7) scale(1.11)"/>
+    <use href="#lk" transform="translate(338.6 719.3) rotate(161.5) scale(1.12) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(328.2 722.7) rotate(162.3) scale(1.13)"/>
+    <use href="#lk" transform="translate(317.9 725.9) rotate(163) scale(1.13) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(307.6 729) rotate(163.8) scale(1.14)"/>
+    <use href="#lk" transform="translate(297.3 731.9) rotate(164.6) scale(1.15) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(287 734.7) rotate(165.4) scale(1.15)"/>
+    <use href="#lk" transform="translate(276.6 737.3) rotate(166.3) scale(1.16) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(266.3 739.7) rotate(167.1) scale(1.17)"/>
+    <use href="#lk" transform="translate(256 742) rotate(167.7) scale(1.18) scale(1 0.32)"/>
+  </g>
+  <g opacity="0.9">
+    <path d="M 878.2 502 Q 1108.1 714 1338 746" fill="none" stroke="#0e1c26" stroke-width="6.2" stroke-linecap="round" opacity="0.75"/>
+    <use href="#lk" transform="translate(878.2 502) rotate(42.6) scale(0.88)"/>
+    <use href="#lk" transform="translate(888.6 511.5) rotate(42.1) scale(0.89) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(899.1 520.9) rotate(41.6) scale(0.9)"/>
+    <use href="#lk" transform="translate(909.5 530.1) rotate(41) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(920 539.1) rotate(40.4) scale(0.91)"/>
+    <use href="#lk" transform="translate(930.4 547.9) rotate(39.8) scale(0.92) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(940.9 556.5) rotate(39.2) scale(0.93)"/>
+    <use href="#lk" transform="translate(951.3 564.9) rotate(38.6) scale(0.94) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(961.8 573.1) rotate(37.9) scale(0.94)"/>
+    <use href="#lk" transform="translate(972.2 581.2) rotate(37.3) scale(0.95) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(982.7 589.1) rotate(36.7) scale(0.96)"/>
+    <use href="#lk" transform="translate(993.1 596.8) rotate(36) scale(0.97) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1003.6 604.2) rotate(35.3) scale(0.98)"/>
+    <use href="#lk" transform="translate(1014 611.6) rotate(34.6) scale(0.98) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1024.5 618.7) rotate(33.9) scale(0.99)"/>
+    <use href="#lk" transform="translate(1034.9 625.6) rotate(33.2) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1045.4 632.4) rotate(32.5) scale(1.01)"/>
+    <use href="#lk" transform="translate(1055.8 638.9) rotate(31.8) scale(1.02) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1066.3 645.3) rotate(31) scale(1.02)"/>
+    <use href="#lk" transform="translate(1076.7 651.5) rotate(30.3) scale(1.03) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1087.2 657.5) rotate(29.5) scale(1.04)"/>
+    <use href="#lk" transform="translate(1097.6 663.4) rotate(28.7) scale(1.05) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1108.1 669) rotate(28) scale(1.06)"/>
+    <use href="#lk" transform="translate(1118.5 674.5) rotate(27.2) scale(1.06) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1129 679.7) rotate(26.3) scale(1.07)"/>
+    <use href="#lk" transform="translate(1139.4 684.8) rotate(25.5) scale(1.08) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1149.9 689.7) rotate(24.7) scale(1.09)"/>
+    <use href="#lk" transform="translate(1160.3 694.4) rotate(23.8) scale(1.1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1170.8 698.9) rotate(23) scale(1.1)"/>
+    <use href="#lk" transform="translate(1181.2 703.3) rotate(22.1) scale(1.11) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1191.7 707.4) rotate(21.2) scale(1.12)"/>
+    <use href="#lk" transform="translate(1202.1 711.4) rotate(20.3) scale(1.13) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1212.6 715.2) rotate(19.4) scale(1.14)"/>
+    <use href="#lk" transform="translate(1223 718.8) rotate(18.5) scale(1.14) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1233.5 722.2) rotate(17.6) scale(1.15)"/>
+    <use href="#lk" transform="translate(1243.9 725.4) rotate(16.7) scale(1.16) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1254.4 728.4) rotate(15.7) scale(1.17)"/>
+    <use href="#lk" transform="translate(1264.8 731.3) rotate(14.8) scale(1.18) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1275.3 733.9) rotate(13.8) scale(1.18)"/>
+    <use href="#lk" transform="translate(1285.7 736.4) rotate(12.9) scale(1.19) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1296.2 738.7) rotate(11.9) scale(1.2)"/>
+    <use href="#lk" transform="translate(1306.6 740.8) rotate(10.9) scale(1.21) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1317.1 742.7) rotate(9.9) scale(1.22)"/>
+    <use href="#lk" transform="translate(1327.5 744.5) rotate(8.9) scale(1.22) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1338 746) rotate(8.1) scale(1.23)"/>
+  </g>
+  <g opacity="0.72">
+    <path d="M 889.8 574 Q 1005.9 693 1122 720" fill="none" stroke="#0e1c26" stroke-width="4.6" stroke-linecap="round" opacity="0.75"/>
+    <use href="#lk" transform="translate(889.8 574) rotate(45.6) scale(0.66)"/>
+    <use href="#lk" transform="translate(899.1 583.4) rotate(44.8) scale(0.67) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(908.4 592.5) rotate(43.9) scale(0.68)"/>
+    <use href="#lk" transform="translate(917.7 601.2) rotate(42.9) scale(0.69) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(927 609.7) rotate(41.9) scale(0.7)"/>
+    <use href="#lk" transform="translate(936.2 617.9) rotate(40.9) scale(0.71) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(945.5 625.8) rotate(39.9) scale(0.72)"/>
+    <use href="#lk" transform="translate(954.8 633.4) rotate(38.8) scale(0.73) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(964.1 640.7) rotate(37.6) scale(0.74)"/>
+    <use href="#lk" transform="translate(973.4 647.8) rotate(36.5) scale(0.75) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(982.7 654.5) rotate(35.3) scale(0.76)"/>
+    <use href="#lk" transform="translate(992 660.9) rotate(34.1) scale(0.77) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1001.3 667) rotate(32.8) scale(0.78)"/>
+    <use href="#lk" transform="translate(1010.5 672.9) rotate(31.5) scale(0.79) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1019.8 678.4) rotate(30.2) scale(0.8)"/>
+    <use href="#lk" transform="translate(1029.1 683.7) rotate(28.8) scale(0.81) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1038.4 688.6) rotate(27.4) scale(0.82)"/>
+    <use href="#lk" transform="translate(1047.7 693.3) rotate(25.9) scale(0.83) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1057 697.7) rotate(24.4) scale(0.84)"/>
+    <use href="#lk" transform="translate(1066.3 701.7) rotate(22.9) scale(0.86) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1075.6 705.5) rotate(21.4) scale(0.87)"/>
+    <use href="#lk" transform="translate(1084.8 709) rotate(19.8) scale(0.88) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1094.1 712.2) rotate(18.1) scale(0.89)"/>
+    <use href="#lk" transform="translate(1103.4 715.1) rotate(16.5) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1112.7 717.7) rotate(14.8) scale(0.91)"/>
+    <use href="#lk" transform="translate(1122 720) rotate(13.3) scale(0.92) scale(1 0.32)"/>
+  </g>
+  <g opacity="0.62">
+    <path d="M 716.6 558 Q 625.3 667 534 708" fill="none" stroke="#0e1c26" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
+    <use href="#lk" transform="translate(716.6 558) rotate(130) scale(0.58)"/>
+    <use href="#lk" transform="translate(708.7 567.3) rotate(130.7) scale(0.59) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(700.7 576.4) rotate(131.5) scale(0.6)"/>
+    <use href="#lk" transform="translate(692.8 585.3) rotate(132.4) scale(0.61) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(684.9 593.9) rotate(133.2) scale(0.62)"/>
+    <use href="#lk" transform="translate(676.9 602.2) rotate(134.1) scale(0.63) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(669 610.2) rotate(135) scale(0.64)"/>
+    <use href="#lk" transform="translate(661 618) rotate(136) scale(0.65) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(653.1 625.6) rotate(136.9) scale(0.66)"/>
+    <use href="#lk" transform="translate(645.2 632.9) rotate(137.9) scale(0.67) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(637.2 639.9) rotate(139) scale(0.68)"/>
+    <use href="#lk" transform="translate(629.3 646.7) rotate(140) scale(0.69) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(621.3 653.2) rotate(141.2) scale(0.7)"/>
+    <use href="#lk" transform="translate(613.4 659.5) rotate(142.3) scale(0.71) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(605.5 665.5) rotate(143.5) scale(0.72)"/>
+    <use href="#lk" transform="translate(597.5 671.3) rotate(144.7) scale(0.73) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(589.6 676.7) rotate(146) scale(0.74)"/>
+    <use href="#lk" transform="translate(581.6 682) rotate(147.2) scale(0.75) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(573.7 687) rotate(148.6) scale(0.76)"/>
+    <use href="#lk" transform="translate(565.8 691.7) rotate(149.9) scale(0.77) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(557.8 696.1) rotate(151.4) scale(0.78)"/>
+    <use href="#lk" transform="translate(549.9 700.4) rotate(152.8) scale(0.79) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(541.9 704.3) rotate(154.3) scale(0.8)"/>
+    <use href="#lk" transform="translate(534 708) rotate(155.6) scale(0.81) scale(1 0.32)"/>
+  </g>
+
+  <!-- light pouring out of the fissures at the spire's foot -->
+  <ellipse cx="800" cy="712" rx="220" ry="108" fill="url(#footGlow)"/>
+  <ellipse cx="800" cy="758" rx="340" ry="56" fill="#3cbcf0" opacity="0.22" filter="url(#b18)"/>
+  <g fill="#8eecff" opacity="0.5" filter="url(#b6)">
+    <path d="M 736 658 L 752 658 L 746.8 766 L 741.2 766 Z"/>
+    <path d="M 764 632 L 784 632 L 777.5 778 L 770.5 778 Z"/>
+    <path d="M 809 638 L 827 638 L 821.1 776 L 814.9 776 Z"/>
+    <path d="M 843 666 L 857 666 L 852.5 770 L 847.5 770 Z"/>
+    <path d="M 700 686 L 712 686 L 708.1 762 L 703.9 762 Z"/>
+    <path d="M 884 696 L 896 696 L 892.1 766 L 887.9 766 Z"/>
+    <path d="M 784 680 L 812 680 L 802.9 802 L 793.1 802 Z"/>
+    <path d="M 863 720 L 873 720 L 869.8 778 L 866.2 778 Z"/>
+    <path d="M 725 726 L 735 726 L 731.8 780 L 728.2 780 Z"/>
+  </g>
+
+  <!-- the rock standing between us and that light: near, so nearly black. -->
+  <!-- It climbs high enough on both sides that the spire reads as rising -->
+  <!-- out of the mountain rather than standing on top of it. -->
+  <path d="M 350 892 L 377.1 878.6 L 403.4 849.3 L 418.4 862.9 L 431.4 842.8 L 458.6 826.8 L 485.7 812.4 L 512.9 793.7 L 540 776 L 540 776 L 558.6 792.9 L 577.1 817.8 L 595.7 830.2 L 614.3 853.1 L 632.9 846.3 L 643.1 867.4 L 651.4 877.4 L 670 892 Z" fill="url(#mtnSnowNear)"/>
+  <path d="M 540 776 L 540 776 L 558.6 792.9 L 577.1 817.8 L 595.7 830.2 L 614.3 853.1 L 632.9 846.3 L 643.1 867.4 L 651.4 877.4 L 670 892 L 566 892 Z" fill="#070f16" opacity="0.6"/>
+  <g>
+    <path d="M 520 786.7 L 528.3 791.7 L 522.3 892 L 514.9 892 Z" fill="#0e1c26" opacity="0.47"/>
+    <path d="M 474.7 799.7 L 492.8 810.6 L 488.9 892 L 472.6 892 Z" fill="#0e1c26" opacity="0.34"/>
+    <path d="M 447.9 812.7 L 464.7 822.8 L 456.3 892 L 441.2 892 Z" fill="#0e1c26" opacity="0.37"/>
+    <path d="M 412.6 825.8 L 431 836.8 L 423.4 892 L 406.8 892 Z" fill="#0e1c26" opacity="0.46"/>
+    <path d="M 385.6 838.8 L 395.2 844.6 L 389.9 892 L 381.2 892 Z" fill="#0e1c26" opacity="0.41"/>
+    <path d="M 561.8 788.2 L 574.3 795.7 L 568.4 892 L 557.2 892 Z" fill="#0e1c26" opacity="0.37"/>
+    <path d="M 590.8 802 L 608.7 812.8 L 600 892 L 583.9 892 Z" fill="#0e1c26" opacity="0.34"/>
+    <path d="M 612.4 815.8 L 622.8 822 L 615.9 892 L 606.6 892 Z" fill="#0e1c26" opacity="0.35"/>
+    <path d="M 625.6 829.6 L 643.5 840.3 L 637.2 892 L 621 892 Z" fill="#0e1c26" opacity="0.28"/>
+  </g>
+  <path d="M 512.9 793.7 L 540 776 L 540 776 L 558.6 792.9 L 561.7 799.2 L 543.8 783.4 L 538.9 782.4 L 509.9 797.5 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 512.9 793.7 L 540 776 L 540 776 L 558.6 792.9" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 532 892 L 552 868.4 L 572 845.6 L 592 817.2 L 612 796.5 L 632 762.1 L 651 700.3 L 662 734.7 L 672 706 L 672 706 L 687.7 734.2 L 703.4 764 L 719.1 794.7 L 734.9 824.7 L 752.5 828.1 L 761.1 848 L 766.3 867.2 L 782 892 Z" fill="url(#mtnSnowNear)"/>
+  <path d="M 672 706 L 672 706 L 687.7 734.2 L 703.4 764 L 719.1 794.7 L 734.9 824.7 L 752.5 828.1 L 761.1 848 L 766.3 867.2 L 782 892 L 694 892 Z" fill="#070f16" opacity="0.6"/>
+  <g>
+    <path d="M 655.9 723.2 L 665.3 728.9 L 658.6 892 L 650.1 892 Z" fill="#0e1c26" opacity="0.41"/>
+    <path d="M 632.3 744.1 L 639.9 748.6 L 634 892 L 627.2 892 Z" fill="#0e1c26" opacity="0.41"/>
+    <path d="M 602 764.9 L 614.1 772.2 L 607.9 892 L 597 892 Z" fill="#0e1c26" opacity="0.29"/>
+    <path d="M 576.9 785.8 L 589.1 793.1 L 582.1 892 L 571.1 892 Z" fill="#0e1c26" opacity="0.28"/>
+    <path d="M 560.8 806.7 L 572.6 813.7 L 569.3 892 L 558.7 892 Z" fill="#0e1c26" opacity="0.3"/>
+    <path d="M 689.7 725.6 L 696.6 729.8 L 694.4 892 L 688.3 892 Z" fill="#0e1c26" opacity="0.45"/>
+    <path d="M 702.5 747.7 L 710.9 752.8 L 709 892 L 701.4 892 Z" fill="#0e1c26" opacity="0.45"/>
+    <path d="M 735.2 769.8 L 744.8 775.6 L 737.7 892 L 729.1 892 Z" fill="#0e1c26" opacity="0.25"/>
+    <path d="M 744.1 791.9 L 754.3 798.1 L 746.6 892 L 737.4 892 Z" fill="#0e1c26" opacity="0.46"/>
+  </g>
+  <path d="M 651 700.3 L 662 734.7 L 672 706 L 672 706 L 687.7 734.2 L 688.2 740.8 L 671.1 715 L 669.9 714.6 L 661 737.8 L 649.8 707.1 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 651 700.3 L 662 734.7 L 672 706 L 672 706 L 687.7 734.2" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 816 892 L 831.7 869 L 847.4 842.3 L 863.1 821.3 L 878.9 788.9 L 894.6 760.6 L 907.9 700.1 L 916.6 730 L 926 700 L 926 700 L 947.4 732.1 L 974 735.4 L 985.8 753.2 L 990.3 789.1 L 1011.7 814.4 L 1033.1 843.9 L 1054.6 870.9 L 1076 892 Z" fill="url(#mtnSnowNear)"/>
+  <path d="M 926 700 L 926 700 L 947.4 732.1 L 974 735.4 L 985.8 753.2 L 990.3 789.1 L 1011.7 814.4 L 1033.1 843.9 L 1054.6 870.9 L 1076 892 L 956 892 Z" fill="#070f16" opacity="0.6"/>
+  <g>
+    <path d="M 915.9 717.7 L 928.4 725.2 L 918.8 892 L 907.6 892 Z" fill="#0e1c26" opacity="0.41"/>
+    <path d="M 887.4 739.3 L 896.6 744.8 L 892.1 892 L 883.8 892 Z" fill="#0e1c26" opacity="0.44"/>
+    <path d="M 879.9 760.8 L 889.6 766.7 L 881.8 892 L 873.1 892 Z" fill="#0e1c26" opacity="0.41"/>
+    <path d="M 860.5 782.4 L 867.8 786.8 L 866.3 892 L 859.7 892 Z" fill="#0e1c26" opacity="0.46"/>
+    <path d="M 830.3 803.9 L 840.6 810.1 L 835.8 892 L 826.5 892 Z" fill="#0e1c26" opacity="0.27"/>
+    <path d="M 955.2 720.3 L 964.2 725.7 L 962.1 892 L 954 892 Z" fill="#0e1c26" opacity="0.46"/>
+    <path d="M 978.1 743.1 L 988.8 749.5 L 981.1 892 L 971.5 892 Z" fill="#0e1c26" opacity="0.4"/>
+    <path d="M 1010.5 765.9 L 1019 771 L 1016.2 892 L 1008.5 892 Z" fill="#0e1c26" opacity="0.25"/>
+    <path d="M 1031.5 788.7 L 1042.2 795.1 L 1033.8 892 L 1024.2 892 Z" fill="#0e1c26" opacity="0.41"/>
+  </g>
+  <path d="M 907.9 700.1 L 916.6 730 L 926 700 L 926 700 L 947.4 732.1 L 974 735.4 L 977.2 740.4 L 947.4 735.9 L 923.1 707.7 L 927.7 704 L 914.4 735.4 L 905.7 706 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 907.9 700.1 L 916.6 730 L 926 700 L 926 700 L 947.4 732.1 L 974 735.4" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 934 892 L 952.6 877.8 L 971.1 862 L 989.7 845.7 L 1008.3 832.7 L 1032.6 787.8 L 1042.8 804.2 L 1045.4 788.3 L 1064 770 L 1064 770 L 1092.6 790.5 L 1121.1 807.2 L 1149.7 826.8 L 1178.3 840.2 L 1204.9 844.9 L 1220.6 863.9 L 1235.4 876 L 1264 892 Z" fill="url(#mtnSnowNear)"/>
+  <path d="M 1064 770 L 1064 770 L 1092.6 790.5 L 1121.1 807.2 L 1149.7 826.8 L 1178.3 840.2 L 1204.9 844.9 L 1220.6 863.9 L 1235.4 876 L 1264 892 L 1104 892 Z" fill="#070f16" opacity="0.6"/>
+  <g>
+    <path d="M 1048 781.3 L 1058.1 787.3 L 1054.7 892 L 1045.6 892 Z" fill="#0e1c26" opacity="0.31"/>
+    <path d="M 1018.4 795 L 1030.8 802.4 L 1023.6 892 L 1012.5 892 Z" fill="#0e1c26" opacity="0.31"/>
+    <path d="M 1007 808.6 L 1026.6 820.4 L 1013.4 892 L 995.8 892 Z" fill="#0e1c26" opacity="0.46"/>
+    <path d="M 976.9 822.3 L 986.2 827.9 L 980.6 892 L 972.2 892 Z" fill="#0e1c26" opacity="0.27"/>
+    <path d="M 952.6 836 L 971.1 847.1 L 957.8 892 L 941.1 892 Z" fill="#0e1c26" opacity="0.28"/>
+    <path d="M 1098 782.9 L 1111.5 791 L 1107.6 892 L 1095.4 892 Z" fill="#0e1c26" opacity="0.32"/>
+    <path d="M 1136 797.4 L 1155.1 808.8 L 1144.2 892 L 1127 892 Z" fill="#0e1c26" opacity="0.41"/>
+    <path d="M 1168.7 811.9 L 1183.8 820.9 L 1177.9 892 L 1164.3 892 Z" fill="#0e1c26" opacity="0.34"/>
+    <path d="M 1198.1 826.4 L 1209.5 833.2 L 1204.1 892 L 1193.8 892 Z" fill="#0e1c26" opacity="0.27"/>
+  </g>
+  <path d="M 1032.6 787.8 L 1045.4 788.3 L 1064 770 L 1064 770 L 1092.6 790.5 L 1090.8 800.2 L 1063.9 778.2 L 1064.1 774.6 L 1048.3 793.2 L 1033.5 793.9 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 1032.6 787.8 L 1045.4 788.3 L 1064 770 L 1064 770 L 1092.6 790.5" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 670 892 L 687.1 874.8 L 704.3 859.4 L 721.4 834.6 L 738.6 817.1 L 756.7 776.1 L 766.1 802.5 L 772.9 778.8 L 790 754 L 790 754 L 807.1 779.2 L 824.3 803.1 L 841.4 816.5 L 857.9 828.3 L 867.3 844.6 L 875.7 858.2 L 892.9 874.3 L 910 892 Z" fill="url(#mtnSnowNear)"/>
+  <path d="M 790 754 L 790 754 L 807.1 779.2 L 824.3 803.1 L 841.4 816.5 L 857.9 828.3 L 867.3 844.6 L 875.7 858.2 L 892.9 874.3 L 910 892 L 814 892 Z" fill="#070f16" opacity="0.6"/>
+  <g>
+    <path d="M 769.2 766.8 L 778.3 772.2 L 774 892 L 765.9 892 Z" fill="#0e1c26" opacity="0.36"/>
+    <path d="M 757.2 782.2 L 764.3 786.5 L 761.2 892 L 754.8 892 Z" fill="#0e1c26" opacity="0.4"/>
+    <path d="M 733.2 797.7 L 743 803.6 L 740.4 892 L 731.5 892 Z" fill="#0e1c26" opacity="0.28"/>
+    <path d="M 714 813.2 L 727.3 821.1 L 721.2 892 L 709.3 892 Z" fill="#0e1c26" opacity="0.33"/>
+    <path d="M 686.6 828.7 L 693.4 832.8 L 689.8 892 L 683.7 892 Z" fill="#0e1c26" opacity="0.26"/>
+    <path d="M 804.6 768.6 L 813.5 773.9 L 808.6 892 L 800.7 892 Z" fill="#0e1c26" opacity="0.25"/>
+    <path d="M 833.6 785 L 841.2 789.5 L 837.2 892 L 830.4 892 Z" fill="#0e1c26" opacity="0.26"/>
+    <path d="M 853.4 801.4 L 866.1 809 L 860.9 892 L 849.5 892 Z" fill="#0e1c26" opacity="0.46"/>
+    <path d="M 871.8 817.8 L 878.3 821.7 L 874.7 892 L 868.9 892 Z" fill="#0e1c26" opacity="0.36"/>
+  </g>
+  <path d="M 756.7 776.1 L 772.9 778.8 L 790 754 L 790 754 L 807.1 779.2 L 808.1 785.2 L 791.3 757.2 L 786.9 759.7 L 772.8 785.8 L 757.3 781.8 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 756.7 776.1 L 772.9 778.8 L 790 754 L 790 754 L 807.1 779.2" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 182 892 L 209.1 879.9 L 236.3 867.9 L 259.8 851.1 L 274.8 860.1 L 290.6 852.6 L 317.7 838.4 L 344.9 824.1 L 372 812 L 372 812 L 392 827.1 L 412 837.4 L 432 849.6 L 452 861.4 L 469.4 854.7 L 480.4 867.5 L 492 883 L 512 892 Z" fill="url(#mtnSnowNear)"/>
+  <path d="M 372 812 L 372 812 L 392 827.1 L 412 837.4 L 432 849.6 L 452 861.4 L 469.4 854.7 L 480.4 867.5 L 492 883 L 512 892 L 400 892 Z" fill="#070f16" opacity="0.6"/>
+  <g>
+    <path d="M 347.4 819.4 L 359 826.4 L 354 892 L 343.5 892 Z" fill="#0e1c26" opacity="0.26"/>
+    <path d="M 306.3 828.4 L 318.7 835.8 L 309.5 892 L 298.3 892 Z" fill="#0e1c26" opacity="0.38"/>
+    <path d="M 282.2 837.3 L 292.6 843.6 L 286.9 892 L 277.6 892 Z" fill="#0e1c26" opacity="0.28"/>
+    <path d="M 252.8 846.3 L 268.7 855.8 L 260.1 892 L 245.9 892 Z" fill="#0e1c26" opacity="0.36"/>
+    <path d="M 209.9 855.3 L 220 861.4 L 214.6 892 L 205.5 892 Z" fill="#0e1c26" opacity="0.29"/>
+    <path d="M 392 820.4 L 409.9 831.2 L 404.4 892 L 388.3 892 Z" fill="#0e1c26" opacity="0.35"/>
+    <path d="M 420.4 830 L 430.6 836.1 L 428.3 892 L 419.1 892 Z" fill="#0e1c26" opacity="0.39"/>
+    <path d="M 451.8 839.5 L 464.1 846.9 L 459.6 892 L 448.5 892 Z" fill="#0e1c26" opacity="0.4"/>
+    <path d="M 465.2 849 L 479.3 857.4 L 470.4 892 L 457.7 892 Z" fill="#0e1c26" opacity="0.44"/>
+  </g>
+  <path d="M 344.9 824.1 L 372 812 L 372 812 L 392 827.1 L 393 833.9 L 374.9 816.5 L 369.3 819.7 L 344.6 830 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 344.9 824.1 L 372 812 L 372 812 L 392 827.1" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 1080 892 L 1101.4 880.7 L 1122.9 872.3 L 1144.3 855.2 L 1169.2 837.7 L 1181 849.4 L 1187.1 832.1 L 1208.6 819.5 L 1230 806 L 1230 806 L 1258.6 821.3 L 1287.1 837.8 L 1315.7 844.5 L 1344.3 858.1 L 1375.8 860.7 L 1391.5 868.7 L 1401.4 879.8 L 1430 892 Z" fill="url(#mtnSnowNear)"/>
+  <path d="M 1230 806 L 1230 806 L 1258.6 821.3 L 1287.1 837.8 L 1315.7 844.5 L 1344.3 858.1 L 1375.8 860.7 L 1391.5 868.7 L 1401.4 879.8 L 1430 892 L 1270 892 Z" fill="#070f16" opacity="0.6"/>
+  <g>
+    <path d="M 1214.4 813.9 L 1234.9 826.3 L 1220.4 892 L 1201.9 892 Z" fill="#0e1c26" opacity="0.32"/>
+    <path d="M 1176.9 823.6 L 1196.9 835.6 L 1192.5 892 L 1174.5 892 Z" fill="#0e1c26" opacity="0.33"/>
+    <path d="M 1160 833.2 L 1175.7 842.7 L 1164.5 892 L 1150.3 892 Z" fill="#0e1c26" opacity="0.36"/>
+    <path d="M 1138.3 842.9 L 1154.2 852.5 L 1146.3 892 L 1132 892 Z" fill="#0e1c26" opacity="0.25"/>
+    <path d="M 1108.3 852.5 L 1127.1 863.8 L 1117 892 L 1100.1 892 Z" fill="#0e1c26" opacity="0.45"/>
+    <path d="M 1261.5 815.1 L 1273.3 822.2 L 1269.6 892 L 1259 892 Z" fill="#0e1c26" opacity="0.29"/>
+    <path d="M 1304.2 825.3 L 1314.9 831.7 L 1308.1 892 L 1298.4 892 Z" fill="#0e1c26" opacity="0.31"/>
+    <path d="M 1328 835.5 L 1344.2 845.3 L 1338.9 892 L 1324.3 892 Z" fill="#0e1c26" opacity="0.32"/>
+    <path d="M 1363.3 845.7 L 1383.8 858 L 1376.6 892 L 1358.2 892 Z" fill="#0e1c26" opacity="0.25"/>
+  </g>
+  <path d="M 1208.6 819.5 L 1230 806 L 1230 806 L 1258.6 821.3 L 1257.7 824.9 L 1226.9 815.9 L 1231.9 813.1 L 1209.5 822.5 Z" fill="#f0f8ff" opacity="0.28" filter="url(#soft)"/>
+  <path d="M 1208.6 819.5 L 1230 806 L 1230 806 L 1258.6 821.3" fill="none" stroke="#f6fbff" stroke-width="1.8" opacity="0.45" stroke-linejoin="round" stroke-linecap="round" filter="url(#soft)"/>
+
+  <!-- ====================== fields of ice shards ====================== -->
+  <!-- They grow in thickets, not in a row: each cluster has one tall blade -->
+  <!-- with smaller ones crowding and overlapping it. -->
+  <g>
+    <ellipse cx="154" cy="730.2" rx="7.6" ry="1.7" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(154 728.2) scale(0.34 0.36) rotate(7.5)"/>
+    <ellipse cx="143.5" cy="741.5" rx="7.6" ry="1.7" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s3" transform="translate(143.5 739.5) scale(0.34 0.38) rotate(-1.6)"/>
+    <ellipse cx="154.5" cy="739.3" rx="7.7" ry="1.7" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(154.5 737.3) scale(0.35 0.44) rotate(7.6)"/>
+    <ellipse cx="40.4" cy="744.6" rx="15.9" ry="3.6" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(40.4 742.6) scale(0.72 0.88) rotate(0)"/>
+    <ellipse cx="96" cy="734" rx="28.6" ry="6.5" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(96 732) scale(1.3 1.38) rotate(0.1)"/>
+  </g>
+  <g>
+    <ellipse cx="264.3" cy="716.1" rx="3.5" ry="0.8" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(264.3 714.1) scale(0.16 0.17) rotate(7.3)"/>
+    <ellipse cx="315.1" cy="727.7" rx="6.7" ry="1.5" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s2" transform="translate(315.1 725.7) scale(0.31 0.36) rotate(3.4)"/>
+    <ellipse cx="301.7" cy="718.2" rx="7.7" ry="1.8" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(301.7 716.2) scale(0.35 0.43) rotate(-2.4)"/>
+    <ellipse cx="270" cy="718" rx="13.6" ry="3.1" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(270 716) scale(0.62 0.79) rotate(0.8)"/>
+  </g>
+  <g>
+    <ellipse cx="423.9" cy="703.9" rx="6.5" ry="1.5" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(423.9 701.9) scale(0.3 0.32) rotate(-7.7)"/>
+    <ellipse cx="436.1" cy="705.5" rx="8.3" ry="1.9" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(436.1 703.5) scale(0.38 0.48) rotate(7.2)"/>
+    <ellipse cx="363.7" cy="711.7" rx="10.4" ry="2.4" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(363.7 709.7) scale(0.47 0.55) rotate(-3.7)"/>
+    <ellipse cx="392" cy="708" rx="19.8" ry="4.5" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(392 706) scale(0.9 0.98) rotate(6.6)"/>
+  </g>
+  <g>
+    <ellipse cx="524.6" cy="697" rx="3.2" ry="0.7" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(524.6 695) scale(0.14 0.17) rotate(1.9)"/>
+    <ellipse cx="510" cy="702.3" rx="3.2" ry="0.7" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s3" transform="translate(510 700.3) scale(0.15 0.18) rotate(3.1)"/>
+    <ellipse cx="508" cy="692" rx="6.6" ry="1.5" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(508 690) scale(0.3 0.38) rotate(0)"/>
+  </g>
+  <g>
+    <ellipse cx="1051.3" cy="697.2" rx="4.8" ry="1.1" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(1051.3 695.2) scale(0.22 0.28) rotate(-0.3)"/>
+    <ellipse cx="1026.9" cy="705.7" rx="5.1" ry="1.2" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s3" transform="translate(1026.9 703.7) scale(0.23 0.3) rotate(1.4)"/>
+    <ellipse cx="1064" cy="696" rx="7.9" ry="1.8" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(1064 694) scale(0.36 0.45) rotate(-2.4)"/>
+  </g>
+  <g>
+    <ellipse cx="1184" cy="732" rx="16.4" ry="3.7" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s2" transform="translate(1184 730) scale(0.75 0.79) rotate(3.3)"/>
+    <ellipse cx="1197.7" cy="732.9" rx="16.6" ry="3.8" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(1197.7 730.9) scale(0.76 0.83) rotate(-7.7)"/>
+    <ellipse cx="1180" cy="733.4" rx="18.8" ry="4.3" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(1180 731.4) scale(0.86 1.01) rotate(-5)"/>
+    <ellipse cx="1161.1" cy="734" rx="19.6" ry="4.5" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(1161.1 732) scale(0.89 1.15) rotate(-7.3)"/>
+    <ellipse cx="1210" cy="732" rx="27.5" ry="6.2" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(1210 730) scale(1.25 1.53) rotate(-4.6)"/>
+  </g>
+  <g>
+    <ellipse cx="1335.4" cy="715.5" rx="6.5" ry="1.5" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s3" transform="translate(1335.4 713.5) scale(0.3 0.34) rotate(-7.7)"/>
+    <ellipse cx="1349.9" cy="725.5" rx="7.6" ry="1.7" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s3" transform="translate(1349.9 723.5) scale(0.34 0.43) rotate(-0.3)"/>
+    <ellipse cx="1347.2" cy="714.9" rx="9.2" ry="2.1" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(1347.2 712.9) scale(0.42 0.46) rotate(-4)"/>
+    <ellipse cx="1370" cy="714" rx="15" ry="3.4" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(1370 712) scale(0.68 0.76) rotate(7.7)"/>
+  </g>
+  <g>
+    <ellipse cx="1483.1" cy="712.2" rx="6.4" ry="1.5" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s2" transform="translate(1483.1 710.2) scale(0.29 0.35) rotate(3.4)"/>
+    <ellipse cx="1465.8" cy="717.9" rx="6.7" ry="1.5" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(1465.8 715.9) scale(0.3 0.35) rotate(-1)"/>
+    <ellipse cx="1494" cy="706" rx="9.7" ry="2.2" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(1494 704) scale(0.44 0.57) rotate(0.8)"/>
+  </g>
+  <g>
+    <ellipse cx="640.1" cy="695.5" rx="1.6" ry="0.4" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(640.1 693.5) scale(0.07 0.09) rotate(7.1)"/>
+    <ellipse cx="628.6" cy="691.3" rx="3.4" ry="0.8" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(628.6 689.3) scale(0.16 0.19) rotate(6.9)"/>
+    <ellipse cx="630" cy="684" rx="4.8" ry="1.1" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(630 682) scale(0.22 0.25) rotate(5.3)"/>
+  </g>
+  <g>
+    <ellipse cx="973.3" cy="686.5" rx="2.5" ry="0.6" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(973.3 684.5) scale(0.11 0.14) rotate(6)"/>
+    <ellipse cx="979.2" cy="683.2" rx="2.5" ry="0.6" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s4" transform="translate(979.2 681.2) scale(0.12 0.13) rotate(-7.9)"/>
+    <ellipse cx="980" cy="686" rx="4.4" ry="1" fill="#0d1c26" opacity="0.3"/>
+    <use href="#s1" transform="translate(980 684) scale(0.2 0.24) rotate(7.2)"/>
+  </g>
+
+  <!-- and two great chains sagging out to the bergs that anchor the spire -->
+  <g opacity="0.9">
+    <path d="M 216 356 Q 430 724 722 548" fill="none" stroke="#0e1c26" stroke-width="5.2" stroke-linecap="round" opacity="0.75"/>
+    <use href="#lk" transform="translate(216 356) rotate(59.8) scale(1.1)"/>
+    <use href="#lk" transform="translate(223.5 368.7) rotate(59) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(232.2 382.8) rotate(58) scale(1)"/>
+    <use href="#lk" transform="translate(239.8 394.8) rotate(57.2) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(248.5 408.1) rotate(56.1) scale(1)"/>
+    <use href="#lk" transform="translate(257.4 421) rotate(55) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(266.3 433.4) rotate(53.9) scale(1)"/>
+    <use href="#lk" transform="translate(275.2 445.4) rotate(52.7) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(285.3 458.4) rotate(51.3) scale(1)"/>
+    <use href="#lk" transform="translate(294.4 469.5) rotate(50) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(304.7 481.4) rotate(48.5) scale(1)"/>
+    <use href="#lk" transform="translate(313.9 491.6) rotate(47) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(324.4 502.5) rotate(45.4) scale(1)"/>
+    <use href="#lk" transform="translate(334.9 512.8) rotate(43.6) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(345.5 522.6) rotate(41.8) scale(0.9)"/>
+    <use href="#lk" transform="translate(356.2 531.9) rotate(39.9) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(366.9 540.6) rotate(37.9) scale(0.9)"/>
+    <use href="#lk" transform="translate(377.8 548.7) rotate(35.9) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(389.9 557.1) rotate(33.5) scale(0.9)"/>
+    <use href="#lk" transform="translate(400.9 564.1) rotate(31.3) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(413.2 571.2) rotate(28.7) scale(0.9)"/>
+    <use href="#lk" transform="translate(425.6 577.7) rotate(26) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(436.9 582.9) rotate(23.6) scale(0.9)"/>
+    <use href="#lk" transform="translate(449.5 588) rotate(20.8) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(462.2 592.5) rotate(17.9) scale(0.9)"/>
+    <use href="#lk" transform="translate(475 596.2) rotate(15) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(487.9 599.3) rotate(12) scale(0.9)"/>
+    <use href="#lk" transform="translate(499.6 601.5) rotate(9.4) scale(0.8) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(512.7 603.4) rotate(6.4) scale(0.8)"/>
+    <use href="#lk" transform="translate(525.8 604.5) rotate(3.4) scale(0.8) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(537.8 604.9) rotate(0.8) scale(0.8)"/>
+    <use href="#lk" transform="translate(551.1 604.8) rotate(-2.2) scale(0.8) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(563.2 604) rotate(-4.7) scale(0.8)"/>
+    <use href="#lk" transform="translate(575.4 602.7) rotate(-7.2) scale(0.8) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(587.7 600.9) rotate(-9.7) scale(0.8)"/>
+    <use href="#lk" transform="translate(598.7 598.8) rotate(-11.8) scale(0.8) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(611.1 596) rotate(-14.2) scale(0.8)"/>
+    <use href="#lk" transform="translate(622.2 592.9) rotate(-16.2) scale(0.8) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(633.4 589.5) rotate(-18.1) scale(0.8)"/>
+    <use href="#lk" transform="translate(644.6 585.6) rotate(-20) scale(0.8) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(655.9 581.3) rotate(-21.8) scale(0.8)"/>
+    <use href="#lk" transform="translate(665.8 577.1) rotate(-23.4) scale(0.8) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(677.2 572) rotate(-25.1) scale(0.7)"/>
+    <use href="#lk" transform="translate(687.2 567.2) rotate(-26.5) scale(0.7) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(697.3 562) rotate(-27.9) scale(0.7)"/>
+    <use href="#lk" transform="translate(706 557.3) rotate(-29.1) scale(0.7) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(716.2 551.5) rotate(-30.4) scale(0.7)"/>
+  </g>
+  <g opacity="0.92">
+    <path d="M 874 493 Q 1180 706 1466 428" fill="none" stroke="#0e1c26" stroke-width="5.9" stroke-linecap="round" opacity="0.75"/>
+    <use href="#lk" transform="translate(874 493) rotate(34.8) scale(0.9)"/>
+    <use href="#lk" transform="translate(884.7 500.3) rotate(33.8) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(895.4 507.3) rotate(32.7) scale(0.9)"/>
+    <use href="#lk" transform="translate(906.1 514) rotate(31.5) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(918.3 521.3) rotate(30.2) scale(0.9)"/>
+    <use href="#lk" transform="translate(928.9 527.4) rotate(29) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(941.1 533.9) rotate(27.6) scale(0.9)"/>
+    <use href="#lk" transform="translate(953.2 540.1) rotate(26.2) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(965.3 545.9) rotate(24.7) scale(0.9)"/>
+    <use href="#lk" transform="translate(977.5 551.2) rotate(23.2) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(991.1 556.8) rotate(21.4) scale(0.9)"/>
+    <use href="#lk" transform="translate(1003.1 561.4) rotate(19.8) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1016.7 566) rotate(18) scale(0.9)"/>
+    <use href="#lk" transform="translate(1030.3 570.1) rotate(16.1) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1043.8 573.8) rotate(14.1) scale(0.9)"/>
+    <use href="#lk" transform="translate(1057.3 576.9) rotate(12.1) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1070.8 579.6) rotate(10.1) scale(0.9)"/>
+    <use href="#lk" transform="translate(1085.8 582) rotate(7.8) scale(0.9) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1099.2 583.6) rotate(5.8) scale(1)"/>
+    <use href="#lk" transform="translate(1114.1 584.8) rotate(3.4) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1129 585.3) rotate(1.1) scale(1)"/>
+    <use href="#lk" transform="translate(1143.9 585.3) rotate(-1.3) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1158.7 584.7) rotate(-3.7) scale(1)"/>
+    <use href="#lk" transform="translate(1172 583.6) rotate(-5.8) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1186.8 581.8) rotate(-8.1) scale(1)"/>
+    <use href="#lk" transform="translate(1201.6 579.3) rotate(-10.5) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1216.3 576.3) rotate(-12.8) scale(1)"/>
+    <use href="#lk" transform="translate(1231.1 572.6) rotate(-15.1) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1245.8 568.4) rotate(-17.3) scale(1)"/>
+    <use href="#lk" transform="translate(1260.4 563.5) rotate(-19.5) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1275.1 558) rotate(-21.6) scale(1)"/>
+    <use href="#lk" transform="translate(1289.7 551.9) rotate(-23.7) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1302.8 545.9) rotate(-25.5) scale(1)"/>
+    <use href="#lk" transform="translate(1317.4 538.6) rotate(-27.5) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1330.5 531.5) rotate(-29.2) scale(1)"/>
+    <use href="#lk" transform="translate(1345 523.1) rotate(-31.1) scale(1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1358 515) rotate(-32.7) scale(1)"/>
+    <use href="#lk" transform="translate(1371.1 506.4) rotate(-34.3) scale(1.1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1384.1 497.3) rotate(-35.8) scale(1.1)"/>
+    <use href="#lk" transform="translate(1397.1 487.6) rotate(-37.2) scale(1.1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1410 477.5) rotate(-38.6) scale(1.1)"/>
+    <use href="#lk" transform="translate(1423 466.9) rotate(-40) scale(1.1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1435.9 455.8) rotate(-41.3) scale(1.1)"/>
+    <use href="#lk" transform="translate(1447.4 445.6) rotate(-42.4) scale(1.1) scale(1 0.32)"/>
+    <use href="#lk" transform="translate(1460.3 433.5) rotate(-43.7) scale(1.1)"/>
+  </g>
+
+  <!-- the waterline round the island's skirts -->
+  <g filter="url(#b6)">
+    <ellipse cx="800" cy="838" rx="430" ry="16" fill="#0a1824" opacity="0.45"/>
+    <ellipse cx="620" cy="846" rx="200" ry="10" fill="#dff2fb" opacity="0.22"/>
+    <ellipse cx="990" cy="842" rx="220" ry="10" fill="#dff2fb" opacity="0.2"/>
+    <ellipse cx="800" cy="833" rx="300" ry="8" fill="#eaf7fd" opacity="0.3"/>
+  </g>
+  <g stroke="#e8f5fc" fill="none" stroke-linecap="round" opacity="0.5">
+    <path d="M 430 842 Q 520 836 605 841" stroke-width="1.6"/>
+    <path d="M 660 836 Q 760 830 850 835" stroke-width="1.8"/>
+    <path d="M 905 838 Q 1010 833 1120 840" stroke-width="1.6"/>
+    <path d="M 1140 846 Q 1210 842 1265 847" stroke-width="1.3"/>
+    <path d="M 350 850 Q 400 846 452 850" stroke-width="1.3"/>
+  </g>
+  <!-- the glow at the spire's foot smeared down the swell -->
+  <g filter="url(#b6)" opacity="0.5">
+    <path d="M 762 840 L 774 840 L 771 895 L 765 895 Z" fill="#7fd8f4"/>
+    <path d="M 790 845 L 812 845 L 807 900 L 795 900 Z" fill="#8fe2fa"/>
+    <path d="M 833 842 L 845 842 L 842 890 L 836 890 Z" fill="#7fd8f4"/>
+    <path d="M 725 848 L 733 848 L 731 886 L 727 886 Z" fill="#66c4e8"/>
+    <path d="M 872 850 L 880 850 L 878 884 L 874 884 Z" fill="#66c4e8"/>
+  </g>
+  <!-- dark reflections under the flanking rock -->
+  <g filter="url(#b18)" opacity="0.4">
+    <ellipse cx="530" cy="868" rx="150" ry="20" fill="#0a1a26"/>
+    <ellipse cx="1080" cy="866" rx="150" ry="20" fill="#0a1a26"/>
+  </g>
+  <path d="M -20 900 L -20 829 Q 25 829 70 824.3 Q 115 824.3 160 823.4 Q 205 823.4 250 829.2 Q 295 829.2 340 822.2 Q 385 822.2 430 825.8 Q 475 825.8 520 826.6 Q 565 826.6 610 827.1 Q 655 827.1 700 822.5 Q 745 822.5 790 827.3 Q 835 827.3 880 826 Q 925 826 970 829.5 Q 1015 829.5 1060 821.3 Q 1105 821.3 1150 830.6 Q 1195 830.6 1240 822.7 Q 1285 822.7 1330 829.1 Q 1375 829.1 1420 826.1 Q 1465 826.1 1510 829.4 Q 1555 829.4 1600 822.8 L 1620 900 Z" fill="url(#water)"/>
+  <path d="M 690 826 L 910 826 L 950 900 L 650 900 Z" fill="url(#refl)" opacity="0.4"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M 1410.9 675.8 Q 1436.2 674.5 1461.5 675.8 T 1487.5 676.3" stroke="#a8dcec" stroke-width="1" opacity="0.1"/>
+    <path d="M 1380 693.6 Q 1426.8 692.1 1473.5 693.6 T 1521.6 694.2" stroke="#a8dcec" stroke-width="1.2" opacity="0.1"/>
+    <path d="M 1119.1 894.9 Q 1229.8 890.4 1340.4 894.9 T 1454.4 896.6" stroke="#0d2c40" stroke-width="3.1" opacity="0.3"/>
+    <path d="M 222.3 734.9 Q 261.9 732.7 301.4 734.9 T 342.2 735.7" stroke="#a8dcec" stroke-width="1.6" opacity="0.1"/>
+    <path d="M 830.2 881.7 Q 873.1 877.5 916 881.7 T 960.3 883.4" stroke="#0d2c40" stroke-width="3" opacity="0.2"/>
+    <path d="M 1480.3 795.2 Q 1537.4 792.2 1594.5 795.2 T 1653.3 796.4" stroke="#a8dcec" stroke-width="2.2" opacity="0.2"/>
+    <path d="M 1485.9 736.6 Q 1518.9 734.5 1551.9 736.6 T 1585.9 737.5" stroke="#0d2c40" stroke-width="1.6" opacity="0.1"/>
+    <path d="M 91 740.3 Q 149.9 738.1 208.9 740.3 T 269.6 741.2" stroke="#a8dcec" stroke-width="1.6" opacity="0.1"/>
+    <path d="M 1039.9 889.9 Q 1075.7 885.6 1111.5 889.9 T 1148.4 891.7" stroke="#a8dcec" stroke-width="3.1" opacity="0.3"/>
+    <path d="M 439.3 838.1 Q 479 834.5 518.7 838.1 T 559.6 839.5" stroke="#0d2c40" stroke-width="2.6" opacity="0.2"/>
+    <path d="M 1136.2 891.1 Q 1228.6 886.7 1320.9 891.1 T 1416.1 892.9" stroke="#a8dcec" stroke-width="3.1" opacity="0.3"/>
+    <path d="M 1144.2 880.7 Q 1176.8 876.5 1209.4 880.7 T 1243 882.4" stroke="#a8dcec" stroke-width="3" opacity="0.2"/>
+    <path d="M 101 808 Q 137.9 804.9 174.8 808 T 212.8 809.3" stroke="#0d2c40" stroke-width="2.3" opacity="0.2"/>
+    <path d="M 1267.5 703.3 Q 1291.1 701.6 1314.6 703.3 T 1338.9 704" stroke="#a8dcec" stroke-width="1.3" opacity="0.1"/>
+    <path d="M 752.3 846.9 Q 823.3 843.2 894.3 846.9 T 967.5 848.4" stroke="#0d2c40" stroke-width="2.7" opacity="0.2"/>
+    <path d="M 733.9 870.5 Q 792.7 866.4 851.6 870.5 T 912.2 872.1" stroke="#0d2c40" stroke-width="2.9" opacity="0.2"/>
+    <path d="M 65.6 760.2 Q 101.6 757.7 137.6 760.2 T 174.6 761.2" stroke="#a8dcec" stroke-width="1.8" opacity="0.1"/>
+    <path d="M 9 836.5 Q 54.1 832.9 99.2 836.5 T 145.6 838" stroke="#a8dcec" stroke-width="2.6" opacity="0.2"/>
+    <path d="M 1025.3 864.7 Q 1139.8 860.7 1254.3 864.7 T 1372.3 866.3" stroke="#a8dcec" stroke-width="2.9" opacity="0.2"/>
+    <path d="M 688.8 856.6 Q 771.7 852.7 854.5 856.6 T 939.9 858.1" stroke="#a8dcec" stroke-width="2.8" opacity="0.2"/>
+    <path d="M 1255.6 844.4 Q 1331.9 840.7 1408.2 844.4 T 1486.9 845.9" stroke="#a8dcec" stroke-width="2.7" opacity="0.2"/>
+    <path d="M 1301.3 887.8 Q 1366.3 883.5 1431.2 887.8 T 1498.1 889.5" stroke="#0d2c40" stroke-width="3.1" opacity="0.3"/>
+    <path d="M 1142.5 894.1 Q 1281.1 889.7 1419.6 894.1 T 1562.4 895.9" stroke="#a8dcec" stroke-width="3.1" opacity="0.3"/>
+    <path d="M 787.6 882 Q 872.2 877.8 956.8 882 T 1044 883.7" stroke="#a8dcec" stroke-width="3" opacity="0.2"/>
+    <path d="M 1129.7 856.2 Q 1220.6 852.4 1311.4 856.2 T 1405.1 857.8" stroke="#a8dcec" stroke-width="2.8" opacity="0.2"/>
+    <path d="M 1286.4 674.5 Q 1318.3 673.2 1350.3 674.5 T 1383.2 675" stroke="#0d2c40" stroke-width="1" opacity="0.1"/>
+    <path d="M 1419.5 805.9 Q 1465.1 802.8 1510.6 805.9 T 1557.6 807.2" stroke="#a8dcec" stroke-width="2.3" opacity="0.2"/>
+    <path d="M 1444.6 775.9 Q 1496.4 773.1 1548.3 775.9 T 1601.6 776.9" stroke="#a8dcec" stroke-width="2" opacity="0.2"/>
+    <path d="M 139.9 815.1 Q 183.1 811.8 226.4 815.1 T 271 816.4" stroke="#0d2c40" stroke-width="2.4" opacity="0.2"/>
+    <path d="M 120.7 773 Q 163.8 770.3 206.9 773 T 251.3 774" stroke="#0d2c40" stroke-width="2" opacity="0.2"/>
+    <path d="M 105.5 780.3 Q 164 777.5 222.6 780.3 T 283 781.4" stroke="#0d2c40" stroke-width="2" opacity="0.2"/>
+    <path d="M 222.1 662.7 Q 240.2 661.6 258.4 662.7 T 277.1 663.2" stroke="#0d2c40" stroke-width="0.9" opacity="0.1"/>
+    <path d="M 1422.5 884.3 Q 1521.1 880.1 1619.8 884.3 T 1721.4 886" stroke="#0d2c40" stroke-width="3" opacity="0.2"/>
+    <path d="M 87.4 874.8 Q 177 870.6 266.7 874.8 T 359.1 876.4" stroke="#0d2c40" stroke-width="3" opacity="0.2"/>
+    <path d="M 129.3 774.9 Q 169 772.2 208.8 774.9 T 249.7 776" stroke="#0d2c40" stroke-width="2" opacity="0.2"/>
+    <path d="M 159 736.1 Q 215.8 733.9 272.6 736.1 T 331.2 736.9" stroke="#a8dcec" stroke-width="1.6" opacity="0.1"/>
+    <path d="M 281.3 867.6 Q 386.8 863.6 492.3 867.6 T 601.1 869.2" stroke="#a8dcec" stroke-width="2.9" opacity="0.2"/>
+    <path d="M 452.3 895.6 Q 554.9 891.2 657.4 895.6 T 763 897.4" stroke="#a8dcec" stroke-width="3.2" opacity="0.3"/>
+    <path d="M 751 844.2 Q 866.2 840.5 981.4 844.2 T 1100.1 845.7" stroke="#a8dcec" stroke-width="2.7" opacity="0.2"/>
+    <path d="M 187.8 697.7 Q 239.9 696.1 292.1 697.7 T 345.8 698.3" stroke="#a8dcec" stroke-width="1.2" opacity="0.1"/>
+    <path d="M 348.5 851.4 Q 480.9 847.6 613.2 851.4 T 749.5 852.9" stroke="#a8dcec" stroke-width="2.7" opacity="0.2"/>
+    <path d="M 246.5 849.9 Q 277.2 846.1 307.9 849.9 T 339.6 851.4" stroke="#a8dcec" stroke-width="2.7" opacity="0.2"/>
+    <path d="M 929.8 865.4 Q 1034.7 861.4 1139.7 865.4 T 1247.9 867" stroke="#0d2c40" stroke-width="2.9" opacity="0.2"/>
+    <path d="M 1219.4 876 Q 1308.1 871.8 1396.8 876 T 1488.2 877.6" stroke="#a8dcec" stroke-width="3" opacity="0.2"/>
+    <path d="M 574.4 889.2 Q 698.5 884.8 822.7 889.2 T 950.6 890.9" stroke="#a8dcec" stroke-width="3.1" opacity="0.3"/>
+    <path d="M 895.9 833.5 Q 1028.7 830 1161.5 833.5 T 1298.3 835" stroke="#a8dcec" stroke-width="2.5" opacity="0.2"/>
+  </g>
+  <g stroke="#eefcff" fill="none" stroke-linecap="round">
+    <path d="M 794 888.5 l 7.8 0" stroke-width="2.2" opacity="0.5"/>
+    <path d="M 787.1 876.1 l 20.3 0" stroke-width="1.4" opacity="0.7"/>
+    <path d="M 655.9 846.5 l 10 0" stroke-width="1.4" opacity="0.5"/>
+    <path d="M 851.1 858.7 l 8.2 0" stroke-width="1.3" opacity="0.8"/>
+    <path d="M 834.3 883.8 l 6.6 0" stroke-width="1.6" opacity="0.6"/>
+    <path d="M 865.3 863 l 10.8 0" stroke-width="1" opacity="0.6"/>
+    <path d="M 704.4 892.1 l 16.2 0" stroke-width="1" opacity="0.3"/>
+    <path d="M 810.3 880.1 l 17.7 0" stroke-width="1.6" opacity="0.4"/>
+    <path d="M 715.6 888.5 l 20 0" stroke-width="1" opacity="0.7"/>
+    <path d="M 794.8 876.5 l 19.8 0" stroke-width="1.2" opacity="0.7"/>
+    <path d="M 815.3 886.1 l 28.8 0" stroke-width="1.7" opacity="0.3"/>
+    <path d="M 745.7 843 l 10.5 0" stroke-width="1.8" opacity="0.6"/>
+    <path d="M 802.7 865.8 l 16.8 0" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 887.8 864.8 l 14.9 0" stroke-width="1.6" opacity="0.4"/>
+    <path d="M 846.6 854.5 l 23.9 0" stroke-width="1.6" opacity="0.5"/>
+    <path d="M 631.7 880.9 l 11.5 0" stroke-width="1.1" opacity="0.7"/>
+    <path d="M 687 894.1 l 20.4 0" stroke-width="1.5" opacity="0.7"/>
+    <path d="M 757.7 843.3 l 10.9 0" stroke-width="2.2" opacity="0.7"/>
+    <path d="M 678.5 851.2 l 13.3 0" stroke-width="1.9" opacity="0.4"/>
+    <path d="M 810.1 844.8 l 14 0" stroke-width="1.6" opacity="0.6"/>
+    <path d="M 728.6 893 l 10.5 0" stroke-width="1.1" opacity="0.7"/>
+    <path d="M 807.3 838.9 l 14.8 0" stroke-width="1.3" opacity="0.7"/>
+  </g>
+  <!-- pack ice adrift on the swell -->
+  <ellipse cx="256" cy="752.9" rx="27.6" ry="4.4" fill="#071722" opacity="0.4"/>
+  <path d="M 230.5 747.1 L 281.5 747.6 L 276.8 753.5 L 237.3 753.1 Z" fill="#1f3c52"/>
+  <path d="M 229.9 745.4 L 241.4 742.4 L 259.2 738.8 L 273.2 742.6 L 280.3 746.6 L 274.3 749.1 L 241.6 751.2 Z" fill="#f0f8fd"/>
+  <path d="M 242.5 741.4 L 257.6 739.8 L 271.1 742.7 L 258.6 744 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="256" cy="762.1" rx="20.8" ry="5.3" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="1338" cy="757.6" rx="31.8" ry="5.1" fill="#071722" opacity="0.4"/>
+  <path d="M 1308.6 751 L 1367.4 751.5 L 1362 758.3 L 1316.4 757.9 Z" fill="#1f3c52"/>
+  <path d="M 1310.2 750.9 L 1324.7 743.3 L 1340.9 743.8 L 1355.5 744.5 L 1366.9 750.6 L 1356.1 754.8 L 1318.2 753.1 Z" fill="#f0f8fd"/>
+  <path d="M 1322.4 744.4 L 1339.8 742.5 L 1355.4 745.9 L 1341 747.4 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="1338" cy="768.3" rx="24" ry="6.1" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="64.7" cy="703.3" rx="19" ry="3" fill="#071722" opacity="0.4"/>
+  <path d="M 47.2 699.4 L 82.3 699.7 L 79.1 703.8 L 51.9 703.5 Z" fill="#1f3c52"/>
+  <path d="M 46.8 699.2 L 56.1 695.7 L 66.8 693.6 L 75.8 696.2 L 82.3 699.8 L 74.6 702 L 55 702 Z" fill="#f0f8fd"/>
+  <path d="M 55.4 695.4 L 65.8 694.3 L 75.1 696.4 L 66.5 697.3 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="64.7" cy="709.7" rx="14.3" ry="3.6" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="197.6" cy="760.1" rx="11.6" ry="1.9" fill="#071722" opacity="0.4"/>
+  <path d="M 186.8 757.6 L 208.3 757.8 L 206.3 760.3 L 189.7 760.2 Z" fill="#1f3c52"/>
+  <path d="M 186.8 757.7 L 192 755.4 L 197.5 754.7 L 203 755.8 L 207.6 757.4 L 203.6 758.6 L 190.3 759.1 Z" fill="#f0f8fd"/>
+  <path d="M 191.9 755.2 L 198.2 754.5 L 203.9 755.8 L 198.7 756.3 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="197.6" cy="764" rx="8.8" ry="2.2" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="1290.8" cy="703" rx="16.9" ry="2.7" fill="#071722" opacity="0.4"/>
+  <path d="M 1275.2 699.5 L 1306.5 699.7 L 1303.6 703.4 L 1279.3 703.1 Z" fill="#1f3c52"/>
+  <path d="M 1275.7 699.3 L 1282.8 696 L 1292.5 694.9 L 1299.7 696.6 L 1305.4 698.9 L 1301.1 701 L 1281 700.7 Z" fill="#f0f8fd"/>
+  <path d="M 1282.5 695.9 L 1291.8 695 L 1300.1 696.7 L 1292.4 697.6 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="1290.8" cy="708.7" rx="12.8" ry="3.3" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="1434.6" cy="765.2" rx="17.9" ry="2.9" fill="#071722" opacity="0.4"/>
+  <path d="M 1418.1 761.4 L 1451.1 761.7 L 1448.1 765.6 L 1422.5 765.3 Z" fill="#1f3c52"/>
+  <path d="M 1418.6 760.7 L 1427.1 757.8 L 1436.4 756.1 L 1445.8 758.5 L 1450.4 760.6 L 1443.7 762.4 L 1425.3 763.8 Z" fill="#f0f8fd"/>
+  <path d="M 1425.8 757.7 L 1435.6 756.7 L 1444.4 758.6 L 1436.3 759.4 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="1434.6" cy="771.2" rx="13.5" ry="3.4" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="323" cy="797.2" rx="12.4" ry="2" fill="#071722" opacity="0.4"/>
+  <path d="M 311.6 794.6 L 334.5 794.8 L 332.4 797.5 L 314.7 797.3 Z" fill="#1f3c52"/>
+  <path d="M 312.3 794 L 317.8 792.4 L 323.6 791.3 L 329.6 792.5 L 335.1 794.7 L 331.3 795.4 L 315.7 796 Z" fill="#f0f8fd"/>
+  <path d="M 317 792 L 323.7 791.3 L 329.8 792.6 L 324.2 793.2 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="323" cy="801.3" rx="9.3" ry="2.4" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="1538.7" cy="703.4" rx="19" ry="3" fill="#071722" opacity="0.4"/>
+  <path d="M 1521.2 699.4 L 1556.3 699.7 L 1553.1 703.8 L 1525.8 703.5 Z" fill="#1f3c52"/>
+  <path d="M 1521.8 698.2 L 1530.3 695 L 1539.6 693.6 L 1547.6 696.2 L 1557.9 698.9 L 1548.3 701.6 L 1527.3 700.8 Z" fill="#f0f8fd"/>
+  <path d="M 1529.4 695.4 L 1539.8 694.3 L 1549.1 696.3 L 1540.5 697.3 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="1538.7" cy="709.8" rx="14.3" ry="3.7" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="105.1" cy="860.2" rx="46.7" ry="7.5" fill="#071722" opacity="0.4"/>
+  <path d="M 61.9 850.5 L 148.4 851.3 L 140.4 861.3 L 73.4 860.7 Z" fill="#1f3c52"/>
+  <path d="M 64.2 849.3 L 82 841.5 L 106.5 837.6 L 132.9 843.7 L 152.3 850.5 L 135.1 856.5 L 76.6 856.2 Z" fill="#f0f8fd"/>
+  <path d="M 82.2 840.8 L 107.8 838.1 L 130.7 843 L 109.5 845.3 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="105.1" cy="876" rx="35.3" ry="9" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="422.8" cy="883.6" rx="31.8" ry="5.1" fill="#071722" opacity="0.4"/>
+  <path d="M 393.4 877 L 452.2 877.5 L 446.8 884.3 L 401.2 883.9 Z" fill="#1f3c52"/>
+  <path d="M 391.3 875.9 L 409.6 869.1 L 427.1 869.8 L 439.7 872.2 L 451.7 875.5 L 438.8 880.8 L 403.3 880.5 Z" fill="#f0f8fd"/>
+  <path d="M 407.2 870.3 L 424.6 868.5 L 440.2 871.9 L 425.8 873.4 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="422.8" cy="894.3" rx="24" ry="6.1" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="689.3" cy="861.7" rx="20.8" ry="3.3" fill="#071722" opacity="0.4"/>
+  <path d="M 670 857.3 L 708.6 857.7 L 705 862.1 L 675.2 861.9 Z" fill="#1f3c52"/>
+  <path d="M 669.3 856.7 L 680.7 853 L 692.2 851.6 L 701.9 854 L 707.3 858 L 702.2 859.5 L 677.3 858.7 Z" fill="#f0f8fd"/>
+  <path d="M 679.1 853 L 690.5 851.8 L 700.7 854 L 691.3 855 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="689.3" cy="868.7" rx="15.7" ry="4" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="1028.7" cy="884.9" rx="27.9" ry="4.5" fill="#071722" opacity="0.4"/>
+  <path d="M 1002.8 879.1 L 1054.5 879.6 L 1049.7 885.6 L 1009.7 885.2 Z" fill="#1f3c52"/>
+  <path d="M 1000.4 879.1 L 1014 872.9 L 1029.2 871.6 L 1045.3 874.2 L 1053.3 879 L 1044.3 882.8 L 1010.8 882 Z" fill="#f0f8fd"/>
+  <path d="M 1014.9 873.3 L 1030.2 871.7 L 1043.9 874.6 L 1031.3 876 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="1028.7" cy="894.3" rx="21.1" ry="5.4" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="1236.2" cy="864.2" rx="46.6" ry="7.5" fill="#071722" opacity="0.4"/>
+  <path d="M 1193.1 854.5 L 1279.2 855.3 L 1271.3 865.3 L 1204.5 864.7 Z" fill="#1f3c52"/>
+  <path d="M 1189.7 854.5 L 1213.7 846.1 L 1241.2 842.1 L 1263.4 845.6 L 1282.1 853 L 1263.9 857.8 L 1213.3 859.2 Z" fill="#f0f8fd"/>
+  <path d="M 1213.3 844.8 L 1238.8 842.1 L 1261.7 847 L 1240.6 849.3 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="1236.2" cy="879.9" rx="35.2" ry="9" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="1477.8" cy="892.6" rx="48.7" ry="7.8" fill="#071722" opacity="0.4"/>
+  <path d="M 1432.8 882.4 L 1522.8 883.2 L 1514.5 893.7 L 1444.8 893.1 Z" fill="#1f3c52"/>
+  <path d="M 1433.5 879.9 L 1456.2 871.8 L 1481.7 871.3 L 1505.7 875.7 L 1523.6 882 L 1509.7 887.2 L 1446.4 887 Z" fill="#f0f8fd"/>
+  <path d="M 1453.9 872.3 L 1480.6 869.5 L 1504.4 874.6 L 1482.4 877 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="1477.8" cy="909" rx="36.7" ry="9.4" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="868.8" cy="895.1" rx="28.7" ry="4.6" fill="#071722" opacity="0.4"/>
+  <path d="M 842.3 889.1 L 895.4 889.5 L 890.5 895.7 L 849.3 895.3 Z" fill="#1f3c52"/>
+  <path d="M 839.8 888.5 L 853.1 884.2 L 868.6 880.9 L 882.6 884.2 L 893.5 889.2 L 883.9 891 L 851.8 891.3 Z" fill="#f0f8fd"/>
+  <path d="M 854.7 883.1 L 870.5 881.4 L 884.6 884.5 L 871.5 885.9 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="868.8" cy="904.8" rx="21.7" ry="5.5" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="547.6" cy="908.1" rx="74" ry="11.9" fill="#071722" opacity="0.4"/>
+  <path d="M 479.1 892.6 L 616 893.8 L 603.5 909.7 L 497.3 908.8 Z" fill="#1f3c52"/>
+  <path d="M 475.5 892 L 513.2 878.3 L 551.2 872.5 L 590 878.5 L 611.7 889.6 L 584.9 899.8 L 500.5 900.4 Z" fill="#f0f8fd"/>
+  <path d="M 511.3 877.2 L 551.8 872.9 L 588.1 880.8 L 554.6 884.3 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="547.6" cy="933" rx="55.9" ry="14.2" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="243.6" cy="899" rx="39.6" ry="6.4" fill="#071722" opacity="0.4"/>
+  <path d="M 207 890.7 L 280.3 891.4 L 273.5 899.9 L 216.7 899.4 Z" fill="#1f3c52"/>
+  <path d="M 207.4 889.7 L 222.9 882.6 L 242.7 880.3 L 263.1 885.9 L 281.4 890.6 L 264.9 893.2 L 218.9 894.5 Z" fill="#f0f8fd"/>
+  <path d="M 224.2 882.5 L 245.8 880.2 L 265.3 884.4 L 247.3 886.3 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="243.6" cy="912.3" rx="29.9" ry="7.6" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="1563.7" cy="871.3" rx="52.6" ry="8.4" fill="#071722" opacity="0.4"/>
+  <path d="M 1515.1 860.3 L 1612.4 861.2 L 1603.4 872.5 L 1528 871.8 Z" fill="#1f3c52"/>
+  <path d="M 1512.3 858.6 L 1536.9 848.7 L 1563.8 847.1 L 1595.5 852.2 L 1611 861.2 L 1590.3 866.4 L 1533.4 864.6 Z" fill="#f0f8fd"/>
+  <path d="M 1537.9 849.3 L 1566.7 846.3 L 1592.5 851.9 L 1568.7 854.4 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="1563.7" cy="889" rx="39.7" ry="10.1" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="53.9" cy="891.3" rx="30.3" ry="4.9" fill="#071722" opacity="0.4"/>
+  <path d="M 25.9 885 L 81.9 885.5 L 76.8 892 L 33.3 891.6 Z" fill="#1f3c52"/>
+  <path d="M 24.4 884.7 L 36.7 879.4 L 53.1 876.1 L 72.4 879 L 84.4 883.9 L 71 887.5 L 37.6 888.7 Z" fill="#f0f8fd"/>
+  <path d="M 39.1 878.7 L 55.6 877 L 70.5 880.2 L 56.8 881.6 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="53.9" cy="901.5" rx="22.9" ry="5.8" fill="#dff0f8" opacity="0.12"/>
+  <ellipse cx="1113.5" cy="901.3" rx="41.3" ry="6.6" fill="#071722" opacity="0.4"/>
+  <path d="M 1075.3 892.7 L 1151.7 893.3 L 1144.7 902.2 L 1085.4 901.7 Z" fill="#1f3c52"/>
+  <path d="M 1074.5 893.1 L 1093.1 884.6 L 1118 882.3 L 1138.6 885.6 L 1154.1 891 L 1135.6 895.2 L 1092.6 896 Z" fill="#f0f8fd"/>
+  <path d="M 1093.2 884.1 L 1115.8 881.7 L 1136.1 886.1 L 1117.4 888 Z" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="1113.5" cy="915.2" rx="31.2" ry="7.9" fill="#dff0f8" opacity="0.12"/>
+
+  <!-- the sentinel berg on the left, the near chain made fast below its crest -->
+  <g filter="url(#b2)">
+    <path d="M -40 870 C -22 730 -8 610 28 515 C 58 440 100 395 148 362 C 178 341 205 330 222 328 C 230 327 234 333 230 340 C 214 366 200 396 196 434 C 214 452 210 472 200 496 C 214 536 202 566 214 606 C 226 650 214 686 228 726 C 240 762 252 800 266 858 L 266 872 Z" fill="#1c3a4c"/>
+    <path d="M 222 328 C 230 327 234 333 230 340 C 214 366 200 396 196 434 C 214 452 210 472 200 496 C 214 536 202 566 214 606 C 226 650 214 686 228 726 C 240 762 252 800 266 858 L 196 858 C 178 776 166 692 160 608 C 156 524 160 452 176 404 C 188 368 204 342 222 328 Z" fill="url(#bergLitR)"/>
+    <path d="M -40 870 C -22 730 -8 610 28 515 C 58 440 100 395 148 362 L 128 424 C 100 486 80 566 66 650 C 54 736 48 800 50 870 Z" fill="#091a26" opacity="0.6"/>
+    <path d="M 148 362 C 178 341 205 330 222 328 C 204 342 188 368 176 404 C 166 436 160 486 160 545 L 128 552 C 126 486 132 424 148 362 Z" fill="#a9dcee" opacity="0.42"/>
+    <path d="M 206 334 C 214 329 224 327 230 331 C 222 342 212 356 204 374 C 192 368 194 348 206 334 Z" fill="url(#snowCap)" opacity="0.95"/>
+    <path d="M 28 515 C 58 440 100 395 148 362 C 178 341 205 330 222 328 L 214 344 C 188 354 160 372 136 398 C 100 436 66 490 46 540 Z" fill="url(#snowCap)" opacity="0.3"/>
+    <path d="M 176 404 C 188 368 204 342 220 330" fill="none" stroke="#f0fafe" stroke-width="3" opacity="0.7"/>
+    <path d="M 196 434 C 214 452 210 472 200 496 C 214 536 202 566 214 606 C 226 650 214 686 228 726" fill="none" stroke="#eef8fd" stroke-width="2.4" opacity="0.6"/>
+    <path d="M 200 496 C 214 536 202 566 214 606" fill="none" stroke="#d8eef8" stroke-width="2.2" opacity="0.45"/>
+    <path d="M 28 515 C 58 440 100 395 148 362" fill="none" stroke="#9cc6da" stroke-width="2" opacity="0.35"/>
+    <path d="M -40 870 C -22 730 -8 610 28 515 C 58 440 100 395 148 362 C 178 341 205 330 222 328 C 230 327 234 333 230 340 C 214 366 200 396 196 434 C 214 452 210 472 200 496 C 214 536 202 566 214 606 C 226 650 214 686 228 726 C 240 762 252 800 266 858 L 266 872 Z" fill="url(#bergFade)"/>
+  </g>
+  <g filter="url(#b6)">
+    <ellipse cx="110" cy="864" rx="185" ry="12" fill="#071722" opacity="0.5"/>
+    <ellipse cx="120" cy="856" rx="165" ry="8" fill="#e6f5fc" opacity="0.3"/>
+  </g>
+
+  <!-- and the greater claw on the right, leaning in over the sea -->
+  <g filter="url(#b2)">
+    <path d="M 1640 880 L 1638 630 C 1634 490 1618 368 1576 280 C 1548 222 1506 196 1458 202 C 1446 204 1442 212 1448 220 C 1466 232 1482 252 1492 282 C 1500 308 1498 330 1488 344 C 1506 384 1524 410 1522 458 C 1520 506 1538 538 1534 588 C 1530 640 1546 682 1544 730 C 1542 780 1552 822 1554 880 Z" fill="#1b3a4e"/>
+    <path d="M 1458 202 C 1446 204 1442 212 1448 220 C 1466 232 1482 252 1492 282 C 1500 308 1498 330 1488 344 C 1506 384 1524 410 1522 458 C 1520 506 1538 538 1534 588 C 1530 640 1546 682 1544 730 C 1542 780 1552 822 1554 880 L 1470 880 C 1458 788 1450 696 1448 604 C 1446 506 1444 414 1450 334 C 1454 280 1456 232 1458 202 Z" fill="url(#bergLitL)"/>
+    <path d="M 1640 880 L 1638 630 C 1634 490 1618 368 1576 280 L 1592 396 C 1604 498 1610 620 1610 740 L 1612 880 Z" fill="#08161f" opacity="0.6"/>
+    <path d="M 1576 280 C 1548 222 1506 196 1458 202 C 1474 210 1492 228 1504 258 C 1518 292 1530 332 1538 376 L 1570 366 C 1568 336 1570 306 1576 280 Z" fill="#a9dcee" opacity="0.4"/>
+    <path d="M 1458 202 C 1472 198 1488 200 1500 210 C 1486 212 1470 218 1458 228 C 1448 222 1450 208 1458 202 Z" fill="url(#snowCap)" opacity="0.95"/>
+    <path d="M 1576 280 C 1548 222 1506 196 1458 202 L 1470 216 C 1500 220 1526 242 1546 282 C 1562 316 1574 360 1580 408 L 1608 452 C 1604 386 1594 324 1576 280 Z" fill="url(#snowCap)" opacity="0.5"/>
+    <path d="M 1492 282 C 1500 308 1498 330 1488 344 C 1506 384 1524 410 1522 458 C 1520 506 1538 538 1534 588" fill="none" stroke="#eef8fd" stroke-width="2.4" opacity="0.6"/>
+    <path d="M 1450 334 C 1446 414 1448 506 1450 604" fill="none" stroke="#eaf7fd" stroke-width="3" opacity="0.55"/>
+    <path d="M 1458 202 C 1474 210 1492 228 1504 258" fill="none" stroke="#f4fcff" stroke-width="2.6" opacity="0.6"/>
+    <path d="M 1488 344 C 1506 384 1524 410 1522 458" fill="none" stroke="#c2e2f0" stroke-width="2" opacity="0.35"/>
+    <path d="M 1640 880 L 1638 630 C 1634 490 1618 368 1576 280 C 1548 222 1506 196 1458 202 C 1446 204 1442 212 1448 220 C 1466 232 1482 252 1492 282 C 1500 308 1498 330 1488 344 C 1506 384 1524 410 1522 458 C 1520 506 1538 538 1534 588 C 1530 640 1546 682 1544 730 C 1542 780 1552 822 1554 880 Z" fill="url(#bergFade)"/>
+  </g>
+  <use href="#s2" transform="translate(1408 800) scale(0.8 0.9) rotate(-4)"/>
+  <use href="#s1" transform="translate(1372 812) scale(0.5 0.55) rotate(5)"/>
+  <g filter="url(#b6)">
+    <ellipse cx="1520" cy="874" rx="180" ry="12" fill="#071722" opacity="0.5"/>
+    <ellipse cx="1500" cy="866" rx="150" ry="8" fill="#e6f5fc" opacity="0.3"/>
+  </g>
+
+  <!-- a drowned drift heaving out of the water, soft with distance from focus -->
+  <g filter="url(#b6)">
+    <path d="M -40 900 C 30 820 150 786 300 802 C 420 816 500 856 570 900 Z" fill="url(#mound)"/>
+    <path d="M -10 838 C 70 806 170 792 285 802" fill="none" stroke="#f8fcfe" stroke-width="4.5" opacity="0.75"/>
+    <path d="M 120 828 C 200 812 300 812 395 832" fill="none" stroke="#dcedf6" stroke-width="2.5" opacity="0.4"/>
+    <path d="M 300 802 C 420 816 500 856 570 900 L 440 900 C 388 862 336 826 274 812 Z" fill="#5c7f96" opacity="0.5"/>
+    <ellipse cx="260" cy="892" rx="330" ry="14" fill="#0a1e30" opacity="0.35"/>
+  </g>
+  <ellipse cx="800" cy="128" rx="320" ry="270" fill="url(#bloom)" opacity="0.9"/>
+  <path d="M 774 -10 L 826 -10 L 814 380 L 786 380 Z" fill="#eafaff" opacity="0.16" filter="url(#b18)"/>
+  <!-- ======================= the star crowning it ===================== -->
+  <g>
+    <circle cx="800" cy="122" r="210" fill="url(#starGlow)" opacity="0.6"/>
+    <circle cx="800" cy="122" r="70" fill="#e8f8ff" opacity="0.5" filter="url(#b18)"/>
+    <g filter="url(#b6)" fill="#ffffff" opacity="0.7" transform="translate(800 122) scale(0.45 0.48) translate(-800 -122)">
+      <path d="M 1050 122 L 800 131 L 770 122 L 800 113 Z"/>
+      <path d="M 800 442 L 790 122 L 800 83.6 L 810 122 Z"/>
+      <path d="M 550 122 L 800 113 L 830 122 L 800 131 Z"/>
+      <path d="M 800 -8 L 808 122 L 800 137.6 L 792 122 Z"/>
+      <path d="M 896.2 218.2 L 796.1 125.9 L 788.5 110.5 L 803.9 118.1 Z"/>
+      <path d="M 703.8 218.2 L 796.1 118.1 L 811.5 110.5 L 803.9 125.9 Z"/>
+      <path d="M 712.3 34.3 L 803.5 118.5 L 810.5 132.5 L 796.5 125.5 Z"/>
+      <path d="M 887.7 34.3 L 803.5 125.5 L 789.5 132.5 L 796.5 118.5 Z"/>
+      <path d="M 872.3 151.2 L 798.7 125.2 L 791.3 118.5 L 801.3 118.8 Z"/>
+      <path d="M 829.2 194.3 L 796.8 123.3 L 796.5 113.3 L 803.2 120.7 Z"/>
+      <path d="M 770.8 194.3 L 796.8 120.7 L 803.5 113.3 L 803.2 123.3 Z"/>
+      <path d="M 727.7 151.2 L 798.7 118.8 L 808.7 118.5 L 801.3 125.2 Z"/>
+      <path d="M 733.2 95 L 801.1 119.2 L 808 125.2 L 798.9 124.8 Z"/>
+      <path d="M 773 55.2 L 802.8 120.9 L 803.2 130 L 797.2 123.1 Z"/>
+      <path d="M 827 55.2 L 802.8 123.1 L 796.8 130 L 797.2 120.9 Z"/>
+      <path d="M 866.8 95 L 801.1 124.8 L 792 125.2 L 798.9 119.2 Z"/>
+    </g>
+    <circle cx="800" cy="122" r="28" fill="#ffffff" opacity="0.45" filter="url(#b6)"/>
+    <circle cx="800" cy="122" r="8.5" fill="#ffffff"/>
+  </g>
+
+  <circle cx="800" cy="122" r="62" fill="#ffffff" opacity="0.55" filter="url(#b18)"/>
+  <!-- lens ghosts drifting off the flare -->
+  <g fill="#bfe8f5">
+    <circle cx="1042" cy="338" r="26" opacity="0.13"/>
+    <circle cx="1188" cy="470" r="54" opacity="0.09"/>
+    <circle cx="936" cy="244" r="12" opacity="0.16"/>
+  </g>
+  <!-- birds riding the wind under the overcast -->
+  <g fill="none" stroke="#0c1620" stroke-width="2" stroke-linecap="round" opacity="0.75">
+    <path d="M 334 262 Q 338 258 340 262 Q 342 258 346 262"/>
+    <path d="M 373.2 246 Q 376.4 242.8 378 246 Q 379.6 242.8 382.8 246"/>
+    <path d="M 407.8 274 Q 410.6 271.2 412 274 Q 413.4 271.2 416.2 274"/>
+    <path d="M 292.1 288 Q 294.7 285.4 296 288 Q 297.3 285.4 299.9 288"/>
+    <path d="M 445 252 Q 447 250 448 252 Q 449 250 451 252"/>
+    <path d="M 1176.4 216 Q 1178.8 213.6 1180 216 Q 1181.2 213.6 1183.6 216"/>
+    <path d="M 1215.3 232 Q 1217.1 230.2 1218 232 Q 1218.9 230.2 1220.7 232"/>
+  </g>
+  <!-- ============================ snowfall =========================== -->
+  <g opacity="0.8">
+    <use href="#fl" transform="translate(1536 122.9) scale(2.01)"/>
+    <use href="#fl" transform="translate(1128.2 443.1) rotate(-19.7) scale(1.72 9.26)"/>
+    <use href="#fl" transform="translate(1322.3 187.9) scale(2.86)"/>
+    <use href="#fl" transform="translate(1107.5 476.6) rotate(-25) scale(1.7 7.54)"/>
+    <use href="#fl" transform="translate(1346.8 462.1) scale(2.62)"/>
+    <use href="#fl" transform="translate(402.3 748.1) rotate(-22.2) scale(2.44 7.31)"/>
+    <use href="#fl" transform="translate(697.7 582) scale(2.76)"/>
+    <use href="#fl" transform="translate(1106.9 103.5) scale(1.95)"/>
+    <use href="#fl" transform="translate(729.4 331.2) scale(1.91)"/>
+    <use href="#fl" transform="translate(1472.6 152.9) rotate(-26.3) scale(2.13 9.78)"/>
+    <use href="#fl" transform="translate(329.7 476.4) scale(2.31)"/>
+    <use href="#fl" transform="translate(905.6 340.4) rotate(-37.3) scale(2.03 9.35)"/>
+    <use href="#fl" transform="translate(1580.4 769.8) rotate(-21.2) scale(1.82 7.05)"/>
+    <use href="#fl" transform="translate(355.9 216.1) scale(2.33)"/>
+    <use href="#fl" transform="translate(462.5 379) scale(1.89)"/>
+    <use href="#fl" transform="translate(1192.2 252.7) rotate(-31.9) scale(2.13 8.19)"/>
+    <use href="#fl" transform="translate(1490 850) scale(2.74)"/>
+    <use href="#fl" transform="translate(901 173.9) scale(2.58)"/>
+    <use href="#fl" transform="translate(56.2 179.9) rotate(-22.8) scale(2.7 12.11)"/>
+    <use href="#fl" transform="translate(906.2 486.3) scale(1.51)"/>
+    <use href="#fl" transform="translate(1405.4 293.6) scale(2.47)"/>
+    <use href="#fl" transform="translate(550 813.8) rotate(-17.1) scale(1.73 6.1)"/>
+    <use href="#fl" transform="translate(593.3 408) rotate(-33.7) scale(2.63 14.1)"/>
+    <use href="#fl" transform="translate(623 534.7) rotate(-18.6) scale(2.73 7.66)"/>
+    <use href="#fl" transform="translate(916.6 482.8) scale(2.43)"/>
+    <use href="#fl" transform="translate(68.4 660.7) scale(2.54)"/>
+    <use href="#fl" transform="translate(1220.8 389) scale(2.75)"/>
+    <use href="#fl" transform="translate(201.7 762.9) scale(2.89)"/>
+    <use href="#fl" transform="translate(1095.3 812.4) scale(2.22)"/>
+    <use href="#fl" transform="translate(704.4 155.7) scale(2.02)"/>
+    <use href="#fl" transform="translate(1197.9 112) scale(2.13)"/>
+    <use href="#fl" transform="translate(515 707.7) scale(1.78)"/>
+  </g>
+  <g opacity="0.55">
+    <use href="#fl" transform="translate(819.6 503.1) rotate(-19.8) scale(1.66 8.14)"/>
+    <use href="#fl" transform="translate(722.4 426.8) scale(1.6)"/>
+    <use href="#fl" transform="translate(784.2 809.7) scale(1.48)"/>
+    <use href="#fl" transform="translate(771.1 612.4) scale(1.87)"/>
+    <use href="#fl" transform="translate(513.4 746.7) rotate(-29.6) scale(1.98 5.2)"/>
+    <use href="#fl" transform="translate(143.7 731.4) scale(1.07)"/>
+    <use href="#fl" transform="translate(267.9 680.2) scale(1.04)"/>
+    <use href="#fl" transform="translate(95 12.3) scale(1.22)"/>
+    <use href="#fl" transform="translate(1292.3 397.9) scale(1.33)"/>
+    <use href="#fl" transform="translate(182 822.3) scale(1.6)"/>
+    <use href="#fl" transform="translate(1515 324.5) rotate(-26.9) scale(2.2 7.97)"/>
+    <use href="#fl" transform="translate(959.8 887.1) rotate(-27.8) scale(1.87 8.77)"/>
+    <use href="#fl" transform="translate(266.2 26.5) rotate(-18.6) scale(1.64 4.76)"/>
+    <use href="#fl" transform="translate(1226.3 649.1) scale(2.05)"/>
+    <use href="#fl" transform="translate(130.7 389.9) scale(1.55)"/>
+    <use href="#fl" transform="translate(1488.2 42.3) rotate(-13) scale(2.11 6.85)"/>
+    <use href="#fl" transform="translate(995.9 96.4) scale(2.07)"/>
+    <use href="#fl" transform="translate(330.3 275.2) scale(1.43)"/>
+    <use href="#fl" transform="translate(919.1 472.8) scale(1.03)"/>
+    <use href="#fl" transform="translate(330.4 826.6) rotate(-14.7) scale(1.42 3.69)"/>
+    <use href="#fl" transform="translate(878.4 361.3) scale(1.24)"/>
+    <use href="#fl" transform="translate(306 857.8) scale(2.06)"/>
+    <use href="#fl" transform="translate(585.6 303.5) rotate(-30.3) scale(2 9.57)"/>
+    <use href="#fl" transform="translate(1198.5 195.9) rotate(-30.8) scale(1.79 6.28)"/>
+    <use href="#fl" transform="translate(79 180.2) scale(1.61)"/>
+    <use href="#fl" transform="translate(128.4 177.2) rotate(-29.3) scale(1.44 3.72)"/>
+    <use href="#fl" transform="translate(221.5 413.5) scale(1.16)"/>
+    <use href="#fl" transform="translate(1365.6 70.9) rotate(-18.1) scale(1.62 8.38)"/>
+    <use href="#fl" transform="translate(1019.3 416) scale(2.16)"/>
+    <use href="#fl" transform="translate(640.3 469.7) scale(1.07)"/>
+    <use href="#fl" transform="translate(1452 832.3) rotate(-23.2) scale(1.64 8.23)"/>
+    <use href="#fl" transform="translate(434.4 159.5) scale(1.31)"/>
+    <use href="#fl" transform="translate(1101.1 117.1) rotate(-15.7) scale(1.62 8.42)"/>
+    <use href="#fl" transform="translate(936.5 561.7) rotate(-36.7) scale(2.04 11.14)"/>
+    <use href="#fl" transform="translate(288 596.1) rotate(-21.2) scale(2.14 6.83)"/>
+    <use href="#fl" transform="translate(983.4 624.1) scale(1.21)"/>
+    <use href="#fl" transform="translate(588.7 858.1) rotate(-20.3) scale(2.01 4.91)"/>
+    <use href="#fl" transform="translate(1585 128.2) scale(1.13)"/>
+    <use href="#fl" transform="translate(707.3 444) scale(1.37)"/>
+    <use href="#fl" transform="translate(396.9 561.6) rotate(-13.3) scale(1.96 7.51)"/>
+    <use href="#fl" transform="translate(778.4 350.9) scale(1.34)"/>
+    <use href="#fl" transform="translate(252.7 20) scale(1.25)"/>
+  </g>
+  <g opacity="0.32">
+    <use href="#fl" transform="translate(998.4 408.4) scale(1.13)"/>
+    <use href="#fl" transform="translate(113.6 852.9) rotate(-25.4) scale(1.18 3.89)"/>
+    <use href="#fl" transform="translate(622.8 502.3) scale(1.09)"/>
+    <use href="#fl" transform="translate(946.1 282.7) scale(0.9)"/>
+    <use href="#fl" transform="translate(670.7 625.1) scale(0.92)"/>
+    <use href="#fl" transform="translate(311 250) rotate(-26.1) scale(1.18 5.06)"/>
+    <use href="#fl" transform="translate(70.6 93.5) rotate(-35.2) scale(0.89 2.43)"/>
+    <use href="#fl" transform="translate(469.7 12.4) rotate(-18) scale(1.35 4.25)"/>
+    <use href="#fl" transform="translate(485.9 710.2) rotate(-19.3) scale(1.25 6.75)"/>
+    <use href="#fl" transform="translate(1236 38.7) scale(1.46)"/>
+    <use href="#fl" transform="translate(138.7 797.8) scale(1.07)"/>
+    <use href="#fl" transform="translate(1526.1 851.1) scale(1.04)"/>
+    <use href="#fl" transform="translate(434.6 491.7) scale(0.75)"/>
+    <use href="#fl" transform="translate(1259.3 124.7) scale(1.51)"/>
+    <use href="#fl" transform="translate(61.9 91.9) rotate(-19.7) scale(1.23 3.24)"/>
+    <use href="#fl" transform="translate(552.4 92.6) scale(1.58)"/>
+    <use href="#fl" transform="translate(1107.2 65.6) scale(1.37)"/>
+    <use href="#fl" transform="translate(211.7 80) rotate(-12.4) scale(1.46 3.58)"/>
+    <use href="#fl" transform="translate(35.5 677.8) scale(1.03)"/>
+    <use href="#fl" transform="translate(471.8 233.8) rotate(-34.9) scale(0.77 2.82)"/>
+    <use href="#fl" transform="translate(421.6 886.1) scale(1.37)"/>
+    <use href="#fl" transform="translate(1543.7 203) scale(1.56)"/>
+    <use href="#fl" transform="translate(170.7 148.8) rotate(-14.7) scale(0.94 2.83)"/>
+    <use href="#fl" transform="translate(146.2 142.5) scale(0.79)"/>
+    <use href="#fl" transform="translate(492.1 281.9) scale(1.46)"/>
+    <use href="#fl" transform="translate(1483 723) scale(1.48)"/>
+    <use href="#fl" transform="translate(351.5 136) scale(1.19)"/>
+    <use href="#fl" transform="translate(1547.4 649.4) rotate(-34.7) scale(1.4 5.89)"/>
+    <use href="#fl" transform="translate(156.5 404.9) scale(1.56)"/>
+    <use href="#fl" transform="translate(906.6 6.7) scale(1.08)"/>
+    <use href="#fl" transform="translate(44.8 37.6) rotate(-15.2) scale(0.85 4.16)"/>
+    <use href="#fl" transform="translate(712.5 485.3) scale(1.08)"/>
+    <use href="#fl" transform="translate(544.5 196.7) rotate(-14.2) scale(1.42 5.73)"/>
+    <use href="#fl" transform="translate(887.7 779.6) rotate(-26.4) scale(0.86 3.05)"/>
+    <use href="#fl" transform="translate(1246.9 569.2) scale(1.28)"/>
+    <use href="#fl" transform="translate(1591.2 248.3) scale(1.51)"/>
+    <use href="#fl" transform="translate(571.6 139.1) rotate(-32.6) scale(1.51 4.3)"/>
+    <use href="#fl" transform="translate(133.4 884.9) scale(1.59)"/>
+    <use href="#fl" transform="translate(679.7 462.7) scale(1.41)"/>
+    <use href="#fl" transform="translate(1007.6 519.3) scale(1.33)"/>
+    <use href="#fl" transform="translate(97.1 443.4) rotate(-17.1) scale(1.06 5.09)"/>
+    <use href="#fl" transform="translate(884.5 221.5) rotate(-28.5) scale(1.4 6.64)"/>
+    <use href="#fl" transform="translate(782.6 553) scale(1.06)"/>
+    <use href="#fl" transform="translate(988.3 407.3) scale(1.25)"/>
+    <use href="#fl" transform="translate(840.8 206.8) scale(1.31)"/>
+    <use href="#fl" transform="translate(53.5 681.6) scale(0.87)"/>
+    <use href="#fl" transform="translate(1308.5 730.6) rotate(-35.4) scale(1.25 4.55)"/>
+    <use href="#fl" transform="translate(1239.7 653.4) scale(1.14)"/>
+    <use href="#fl" transform="translate(850.6 538.4) scale(1.28)"/>
+    <use href="#fl" transform="translate(733.7 21.8) rotate(-18.7) scale(1.03 4.39)"/>
+  </g>
+  <g opacity="0.17">
+    <use href="#fl" transform="translate(755.3 198.1) rotate(-31.7) scale(0.94 2.42)"/>
+    <use href="#fl" transform="translate(916.2 358.9) scale(0.9)"/>
+    <use href="#fl" transform="translate(884.2 534.8) scale(0.86)"/>
+    <use href="#fl" transform="translate(436.7 35.8) scale(0.63)"/>
+    <use href="#fl" transform="translate(116.4 823.4) rotate(-27.7) scale(1.2 5.44)"/>
+    <use href="#fl" transform="translate(617.8 741.6) scale(0.98)"/>
+    <use href="#fl" transform="translate(1316.8 489.3) rotate(-32.7) scale(1.09 3.77)"/>
+    <use href="#fl" transform="translate(267.9 324.7) rotate(-19) scale(0.75 2.63)"/>
+    <use href="#fl" transform="translate(1212.1 324.1) scale(1.15)"/>
+    <use href="#fl" transform="translate(1294.2 253.2) scale(0.54)"/>
+    <use href="#fl" transform="translate(1145.5 341.5) scale(1.16)"/>
+    <use href="#fl" transform="translate(78.9 134.2) scale(0.73)"/>
+    <use href="#fl" transform="translate(152.4 417.4) rotate(-19.7) scale(0.72 2.73)"/>
+    <use href="#fl" transform="translate(862.4 582.3) scale(1)"/>
+    <use href="#fl" transform="translate(957.2 368) scale(1.04)"/>
+    <use href="#fl" transform="translate(637.7 439.3) scale(1.03)"/>
+    <use href="#fl" transform="translate(924.8 801.2) scale(0.66)"/>
+    <use href="#fl" transform="translate(326.1 719.3) rotate(-13) scale(1.16 5.55)"/>
+    <use href="#fl" transform="translate(787.7 559.5) rotate(-16.8) scale(0.76 3.14)"/>
+    <use href="#fl" transform="translate(889.9 597.7) scale(0.63)"/>
+    <use href="#fl" transform="translate(1159.4 785.1) scale(1.03)"/>
+    <use href="#fl" transform="translate(1072.4 590.3) scale(1.11)"/>
+    <use href="#fl" transform="translate(1311.7 853.8) rotate(-25.4) scale(0.69 3.35)"/>
+    <use href="#fl" transform="translate(176.6 604.4) scale(0.65)"/>
+    <use href="#fl" transform="translate(1377 172.4) scale(0.92)"/>
+    <use href="#fl" transform="translate(425.7 791.3) rotate(-22.9) scale(1.03 4.81)"/>
+    <use href="#fl" transform="translate(10.1 748.6) rotate(-15.7) scale(0.87 3.79)"/>
+    <use href="#fl" transform="translate(1070.1 315.2) scale(0.78)"/>
+    <use href="#fl" transform="translate(1347.6 705.7) rotate(-31.9) scale(1.04 5.53)"/>
+    <use href="#fl" transform="translate(1092.2 24) rotate(-27.4) scale(0.81 2.42)"/>
+    <use href="#fl" transform="translate(534 752.7) scale(1.13)"/>
+    <use href="#fl" transform="translate(1205.9 54.9) scale(1.15)"/>
+    <use href="#fl" transform="translate(264.1 854.3) rotate(-20.2) scale(0.7 3.85)"/>
+    <use href="#fl" transform="translate(1006.8 24.1) rotate(-34) scale(0.69 3.36)"/>
+    <use href="#fl" transform="translate(1091.3 762.5) rotate(-37.8) scale(0.74 3.16)"/>
+    <use href="#fl" transform="translate(1259.7 218.5) rotate(-13.9) scale(0.9 3.16)"/>
+    <use href="#fl" transform="translate(717.5 207.8) rotate(-18.7) scale(0.97 5.15)"/>
+    <use href="#fl" transform="translate(459.6 76) rotate(-22.4) scale(0.72 2.43)"/>
+    <use href="#fl" transform="translate(150.5 744.5) scale(0.96)"/>
+    <use href="#fl" transform="translate(1298.8 790.2) rotate(-24.4) scale(0.53 2.04)"/>
+    <use href="#fl" transform="translate(272.3 464.1) scale(0.75)"/>
+    <use href="#fl" transform="translate(277 836.1) rotate(-17.4) scale(0.89 4.51)"/>
+    <use href="#fl" transform="translate(1237.8 622.2) scale(0.96)"/>
+    <use href="#fl" transform="translate(27.9 371.5) rotate(-29.5) scale(0.61 2.47)"/>
+    <use href="#fl" transform="translate(883 15.7) rotate(-36.9) scale(1.03 4.16)"/>
+    <use href="#fl" transform="translate(1134 301.5) scale(0.72)"/>
+    <use href="#fl" transform="translate(1046.8 107.2) scale(0.75)"/>
+    <use href="#fl" transform="translate(386.4 155.4) rotate(-24.2) scale(0.56 1.4)"/>
+    <use href="#fl" transform="translate(1100.5 589.2) scale(0.99)"/>
+    <use href="#fl" transform="translate(1168.2 661.2) scale(0.68)"/>
+    <use href="#fl" transform="translate(183.8 124.8) scale(0.86)"/>
+    <use href="#fl" transform="translate(750.7 597.2) rotate(-21.9) scale(0.58 2.37)"/>
+    <use href="#fl" transform="translate(22.7 385.2) scale(0.72)"/>
+    <use href="#fl" transform="translate(279.7 764.3) rotate(-33.6) scale(1.13 4.19)"/>
+    <use href="#fl" transform="translate(103.6 121.5) scale(0.67)"/>
+    <use href="#fl" transform="translate(336.8 111.2) scale(0.91)"/>
+  </g>
+
+
+  <!-- the near water falls toward dark so page content stays readable -->
+  <rect x="0" y="750" width="1600" height="150" fill="url(#fade)" opacity="0.55"/>
+</svg>

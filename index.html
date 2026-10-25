@@ -1,1 +1,374 @@
-test
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>FrozenBattlegrounds</title>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E%E2%9A%94%EF%B8%8F%3C/text%3E%3C/svg%3E"/>
+    <!-- sql.js 1.10.3 (MIT, github.com/sql-js/sql.js), wersja czysto JS: SQLite w przegladarce bez
+         serwera i bez osobnego pliku .wasm, wiec dziala tez po otwarciu index.html z dysku. -->
+    <script src="js/sql-asm.js"></script>
+</head>
+<body>
+
+<!-- Wyglad 1:1 z FrozenBattlegrounds: css/app.css, js/snow.js, js/runes.js i img/spire.svg sa
+     skopiowane stamtad bez zmian. Dane: leagues.js - publiczne kopie baz lig (sqlite w base64),
+     wrzucane przez task w3leagues-sync z ScheduledTasks. -->
+<header class="topbar">
+    <a class="brand" href="#">
+        <span class="brand-mark">⚔️</span>
+        <span class="brand-name">FrozenBattlegrounds</span>
+    </a>
+</header>
+
+<main class="container" id="app">
+    <p class="muted">Wczytywanie danych ligi…</p>
+</main>
+
+<footer class="footer">
+    <span>Autor</span>
+    <a href="https://janczura.dev/" target="_blank" rel="noopener">janczura.dev</a>
+    <span class="sep">·</span>
+    <span>Kontakt</span>
+    <a href="mailto:janczurasergiusz@protonmail.com">janczurasergiusz@protonmail.com</a>
+    <div class="frost-bg" aria-hidden="true"></div>
+    <canvas id="snow" class="snow-canvas" aria-hidden="true"></canvas>
+    <script src="js/snow.js" defer></script>
+    <div id="runes" class="rune-veil" aria-hidden="true">
+        <div class="rune-col rune-left"></div>
+        <div class="rune-col rune-right"></div>
+    </div>
+    <script src="js/runes.js" defer></script>
+</footer>
+
+<script>
+(async function () {
+    const PROVISIONAL_DEVIATION = 110;   // jak StatsService: wyzej rating jeszcze sie ustala
+    const RECENT_SHOWN = 3;              // jak LeagueController.RECENT_SHOWN
+    const RACES = {
+        HUMAN: ['Ludzie', '#3b82f6'], ORC: ['Orkowie', '#ef4444'], NIGHT_ELF: ['Nocne elfy', '#22c55e'],
+        UNDEAD: ['Nieumarli', '#a855f7'], RANDOM: ['Losowa', '#9ca3af']
+    };
+    const MODES = {ONE_V_ONE: '1v1', TWO_V_TWO: '2v2', THREE_V_THREE: '3v3', FOUR_V_FOUR: '4v4', FFA: 'Każdy na każdego'};
+    const app = document.getElementById('app');
+
+    // Nicki przychodza m.in. z Discorda - wszystko z bazy idzie przez esc() albo przez biala liste.
+    const esc = s => String(s ?? '').replace(/[&<>"']/g,
+        c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'})[c]);
+    const race = r => RACES[r] ? r : 'RANDOM';
+    const mode = m => esc(MODES[m] || m);
+    const rate = (w, l) => w + l === 0 ? 0 : w / (w + l);
+    const pct = x => (x * 100).toFixed(1).replace('.', ',') + '%';
+    const two = n => String(n).padStart(2, '0');
+    const toDate = iso => new Date(String(iso).replace(/(\.\d{3})\d+/, '$1'));   // nanosekundy z Javy
+    const date = iso => {
+        const d = toDate(iso);
+        return `${d.getFullYear()}-${two(d.getMonth() + 1)}-${two(d.getDate())} ${two(d.getHours())}:${two(d.getMinutes())}`;
+    };
+    const dash = '<span class="muted">–</span>';
+    const card = (title, body) => `<section class="card"><h2>${title}</h2>${body}</section>`;
+
+    // --- nick z dekoracja: port NameDisplay.of() / PlayerStyle z FrozenBattlegrounds ---
+    const hex = v => /^#[0-9a-fA-F]{6}$/.test(String(v ?? '').trim()) ? String(v).trim().toLowerCase() : null;
+    const key = v => String(v ?? '').trim().toUpperCase();
+    const ANIM = {PULSE: 'pn-a-pulse', SHIMMER: 'pn-a-shimmer', RAINBOW: 'pn-a-rainbow',
+        FLICKER: 'pn-a-flicker', FLOAT: 'pn-a-float', SHAKE: 'pn-a-shake'};
+    const BG = {SOLID: 'pn-bg-solid', GRADIENT: 'pn-bg-gradient', ANIMATED: 'pn-bg-animated', PULSE: 'pn-bg-pulse'};
+
+    function pname(p) {
+        const c1 = hex(p.style_color), c2 = hex(p.style_color2), glow = hex(p.style_glow);
+        const anim = ANIM[key(p.style_anim)], bg = BG[key(p.style_bg)];
+        const icon = Array.from(p.style_icon ?? '').filter(ch => !/[\s\p{Cc}<>&"'`\\]/u.test(ch)).slice(0, 3).join('');
+        const color = c1 || RACES[race(p.race)][1];
+        const nick = esc(p.nick);
+        if (!(c1 || c2 || glow || icon || anim || bg || p.style_bold || p.style_italic)) {
+            return `<span class="pn" style="color:${color}"><span class="pn-text">${nick}</span></span>`;
+        }
+        const text = ['pn-text', c2 && 'pn-grad', glow && 'pn-glow', p.style_bold && 'pn-bold',
+            p.style_italic && 'pn-italic', anim].filter(Boolean).join(' ');
+        let vars = `color:${color};--pn-c1:${color};--pn-c2:${c2 || color};`;
+        if (glow) vars += `--pn-glow:${glow};--pn-glow-r:${[0, 6, 12, 20][Math.max(1, Math.min(3, p.style_glow_level | 0))]}px;`;
+        if (bg) {
+            const b1 = hex(p.style_bg_color) || '#1c2330';
+            vars += `--pn-bg1:${b1};--pn-bg2:${hex(p.style_bg_color2) || b1};`;
+        }
+        return `<span class="pn${bg ? ' pn-bg ' + bg : ''}" style="${vars}">`
+            + (icon ? `<span class="pn-icon" aria-hidden="true">${esc(icon)}</span>` : '')
+            + `<span class="${text}">${nick}</span></span>`;
+    }
+
+    function chartCard(values) {   // port RatingChart.of()
+        if (values.length < 2) return '';
+        const W = 640, H = 190, L = 6, R = 6, T = 14, B = 14, r1 = v => Math.round(v * 10) / 10;
+        let min = Math.floor(Math.min(...values) / 50) * 50, max = Math.ceil(Math.max(...values) / 50) * 50;
+        if (min === max) { min -= 50; max += 50; }
+        const y = v => r1(T + (H - T - B) * (1 - (v - min) / (max - min)));
+        const points = values.map((v, i) => `${r1(L + (W - L - R) * i / (values.length - 1))},${y(v)}`).join(' ');
+        const base = 1500 >= min && 1500 <= max ? `<line class="mmr-baseline" x1="0" y1="${y(1500)}" x2="${W}" y2="${y(1500)}"/>` : '';
+        return card('Historia MMR', `<div class="mmr-wrap"><svg class="mmr-chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="MMR w czasie">`
+            + `${base}<polyline class="mmr-line" points="${points}"/></svg>`
+            + `<div class="mmr-axis"><span>${max}</span><span>${min}</span></div></div>`);
+    }
+
+    /** Jedna liga = jeden plik .sqlite; slug (nazwa pliku bez .sqlite) jest jej adresem: #slug, #slug/gracz-17. */
+    function makeLeague(db, slug) {
+        const rows = sql => {
+            const [r] = db.exec(sql);
+            return r ? r.values.map(v => Object.fromEntries(r.columns.map((c, i) => [c, v[i]]))) : [];
+        };
+        const league = rows('SELECT * FROM league_info')[0] || {};
+        const ffa = league.mode === 'FFA';
+        const countries = new Map(rows('SELECT * FROM country').map(c => [c.id,
+            {name: c.name, url: URL.createObjectURL(new Blob([c.flag], {type: c.flag_type}))}]));
+        const players = rows('SELECT * FROM player ORDER BY points DESC, rating DESC');
+        const byId = new Map(players.map(p => [p.id, p]));
+        const parts = new Map();
+        for (const mp of rows('SELECT * FROM match_participant ORDER BY team, id')) {
+            const p = byId.get(mp.player_id);
+            if (!p) continue;
+            if (!parts.has(mp.match_id)) parts.set(mp.match_id, []);
+            parts.get(mp.match_id).push({team: mp.team, before: mp.rating_before, after: mp.rating_after, p});
+        }
+        const matches = rows('SELECT * FROM match_game ORDER BY played_at, id').map(m => ({...m, ps: parts.get(m.id) || []}));
+        const finished = matches.filter(m => m.status === 'FINISHED');   // chronologicznie, jak findFinishedChronological
+        const inProgress = matches.filter(m => m.status !== 'FINISHED');
+        const won = (m, x) => m.winning_team != null && x.team === m.winning_team;
+
+        function flag(p) {
+            const c = countries.get(p.country_id);
+            return c ? `<img class="flag" src="${c.url}" alt="${esc(c.name)}" title="${esc(c.name)}" loading="lazy"/>` : '';
+        }
+        const playerHref = id => `#${slug}/gracz-${Number(id)}`;
+        const playerLink = p => `${flag(p)}<a href="${playerHref(p.id)}">${pname(p)}</a>`;
+
+        function head(h1) {
+            const last = matches[matches.length - 1];
+            const when = last ? `<div class="actions"><span class="muted small">Ostatni mecz: ${date(last.played_at)}</span></div>` : '';
+            return `<div class="page-head"><h1>${h1}</h1>${when}</div>`;
+        }
+
+        function matchCard(m) {
+            const teams = new Map();
+            for (const x of m.ps) {
+                if (!teams.has(x.team)) teams.set(x.team, []);
+                teams.get(x.team).push(x);
+            }
+            const html = [...teams].map(([team, xs]) => {
+                const win = m.winning_team === team;
+                const names = xs.map(x => `<span>${pname(x.p)}${m.mvp_player_id === x.p.id
+                    ? '<span title="MVP tego meczu" aria-hidden="true"> ⭐</span>' : ''}</span>`).join(', ');
+                return `<div class="team${win ? ' winner' : ''}"><span class="team-label">`
+                    + `<span>${ffa ? esc(xs[0].p.nick) : 'Drużyna ' + (team + 1)}</span>`
+                    + `${win ? ' <span class="badge ok">Zwycięzca</span>' : ''}</span>`
+                    + `<span class="players">${names}</span></div>`;
+            }).join('');
+            const map = m.map_name ? `<span class="badge info">Mapa: ${esc(m.map_name)}</span>` : '';
+            return `<div class="match${m.status === 'FINISHED' ? ' finished' : ''}"><div class="teams">${html}</div>`
+                + `<div class="match-edit">${map}<span class="muted small">${date(m.played_at)}</span></div></div>`;
+        }
+
+        // --- strona ligi: jak stats.html + ostatnie mecze z league.html, liczone jak StatsService ---
+        function standingsCard() {
+            const results = new Map(), mvps = new Map();
+            for (const m of finished) {
+                for (const x of m.ps) {
+                    if (!results.has(x.p.id)) results.set(x.p.id, []);
+                    results.get(x.p.id).push(won(m, x));
+                }
+                if (m.mvp_player_id != null) mvps.set(m.mvp_player_id, (mvps.get(m.mvp_player_id) || 0) + 1);
+            }
+            const topCut = league.top_cut || 0;
+            const body = players.map((p, i) => {
+                const rank = i + 1, chrono = results.get(p.id) || [], mvp = mvps.get(p.id) || 0;
+                const form = chrono.slice(-5).reverse();
+                let streak = 0;
+                while (streak < chrono.length && chrono[chrono.length - 1 - streak] === chrono[chrono.length - 1]) streak++;
+                const winning = chrono[chrono.length - 1];
+                const cut = topCut > 0 && rank <= topCut ? (rank === topCut ? 'in-cut cut-line' : 'in-cut') : '';
+                return `<tr class="${cut}"><td>${rank}</td><td>${playerLink(p)}`
+                    + (p.deviation > PROVISIONAL_DEVIATION ? ' <span class="badge warn small" title="Rating jeszcze się ustala — mało rozegranych gier.">wstępny</span>' : '')
+                    + `</td><td><strong>${p.points}</strong></td><td>${Math.round(p.rating)}</td>`
+                    + `<td>${p.wins + p.losses}</td><td>${p.wins} / ${p.losses}</td><td>${pct(rate(p.wins, p.losses))}</td>`
+                    + `<td>${mvp > 0 ? mvp : dash}</td>`
+                    + `<td><span class="form-row">${form.map(w => `<span class="form-pip ${w ? 'win' : 'loss'}">${w ? 'W' : 'L'}</span>`).join('') || dash}</span></td>`
+                    + `<td>${streak ? `<span class="${winning ? 'up' : 'down'}">${winning ? 'W' : 'L'}${streak}</span>` : dash}</td></tr>`;
+            }).join('');
+            const table = players.length ? `<div class="table-scroll"><table class="table"><thead><tr><th>#</th><th>Nick</th>`
+                + `<th>Pkt</th><th>Ranking</th><th>Gry</th><th>W / P</th><th>% wygranych</th>`
+                + `<th title="Mecze, w których gracz dostał MVP.">MVP</th><th>Forma</th><th>Passa</th></tr></thead>`
+                + `<tbody>${body}</tbody></table></div>` : '<p class="muted">Brak graczy.</p>';
+            return card('Tabela', `<p class="muted">Zwycięstwo ${esc(league.win_points)} · porażka ${esc(league.loss_points)} · MVP +${esc(league.mvp_points)}</p>`
+                + table + (topCut > 0 && players.length > topCut ? `<p class="muted small">Kreska oddziela pierwsze ${topCut} miejsc.</p>` : ''));
+        }
+
+        function recentCard() {
+            const recent = finished.slice().reverse();
+            const older = recent.slice(RECENT_SHOWN);
+            return card('Ostatnie mecze', recent.slice(0, RECENT_SHOWN).map(matchCard).join('')
+                + (older.length ? `<details class="more-games"><summary>Pokaż ${older.length} starszych gier</summary>${older.map(matchCard).join('')}</details>` : ''));
+        }
+
+        function raceCard() {
+            const tally = new Map();   // rasa -> [gry, wygrane]
+            for (const m of finished) for (const x of m.ps) {
+                const g = tally.get(race(x.p.race)) || [0, 0];
+                g[0]++;
+                if (won(m, x)) g[1]++;
+                tally.set(race(x.p.race), g);
+            }
+            const stats = Object.keys(RACES).filter(r => tally.has(r)).map(r => ({r, games: tally.get(r)[0], wins: tally.get(r)[1]}))
+                .sort((a, b) => b.wins / b.games - a.wins / a.games || b.games - a.games);
+            return card('Bilans ras', stats.length ? `<table class="table"><thead><tr><th>Rasa</th><th>Gry</th><th>W / P</th><th>% wygranych</th></tr></thead><tbody>`
+                + stats.map(s => `<tr><td style="color:${RACES[s.r][1]}">${RACES[s.r][0]}</td><td>${s.games}</td>`
+                    + `<td>${s.wins} / ${s.games - s.wins}</td><td>${pct(s.wins / s.games)}</td></tr>`).join('')
+                + '</tbody></table>' : '<p class="muted">Brak zakończonych gier.</p>');
+        }
+
+        function mapCard() {
+            const counts = new Map();
+            for (const m of finished) if (m.map_name && m.map_name.trim()) counts.set(m.map_name, (counts.get(m.map_name) || 0) + 1);
+            const maps = [...counts].sort((a, b) => b[1] - a[1]);
+            return card('Rozegrane mapy', maps.length ? `<table class="table"><thead><tr><th>Nazwa mapy</th><th>Gry</th></tr></thead><tbody>`
+                + maps.map(([name, games]) => `<tr><td>${esc(name)}</td><td>${games}</td></tr>`).join('')
+                + '</tbody></table>' : '<p class="muted">Nie rozegrano jeszcze żadnej gry na mapie.</p>');
+        }
+
+        function matrixCard() {
+            const m = new Map();   // rasa -> rasa przeciwnika -> [wygrane, przegrane]
+            for (const g of finished) for (const a of g.ps) for (const b of g.ps) {
+                if (a === b || a.team === b.team) continue;
+                const aw = won(g, a);
+                if (aw === won(g, b)) continue;   // nierozstrzygniete (np. dwoch przegranych w FFA)
+                const ra = race(a.p.race), rb = race(b.p.race);
+                if (!m.has(ra)) m.set(ra, new Map());
+                const wl = m.get(ra).get(rb) || [0, 0];
+                wl[aw ? 0 : 1]++;
+                m.get(ra).set(rb, wl);
+            }
+            const races = Object.keys(RACES).filter(r => m.has(r));
+            if (!races.length) return '';
+            const th = r => `<th style="color:${RACES[r][1]}">${RACES[r][0]}</th>`;
+            const td = (r, c) => {
+                const [w, l] = m.get(r).get(c) || [0, 0];
+                if (!w && !l) return '<td class="muted"><span>–</span></td>';
+                const wr = w / (w + l);
+                return `<td class="${wr >= 0.5 ? 'cell-win' : 'cell-loss'}"><span>${Math.round(wr * 100)}%</span>`
+                    + `<span class="muted small"> (${w}–${l})</span></td>`;
+            };
+            return card('Starcia ras', '<p class="muted small">Dla każdej rasy (wiersz) skuteczność (i bilans W–P) przeciw rasie z kolumny, z rozstrzygniętych gier.</p>'
+                + `<div class="table-scroll"><table class="table matrix"><thead><tr><th></th>${races.map(th).join('')}</tr></thead><tbody>`
+                + races.map(r => `<tr>${th(r)}${races.map(c => td(r, c)).join('')}</tr>`).join('') + '</tbody></table></div>');
+        }
+
+        function home() {
+            return head(`<span>${esc(league.name)}</span> <span class="badge">${mode(league.mode)}</span>`)
+                + (inProgress.length ? card('Gry w toku', inProgress.map(matchCard).join('')) : '')
+                + standingsCard()
+                + (finished.length ? recentCard() : '')
+                + `<div class="two-col">${raceCard()}${mapCard()}</div>`
+                + matrixCard();
+        }
+
+        // --- strona gracza: jak player.html, bez formularzy edycji ---
+        function player(id) {
+            const p = byId.get(id);
+            const crumbs = `<a href="#${slug}">${esc(league.name)}</a><span class="sep">/</span>`;
+            if (!p) return head(crumbs + 'Gracz') + '<div class="alert error">Nie ma takiego gracza.</div>';
+
+            const me = m => m.ps.find(x => x.p.id === id);
+            const mine = finished.filter(me);
+            const history = mine.slice().reverse();
+            const mvp = finished.filter(m => m.mvp_player_id === id).length;
+
+            let last = '<dd class="muted">Nie zagrał żadnej gry</dd>';
+            if (history.length) {
+                const day = d => new Date(d.getFullYear(), d.getMonth(), d.getDate());
+                const days = Math.round((day(new Date()) - day(toDate(history[0].played_at))) / 86400000);
+                last = `<dd><span>${date(history[0].played_at)}</span> <span class="muted small">`
+                    + `${days === 0 ? '(dzisiaj)' : days === 1 ? '(wczoraj)' : `(${days} dni temu)`}</span></dd>`;
+            }
+            const country = countries.get(p.country_id);
+            const w3c = /^https?:\/\//i.test(p.w3c_url || '')   // tylko http(s) - zadnych javascript: w href
+                ? `<a href="${esc(p.w3c_url)}" target="_blank" rel="noopener noreferrer">${esc(p.w3c_url)}</a>` : '<span>Brak</span>';
+            const stats = card('Statystyki', `<dl class="stats">`
+                + `<dt>Pkt</dt><dd><strong>${p.points}</strong></dd><dt>Nagrody MVP</dt><dd>${mvp}</dd>`
+                + `<dt>Ranking</dt><dd>${Math.round(p.rating)}</dd><dt>RD</dt><dd>${Math.round(p.deviation)}</dd>`
+                + `<dt>W / P</dt><dd>${p.wins} / ${p.losses}</dd><dt>% wygranych</dt><dd>${pct(rate(p.wins, p.losses))}</dd>`
+                + `<dt>Ostatnia gra</dt>${last}`
+                + `<dt>Kraj</dt><dd>${flag(p)}<span>${country ? esc(country.name) : 'Brak'}</span></dd>`
+                + `<dt>Link W3Champions</dt><dd style="overflow-wrap:anywhere">${w3c}</dd></dl>`);
+
+            const tally = new Map();   // przeciwnik -> [wygrane, przegrane], tylko rozstrzygniete starcia
+            for (const m of mine) {
+                const a = me(m), aw = won(m, a);
+                for (const o of m.ps) {
+                    if (o.team === a.team || aw === won(m, o)) continue;
+                    const wl = tally.get(o.p.id) || [0, 0];
+                    wl[aw ? 0 : 1]++;
+                    tally.set(o.p.id, wl);
+                }
+            }
+            const h2h = [...tally].sort((a, b) => b[1][0] + b[1][1] - a[1][0] - a[1][1]);
+            const h2hCard = h2h.length ? card('Bezpośrednie starcia', `<div class="table-scroll"><table class="table"><thead><tr><th>Przeciwnik</th><th>Gry</th><th>W / P</th><th>% wygranych</th></tr></thead><tbody>`
+                + h2h.map(([oid, [w, l]]) => `<tr><td><a href="${playerHref(oid)}">${pname(byId.get(oid))}</a></td>`
+                    + `<td>${w + l}</td><td>${w} / ${l}</td><td>${pct(rate(w, l))}</td></tr>`).join('')
+                + '</tbody></table></div>') : '';
+
+            const historyCard = card('Historia meczów', history.length ? `<div class="table-scroll"><table class="table"><thead><tr><th>Data</th><th>Wynik</th><th>Mapa</th><th>kontra</th><th>Zmiana</th></tr></thead><tbody>`
+                + history.map(m => {
+                    const a = me(m), chg = Math.round(a.after == null ? 0 : a.after - a.before);
+                    return `<tr><td>${date(m.played_at)}</td><td>${won(m, a) ? '<span class="badge ok">Wygrana</span>' : '<span class="badge warn">Przegrana</span>'}</td>`
+                        + `<td>${m.map_name ? esc(m.map_name) : dash}</td>`
+                        + `<td>${m.ps.filter(o => o.team !== a.team).map(o => `<span>${pname(o.p)}</span>`).join(', ')}</td>`
+                        + `<td><span class="${chg >= 0 ? 'up' : 'down'}">${chg > 0 ? '+' : ''}${chg}</span></td></tr>`;
+                }).join('') + '</tbody></table></div>' : '<p class="muted">Brak rozegranych meczów.</p>');
+
+            const ratings = [p.base_rating, ...mine.map(m => me(m).after).filter(v => v != null)];
+            return head(crumbs + pname(p)) + stats + chartCard(ratings) + h2hCard + historyCard;
+        }
+
+        return {slug, name: league.name, mode: league.mode, byId, home, player};
+    }
+
+    let leagues;
+    try {
+        // <script>, nie fetch: fetch pliku obok jest zablokowany, gdy strona jest otwarta z dysku (file://).
+        // ?v= omija 10-minutowy cache GitHub Pages, z dysku jest ignorowane.
+        await new Promise((ok, fail) => {
+            const s = document.createElement('script');
+            s.src = 'leagues.js?v=' + Date.now();
+            s.onload = ok;
+            s.onerror = () => fail(new Error('brak pliku leagues.js'));
+            document.head.appendChild(s);
+        });
+        const SQL = await initSqlJs();
+        leagues = Object.entries(window.W3_LEAGUES || {}).filter(([slug]) => /^[\w-]+$/.test(slug))
+            .map(([slug, b64]) => makeLeague(new SQL.Database(Uint8Array.from(atob(b64), c => c.charCodeAt(0))), slug));
+    } catch (e) {
+        app.innerHTML = `<div class="alert error">Nie udało się wczytać danych ligi: ${esc(e.message)}</div>`;
+        return;
+    }
+
+    function dashboard() {
+        return '<h1>Ligi</h1>' + (leagues.length
+            ? `<section class="grid">${leagues.map(l => `<a class="card league-card" href="#${l.slug}"><h2>${esc(l.name)}</h2>`
+                + `<span class="badge">${mode(l.mode)}</span></a>`).join('')}</section>`
+            : '<p class="muted">Brak lig.</p>');
+    }
+
+    function render() {
+        const [, slug, pid] = location.hash.match(/^#([\w-]+)(?:\/gracz-(\d+))?$/) || [];
+        // Przy jednej lidze nie ma czego wybierac - od razu jej tabela.
+        const l = leagues.find(x => x.slug === slug) || (leagues.length === 1 ? leagues[0] : null);
+        const p = l && pid && l.byId.get(Number(pid));
+        app.innerHTML = !l ? dashboard() : pid ? l.player(Number(pid)) : l.home();
+        document.title = (p ? p.nick : l ? l.name : 'Ligi') + ' · FrozenBattlegrounds';
+        window.scrollTo(0, 0);
+    }
+    window.addEventListener('hashchange', render);
+    render();
+})();
+</script>
+</body>
+</html>
