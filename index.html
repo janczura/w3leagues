@@ -135,6 +135,46 @@
         const inProgress = matches.filter(m => m.status !== 'FINISHED');
         const won = (m, x) => m.winning_team != null && x.team === m.winning_team;
 
+        // --- gold: port GoldLedger.compute() z FrozenBattlegrounds - salda nie sa zapisane, liczy sie je
+        // od nowa z gier i zakladow. Na strone trafiaja tylko zaklady z zakonczonych gier; postawiony
+        // gold i tak jest wliczony w Gold, wiec salda wychodza takie same jak w FBG.
+        function ledger() {
+            const purses = new Map();
+            const purse = id => purses.get(id) || purses.set(id, {gold: league.bet_start_gold, won: 0, lost: 0, profit: 0}).get(id);
+            players.forEach(p => purse(p.id));
+            const since = toDate(league.bet_since), settled = m => toDate(m.finished_at || m.played_at);
+            const bets = Map.groupBy(rows('SELECT * FROM bet'), b => b.match_id);
+            const games = finished.filter(m => m.winning_team != null && toDate(m.played_at) >= since)
+                .sort((a, b) => settled(a) - settled(b) || a.id - b.id);   // w kolejnosci rozliczenia
+            let jackpot = 0;
+            for (const m of games) {
+                const win = m.winning_team;
+                for (const x of m.ps) purse(x.p.id).gold += x.team === win ? league.bet_win_gold : league.bet_loss_gold;
+                const stakes = bets.get(m.id) || [];
+                if (!stakes.length) continue;
+                // Zaklady bez kursu: stara wspolna pula (jackpot + bonus + stawki przegranych), dzielona
+                // proporcjonalnie miedzy trafionych, z ucieciem w dol; reszta przechodzi na nastepna gre.
+                const pooled = stakes.filter(b => b.odds == null);
+                let pot = jackpot + league.bet_bonus, onWinner = 0, paid = 0;
+                for (const b of pooled) {
+                    if (b.team === win) onWinner += b.amount;
+                    else pot += b.amount;
+                }
+                for (const b of stakes) {
+                    const p = purse(b.player_id);
+                    let delta = -b.amount;
+                    if (b.team !== win) p.lost++;
+                    else if (b.odds != null) { delta = Math.floor(b.amount * (b.odds - 100) / 100); p.won++; }
+                    else { delta = Math.floor(b.amount * pot / onWinner); paid += delta; p.won++; }
+                    p.gold += delta;
+                    p.profit += delta;
+                }
+                if (pooled.length) jackpot = pot - paid;
+            }
+            return purses;
+        }
+        const gold = league.bet_since ? ledger() : null;   // brak bet_since = obstawianie nigdy nie wlaczone
+
         function flag(p) {
             const c = countries.get(p.country_id);
             return c ? `<img class="flag" src="${c.url}" alt="${esc(c.name)}" title="${esc(c.name)}" loading="lazy"/>` : '';
@@ -202,6 +242,20 @@
                 + table + (topCut > 0 && players.length > topCut ? `<p class="muted small">Kreska oddziela pierwsze ${topCut} miejsc.</p>` : ''));
         }
 
+        function goldCard() {   // jak ranking na betting.html, bez kolumny "W grze" (zakladow na trwajace gry tu nie ma)
+            const a = p => gold.get(p.id);
+            const ranked = players.slice().sort((x, y) => a(y).gold - a(x).gold || a(y).profit - a(x).profit
+                || x.nick.localeCompare(y.nick));
+            return card('Gold', `<p class="muted">Start ${esc(league.bet_start_gold)} gold · za mecz: wygrana +${esc(league.bet_win_gold)},`
+                + ` porażka +${esc(league.bet_loss_gold)} · reszta z obstawiania</p>`
+                + `<div class="table-scroll"><table class="table"><thead><tr><th>#</th><th>Nick</th><th>Gold</th>`
+                + `<th>Zakłady W/P</th><th>Bilans zakładów</th></tr></thead><tbody>`
+                + ranked.map((p, i) => `<tr><td>${i + 1}</td><td>${playerLink(p)}</td><td><strong>${a(p).gold}</strong></td>`
+                    + `<td>${a(p).won} / ${a(p).lost}</td><td class="${a(p).profit > 0 ? 'up' : a(p).profit < 0 ? 'down' : ''}">`
+                    + `${a(p).profit > 0 ? '+' : ''}${a(p).profit}</td></tr>`).join('')
+                + '</tbody></table></div>');
+        }
+
         function recentCard() {
             const recent = finished.slice().reverse();
             const older = recent.slice(RECENT_SHOWN);
@@ -265,6 +319,7 @@
             return head(`<span>${esc(league.name)}</span> <span class="badge">${mode(league.mode)}</span>`)
                 + (inProgress.length ? card('Gry w toku', inProgress.map(matchCard).join('')) : '')
                 + standingsCard()
+                + (gold && players.length ? goldCard() : '')
                 + (finished.length ? recentCard() : '')
                 + `<div class="two-col">${raceCard()}${mapCard()}</div>`
                 + matrixCard();
@@ -295,6 +350,7 @@
                 + `<dt>Pkt</dt><dd><strong>${p.points}</strong></dd><dt>Nagrody MVP</dt><dd>${mvp}</dd>`
                 + `<dt>Ranking</dt><dd>${Math.round(p.rating)}</dd><dt>RD</dt><dd>${Math.round(p.deviation)}</dd>`
                 + `<dt>W / P</dt><dd>${p.wins} / ${p.losses}</dd><dt>% wygranych</dt><dd>${pct(rate(p.wins, p.losses))}</dd>`
+                + (gold ? `<dt>Gold</dt><dd>${gold.get(id).gold}</dd>` : '')
                 + `<dt>Ostatnia gra</dt>${last}`
                 + `<dt>Kraj</dt><dd>${flag(p)}<span>${country ? esc(country.name) : 'Brak'}</span></dd>`
                 + `<dt>Link W3Champions</dt><dd style="overflow-wrap:anywhere">${w3c}</dd></dl>`);
