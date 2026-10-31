@@ -48,7 +48,7 @@
     const RECENT_SHOWN = 3;              // jak LeagueController.RECENT_SHOWN
     const RACES = {
         HUMAN: ['Ludzie', '#3b82f6'], ORC: ['Orkowie', '#ef4444'], NIGHT_ELF: ['Nocne elfy', '#22c55e'],
-        UNDEAD: ['Nieumarli', '#a855f7'], RANDOM: ['Losowa', '#9ca3af']
+        UNDEAD: ['Nieumarli', '#a855f7'], RANDOM: ['Losowa', '#facc15']
     };
     const MODES = {ONE_V_ONE: '1v1', TWO_V_TWO: '2v2', THREE_V_THREE: '3v3', FOUR_V_FOUR: '4v4', FFA: 'Każdy na każdego'};
     const app = document.getElementById('app');
@@ -80,7 +80,7 @@
         const c1 = hex(p.style_color), c2 = hex(p.style_color2), glow = hex(p.style_glow);
         const anim = ANIM[key(p.style_anim)], bg = BG[key(p.style_bg)];
         const icon = Array.from(p.style_icon ?? '').filter(ch => !/[\s\p{Cc}<>&"'`\\]/u.test(ch)).slice(0, 3).join('');
-        const color = c1 || RACES[race(p.race)][1];
+        const color = c1 || (p.newcomer ? '#9ca3af' : RACES[race(p.race)][1]);   // nowy gracz: szary do czasu ustawienia przez admina
         const nick = esc(p.nick);
         if (!(c1 || c2 || glow || icon || anim || bg || p.style_bold || p.style_italic)) {
             return `<span class="pn" style="color:${color}"><span class="pn-text">${nick}</span></span>`;
